@@ -18,8 +18,17 @@ body {
   background-image: url("gradient_bg.png");
   background-repeat: repeat-x;
 }
+repeat-x = repeat the image on x axis
+repeat-y = repeat the image on y axis
+repeat = repeat the image on both axis
+no-repeat = don't repeat the image on any axis
 
-
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  margin-right: 200px;
+}
 
 
 https://unsplash.com/photos/JRNigKHvB1Q
@@ -413,4 +422,14 @@ Comments Routes
 	The local authentication strategy authenticates users using a username and password. The strategy requires a verify callback, which accepts these credentials and calls done providing a user.
 	
 7. var passportLocalMongoose = require("passport-local-mongoose");
-	Passport-Local Mongoose will add a username, hash and salt field to store the username, the hashed password and the salt value. Additionally P
+	Passport-Local Mongoose will add a username, hash and salt field to store the username, the hashed password and the salt value. Additionally Passport-Local Mongoose adds some methods to your Schema.
+   
+	
+	
+	
+	
+	
+	
+	
+	
+	
