@@ -1,0 +1,416 @@
+<link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+
+border color - #bdc3c7
+date color - #3498db
+h2 color - #2c3e50
+font - source sans pro
+
+hr style 
+
+yelp bootstap 3 to bootstrap 4
+https://www.youtube.com/watch?v=NHHh0sj1uKY
+
+
+If your screen size is too small then the columns in the grid will stack vertically instead of sitting side-by-side. 
+To correct this issue you can change the col-lg-6  classes to col-md-6  instead.
+
+body {
+  background-image: url("gradient_bg.png");
+  background-repeat: repeat-x;
+}
+
+
+
+
+https://unsplash.com/photos/JRNigKHvB1Q
+https://unsplash.com/photos/vaWZyE1Z6xg
+https://unsplash.com/photos/jWskS_wLMDo
+https://unsplash.com/photos/P8emRhbM0RU
+https://unsplash.com/photos/fg6g2u5oklo
+https://unsplash.com/photos/Anosw0HcGRk
+https://unsplash.com/photos/g_Abgn1slAM
+https://unsplash.com/photos/vpaHZEYx35U
+https://unsplash.com/photos/xq778lLN5No
+https://unsplash.com/photos/Q6X1ifPIfjs
+
+https://images.unsplash.com/photo-1556783900-2ebe375c20fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80
+https://images.unsplash.com/photo-1555508275-b5451b4c240a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80
+https://images.unsplash.com/photo-1556706743-13aa536f0305?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80
+
+https://images.unsplash.com/photo-1556710303-af0c5260e173?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80
+https://images.unsplash.com/photo-1557006181-776251cae2d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80
+https://images.unsplash.com/photo-1556601221-87dbd524316d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80
+
+https://images.unsplash.com/photo-1551369277-a930560141bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1376&q=80
+https://images.unsplash.com/photo-1555414244-80c33ca2e497?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80
+https://images.unsplash.com/photo-1556220079-4f707a952005?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80
+
+
+https://fontawesome.com/?from=io
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+http://youmightnotneedjquery.com/
+
+
+https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
+
+Projects to practice
+
+https://www.theodinproject.com/courses/web-development-101
+TraversyMedia or TheNetNinja
+ https://github.com/kamranahmedse/developer-roadmap
+
+Gradient css
+https://uigradients.com/
+
+cloud ide
+https://ide.goorm.io/my?plan=ZnJlZQ==
+https://goorm-ide-test-rvcmf.run.goorm.io/
+
+mongodb
+https://www.mongodb.com/cloud/atlas
+devMays - DevColdplay
+mongodb+srv://devMays:<password>@cluster0-n0rgm.mongodb.net/test?retryWrites=true
+
+Ian Node MongoDb setup Ian instructions
+https://www.youtube.com/watch?v=iJtOoeM_fS8
+
+Instructions for MongoDB and Node JS on Windows from Zarko's blog.
+http://zarkom.net/blogs/
+
+Official MongoDB instructions (all operating systems)
+https://docs.mongodb.com/manual/administration/install-community/
+
+Official NodeJS installer files (all operating systems)
+https://nodejs.org/en/download/
+
+Official NodeJS package manager installation options (all operating systems)
+https://nodejs.org/en/download/package-manager/
+
+All Colt codes
+https://github.com/nax3t/webdevbootcamp
+
+www.npmjs.com
+npm faker - fake data;
+
+
+var sound = new Howl({
+  src: ['sound.mp3']
+});
+
+
+
+app.get("/", function(req, res) {
+	res.send("Hi There");
+});
+
+app.listen(3000, function() {
+	console.log("Server listening on port 3000");
+});
+
+app.listen(process.env.port, process.env.IP);
+ 
+sound.play();
+
+
+https://ide.goorm.io/my?plan=ZnJlZQ==
+https://goorm-ide-test-rvcmf.run.goorm.io/
+
+
+How to start working on creating server side js file with server running - 
+1. Create a directory using mkdir
+2. create a file app.js
+3. Run the command - "npm init", after entering this will ask for some questions, name, version let it be same, add a description, add author, rest as is. This will create package.json file (Check the file)
+4. Run the command - "npm install express --save", this will add express in the dependencies in package.json file
+5. Start typing commands in app.js
+	a. var express = require("express");
+	b. var app = express();
+	c. .....Other commands
+	d.  app.get("*", function(req, res) {
+			res.send("You are a star");
+		});
+
+		app.listen(3000, process.env.IP, function() {
+			console.log("Server has started");
+		});
+	e. Run the command in console - "npm i -g nodemon", so that everytime code changes in app.js and we press save, the server restarts automatically.
+	f. To runt the program from folder directory just enter - "nodemon"
+	
+Send/Post meanings
+
+app.get("/", function(req, res) {
+	res.render("home");
+});
+The above line means that we want to get some information and / represents the home page, req is request and res is response
+res.render means that the response needs to render or generate the html or ejs page home
+
+app.get("/friends", function(req, res) {
+	var friends = ['Vibhu', 'Gaurav', 'Harsh', 'Arjun', 'Pragyawan'];
+	res.render("friends", {friends: friends});
+});
+Same as above except, link is changes to add friends after /, and the friends ejs file is used to create page using {friends: friends}, 
+where first friends means the variable to be used in ejs page and 2nd friends is the array of friends passed
+
+<% friends.forEach(function(friend) { %>
+	<li><%= friend %></li>
+<% }); %>
+Here friends is the var passed from above app.get and for each loop is run to print each friend in each LI
+
+<%= ... %> is used to print the value in html/ejs page
+<% ... %> is used to right javascript commands which is only for logic purpose
+
+app.get("/fallin/:thing", function(req, res) {
+	var thing = req.params.thing;
+	res.render("love", {thingVar: thing});
+});
+This means that instead of :thing, you can pass any value which will be used to render or post html/ejs.
+If we pass "Dog" instead of ":thing", then we can use it on 'req.params.thing' to fetch dog as value and same can be used to html page to add to the page
+
+app.get("/posts", function(req, res) {
+	var posts = [
+		{title:"Post1", author:"Suzie"},
+		{title:"Adorable pet", author:"Rusty"},
+		{title:"Do Believe", author:"Colt"},
+	];
+	res.render("posts", {posts:posts});
+});
+Here variable posts is created with array containing objects, these different objects can used as below in html/ejs page
+<ul>
+<%posts.forEach(function(post){%>
+	<li>
+		<%= post.title %> - 
+		<strong>
+			<%= post.author%>
+		</strong>
+	</li>					 
+<%})%>
+
+
+<form action="/addfriend" method="POST">
+	<input type="text" name="newfriend" placeholder="name">
+	<button>I made a new friend</button>
+</form>
+
+This form after clicking button will redirect to the page /addfriend
+where /addfriend is defined in app.js as
+
+app.post("/addfriend", function(req, res) {
+	res.send("You have reached the post route");	 
+});
+
+to use the input type, we need to add the npm install body-parser to parse the body
+var bodyParser = require("body-parser"); 
+app.use(bodyParser.urlencoded({extended:true}));
+
+
+app.post("/addfriend", function(req, res) {
+	var newFriend = req.body.newfriend;
+	friends.push(newFriend);
+	res.redirect("/friends");
+});
+
+here req.body.newfriend is used to fetch the value contained in the box where name="newfriend" in the form
+that new name is pushed to the array of friends
+and then the page redirects to the /friends page
+
+
+npm install request
+to request the url's and the get the content
+
+var parsedData = JSON.parse(body);
+
+
+https://www.programmableweb.com/
+
+Basic request from API
+https://github.com/request/request
+
+Random API data
+https://jsonplaceholder.typicode.com/ - you can use different values like /user or /photos or /todos
+
+
+General search: http://www.omdbapi.com/?s=guardians+of+the+galaxy&apikey=thewdb 
+Search with Movie ID: http://www.omdbapi.com/?i=tt3896198&apikey=thewdb 
+
+npm install --save express ejs request
+
+
+
+"Sample app.js starting"============================
+
+var express = require("express");
+var app = express();
+var request = require("request");
+
+app.use(express.static("public"));
+app.set("view engine", "ejs");
+
+app.get("/", function(req, res) {
+	res.send("Welcome to movie page");
+});
+
+app.listen(3000, process.env.IP, function() {
+	console.log("Server has started");
+});
+
+====================================================
+
+
+MongoDB installation in goorm==========================
+
+MongoDB Install Ubuntu 14.04 (Trusty)
+
+(below steps are from https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
+
+1. sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+2. echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+3. sudo apt-get update
+4. sudo apt-get install -y mongodb-org
+5. mkdir data
+6. echo 'mongod --dbpath=data --nojournal' > mongod
+7. chmod a+x mongod
+
+To start the mongodb type - ./mongod
+To start typying sql statements, open another terminal and run  - mongo
+Sample command - show dbs
+
+======================================================
+https://university.mongodb.com/ - For free tutorials
+
+
+MongoDB Commands====================================
+
+use demo - create db
+db.dogs.insert() - it says db is demo db, dogs is the collection
+db.dogs.find();
+db.dogs.insert({Name:"Rusty", Breed:"Mutt"});
+db.dogs.find({Breed:"Mutt"});
+db.dogs.update({Name:"Lulu"}, {Breed:"Labradoodle"}); -- this overwrites the matched data with breed data only
+db.dogs.update({Name:"Lulu"}, {$set: {Name:"Tater", isCute:true}}); --set is used to just update the values and insert new attributes, and it does not try to overwrite
+db.dogs.remove({Breed:"Labradoodle"});
+db.dogs.remove({breed:"Mutt"}, true); --to remove only first collection instead of all
+
+====================================================
+
+In Goorm IDE========================================
+
+var mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/cat_app", {useNewUrlParser: true});
+
+var catSchema = new mongoose.Schema({
+	name: String,
+	age: Number,
+	temperament: String
+});
+
+var Cat = mongoose.model("Cat", catSchema);
+
+Cat.create
+
+
+Restful Routes========================================
+
+name		url			verb	description
+-----------------------------------------------------------------
+INDEX		/dogs		GET		Display a list of all Dogs
+NEW			/dogs/new	GET		Display form to make a new Dog	
+CREATE		/dogs		POST	Add new Dog to db
+SHOW		/dogs/:id	GET		Show info about one dog
+
+
+
+
+Steps building a interactive website================================
+
+Folder Structuring - 
+1. models - To create database schema files
+	a. campground.js - here, this schema holds a comment schema as well which is referenced as "mongoose.Schema.Types.ObjectId"
+	b. comment.js - this schema holds two fields
+2. public -> stylesheets -> main.js = this holds the main css file which can be used to style all the other files
+3. views
+	a. campgrounds
+		i. 	index.ejs - refer Routes(3)
+		ii. new.ejs - refer Routes(4,5)
+		iii.show.ejs - refer Routes(6)
+	b. comments
+		i. new.ejs - refer Comment Routes(1)
+	c. partials - to include these files to other ejs files use "<% include ../partials/header %>" which means go back one folder(..) means to views then /partials/header
+		i. 	header.ejs - this will contain the css stylesheet, bootstrap and navbar
+		ii. footer.ejs - this contains body and html ending tags
+
+Routes
+1. Create a schema using mongoose and assign the schema to a model for use
+2. get("/") - will open the page showing all the elements(say cities)
+3. get("/blogs") - //INDEX ROUTE
+		a. Here we need to find all the cities using Blog.find(), if found then send the cities to index page
+		b. All the cities are traversed using forEach and displayed on the index.ejs page
+4. get("/blogs/new") - //NEW ROUTE
+		a. This will render a new page new.ejs to add new elements
+		b. action="/blogs" method="POST"
+		c. Entered text will be saved into name="blog[title]" and so on for other attributes
+5. post("/blogs") - //CREATE ROUTE
+		a. This will create a new city using the format Blog.create(req.body.blog, function())
+		b. After adding a new entry, the page redirects to /blogs
+6. get("/blogs/:id") - //SHOW ROUTE
+		a. This will search for the specified id using Blog.findById(req.params.id, function(err, foundblog))
+		b. If error is there redirect to /blogs
+		c. else render the show.ejs page using res.render("show", {blog:foundblog})
+		d. Items are represented in the show page using blog.title and so on for other attributes
+7. get("/blogs/:id/edit") - //EDIT ROUTE
+		a. This will search for the specified id using Blog.findById(req.params.id, function(err, foundblog))
+		b. If error is there redirect to /blogs
+		c. else render the edit.ejs page using res.render("edit", {blog:foundblog})
+		d. this put action will be done by the form command - form action="/blogs/<%=blog._id%>?_method=PUT" method="POST", because HTML does allow PUT request so it is overridden
+		e. The input type="text", value will be auto filled using existing values like <%=blog.title%> and so on for other attributes.
+8. put("/blogs/:id") - //UPDATE ROUTE
+		a. The values will be updated using Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog), This will take the id from params, and pass the values taken from body.blog to update.
+		b. If error occurs, the page is redirected to /blogs page
+		c. else the corrected page is opened using res.redirect("/blogs/" + req.params.id)
+9. delete("/blogs/:id") - //DELETE ROUTE
+		a. The opened id show page will show the delete button which on click will find and delete the record - Blog.findByIdAndRemove(req.params.id, function(err)
+		b. and on click the page returns to /blogs page
+		
+Comments Routes
+1. get("/campgrounds/:id/comments/new") - 
+	a. This will search the campground using "Campground.findById(req.params.id, function(err, campground)"
+	b. action="/campgrounds/<%=campground._id%>/comments" method="POST"
+	c. once found the new page will be rendered - "res.render("comments/new", {campground:campground});"
+2. post("/campgrounds/:id/comments") - 
+	a. Find the campground using "Campground.findById(req.params.id, function(err, campground)"
+	b. if not found, then redirect to campground page
+	c. if found then create comment using "Comment.create(req.body.comment, function(err, comment)"
+	d. push the comment to campground - campground.comments.push(comment);
+										campground.save();
+										res.redirect("/campgrounds/"+campground._id);
+		
+		
+=======Different Require and meaning========================
+
+1. var express = require('express');
+   var app = express();
+	The first two lines require() (import) the express module and create an Express application. This object, which is traditionally named app, has methods for routing HTTP requests, configuring middle ware, rendering HTML views, registering a template engine, and modifying application settings that control how the application behaves (e.g. the environment mode, whether route definitions are case sensitive, etc.)
+
+2. var mongoose = require("mongoose");
+   mongoose.connect("mongodb://localhost/auth_demo_app", {useNewUrlParser: true});
+	Mongoose requires a connection to a MongoDB database. You can require() and connect to a locally hosted database with mongoose.connect()
+
+3. var request = require("request");
+	The request module is by far the most popular (non-standard) Node package for making HTTP requests. Actually, it is really just a wrapper around Node's built in http module, so you can achieve all of the same functionality on your own with http, but request just makes it a whole lot easier.
+
+4. var bodyParser = require("body-parser");
+   app.use(bodyParser.urlencoded({extended:true}));
+	You need to use bodyParser() if you want the form data to be available in req.body.
+	
+5. var passport = require("passport");
+   app.use(passport.initialize());
+   app.use(passport.session());
+	Passport is Express-compatible authentication middleware for Node.js.
+   passport.serializeUser(User.serializeUser());
+   passport.deserializeUser(User.deserializeUser());
+	https://stackoverflow.com/questions/27637609/understanding-passport-serialize-deserialize
+	
+6. var LocalStrategy = require("passport-local");
+	The local authentication strategy authenticates users using a username and password. The strategy requires a verify callback, which accepts these credentials and calls done providing a user.
+	
+7. var passportLocalMongoose = require("passport-local-mongoose");
+	Passport-Local Mongoose will add a username, hash and salt field to store the username, the hashed password and the salt value. Additionally P

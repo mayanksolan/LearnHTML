@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Score Keeper</title>
+	<link rel="stylesheet" href="scorekeeper.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<style>
+			#maxVal {
+				border-radius: 5px;
+			}
+		</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1><span id="p1sh">0</span> to <span id="p2sh">0</span></h1>
+		<p>Playing to: <span>5</span></p>
+		<div>
+			<input type="number" name="maxVal" id="maxVal" min="1">
+			<button type="button" id="p1b" class="btn btn-light">Player One</button>
+			<button type="button" id="p2b" class="btn btn-light">Player Two</button>
+			<button type="button" id="reset" class="btn btn-light">Reset</button>
+		</div>
+	</div>
+	<script src="scorekeeper.js"></script>
+</body>
+
+</html>

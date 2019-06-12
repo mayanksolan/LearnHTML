@@ -1,0 +1,29 @@
+h1 {
+	font-size: 50px;
+	text-align: center;
+}
+table {
+	margin: auto;
+}
+.tdd {
+	padding:50px;
+}
+#td2 {
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+}
+#td4 {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+#td5 {
+	border: 2px solid black;
+}
+#td6 {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+#td8 {
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+}
