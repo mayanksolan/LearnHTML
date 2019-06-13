@@ -125,6 +125,28 @@ h2 {
 In the example above, the <h1> element has a bottom margin of 50px and the <h2> element has a top margin set to 20px.
 Common sense would seem to suggest that the vertical margin between the <h1> and the <h2> would be a total of 70px (50px + 20px). But due to margin collapse, the actual margin ends up being 50px.
 
+
+=====================max width max height=====================
+
+this makes sure the div width is max 500px, or we can use 50% also
+div {
+  max-width: 500px;
+  height: 100px;
+  background-color: powderblue;
+}
+
+
+=============Box Model============
+
+Assume we want to style a <div> element to have a total width of 350px:
+div {
+  width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0; 
+}
+this becomes helpful if we want to place a content with border and all below an image of defined width
+
 https://unsplash.com/photos/JRNigKHvB1Q
 https://unsplash.com/photos/vaWZyE1Z6xg
 https://unsplash.com/photos/jWskS_wLMDo
