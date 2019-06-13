@@ -14,6 +14,7 @@ https://www.youtube.com/watch?v=NHHh0sj1uKY
 If your screen size is too small then the columns in the grid will stack vertically instead of sitting side-by-side. 
 To correct this issue you can change the col-lg-6  classes to col-md-6  instead.
 
+==========background-repeat=============
 body {
   background-image: url("gradient_bg.png");
   background-repeat: repeat-x;
@@ -23,13 +24,106 @@ repeat-y = repeat the image on y axis
 repeat = repeat the image on both axis
 no-repeat = don't repeat the image on any axis
 
+==========background-position==========
 body {
   background-image: url("img_tree.png");
   background-repeat: no-repeat;
   background-position: center top;
   margin-right: 200px;
 }
+background-position: top; (bottom, left, right, center)
+background-position: center top;
+background-position: left top;
+background-position: right top;
+background-position: 25% 75%;
+background-position: bottom 50px right 100px;
+background-position: right 35% bottom 45%;
 
+
+===========background-attachment===========
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+background-attachment: scroll;
+background-attachment: fixed;
+background-attachment: local;
+
+==========shorthand background=============
+body {
+  background: #ffffff url("img_tree.png") no-repeat right top;
+}
+
+
+===========border==============
+boder-style : dotted,dashed,solid ,double,groove,ridge ,inset ,outset,none,hidden
+border-width: 2px 10px 4px 20px;
+border-color: any color
+p {
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+}
+p {
+  border: 5px solid red;
+}
+p {
+  border-left: 6px solid red;
+  background-color: lightgrey;
+}
+Curved border
+p {
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+
+==========Margins===============
+p {
+  margin: 25px 50px 75px 100px;
+}
+top right bottom left
+
+p {
+  margin: 25px 50px 75px;
+}
+top 25, right and left 50, bottom 75
+
+
+p {
+  margin: 25px 50px;
+}
+top bottom 25, right left 50
+
+below there is one div, inside which there is an anchor tag, so div already has left margin 100, the same is inherited in anchor tag as well
+div {
+  border: 1px solid red;
+  margin-left: 100px;
+}
+p.ex1 {
+  margin-left: inherit;
+}
+
+horizonatally center 
+div {
+  width: 300px;
+  margin: auto;
+  border: 1px solid red;
+}
+
+Collapse margin
+h1 {
+  margin: 0 0 50px 0;
+}
+
+h2 {
+  margin: 20px 0 0 0;
+}
+In the example above, the <h1> element has a bottom margin of 50px and the <h2> element has a top margin set to 20px.
+Common sense would seem to suggest that the vertical margin between the <h1> and the <h2> would be a total of 70px (50px + 20px). But due to margin collapse, the actual margin ends up being 50px.
 
 https://unsplash.com/photos/JRNigKHvB1Q
 https://unsplash.com/photos/vaWZyE1Z6xg
