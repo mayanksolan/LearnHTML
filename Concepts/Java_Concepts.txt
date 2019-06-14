@@ -1,0 +1,1 @@
+C++ supports multiple inheritance.			<->			Java doesn't support multiple inheritance through class. It can be achieved by interfaces in java.

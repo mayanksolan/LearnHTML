@@ -594,6 +594,8 @@ A closure is a function having access to the parent scope, even after the parent
 
 
 ======================Javascript Prototypes===================
+
+https://www.w3schools.com/js/js_object_prototypes.asp
 function Person(first, last, age, eye) {
   this.firstName = first;
   this.lastName = last;
@@ -704,23 +706,92 @@ https://css-tricks.com/specifics-on-css-specificity/
 
 =========================CSS Gradients - 
 
+https://www.w3schools.com/css/css3_gradients.asp
 CSS gradients let you display smooth transitions between two or more specified colors.
 1. Linear Gradients (goes down/up/left/right/diagonally)
 		background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
-		
+		Linear Gradient - Top to Bottom (this is default)
+			#grad { background-image: linear-gradient(to right, red , yellow); } 		-> left to right red to yellow
+			#grad { background-image: linear-gradient(to bottom right, red , yellow); } -> diagonal red to yellow
+			#grad { background-image: linear-gradient(-90deg, red , yellow); } 			-> right to left red to yellow
+			#grad { background-image: linear-gradient(green, red , yellow); }
+		Transparency
+			#grad { background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); }
+		Repeating linear gradient
+			#grad { background-image: repeating-linear-gradient(red, yellow 10%, green 20%); }
+			
 2. Radial Gradients (defined by their center)
+		Syntax - background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+		Radial Gradient - Evenly Spaced Color Stops (this is default)
+			#grad { background-image: radial-gradient(red, yellow, green); } 					-> evenly spaced colors
+			#grad { background-image: radial-gradient(red 5%, yellow 15%, green 60%); } 		-> Differently Spaced Color Stops
+			#grad { background-image: radial-gradient(circle, red, yellow, green); }			-> circle
+			#grad { background-image: repeating-radial-gradient(red, yellow 10%, green 15%); }	-> Repeating a radial-gradient
+
+
+=========================JS this Keyword -
+
+https://codeburst.io/all-about-this-and-new-keywords-in-javascript-38039f71780c
+In a method, this refers to the owner object.
+Alone, this refers to the global object.
+In a function, this refers to the global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), and apply() can refer this to any object.
+
+CAB -> Call, Apply, Bind
+	Call - Calling one function from another in same object, The call() method takes arguments separately.
+	Apply - The apply() method takes arguments as an array.
+	Bind - The bind() method takes arguments in an array, but any other remaining arguments can be passed while calling.
+
+
+=====================JS callback=====================
+
+https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced
+Callbacks are a great way to handle something after something else has been completed. By something here we mean a function execution. If we want to execute a function right after the return of some other function, then callbacks can be used.
+Callbacks are a way to make sure certain code doesn’t execute until other code has already finished execution.
+
+Syntax - function add(a, b , callback) -> add() function is called with arguments a, b and callback, callback will be executed just after ending of add() function 
+
+function doHomework(subject, callback) {
+  alert(`Starting my ${subject} homework.`);
+  callback();
+}
+doHomework('math', function() {
+  alert('Finished my homework');
+});
+
+or or or or
+
+function doHomework(subject, callback) {
+  alert(`Starting my ${subject} homework.`);
+  callback();
+}
+function alertFinished(){
+  alert('Finished my homework');
+}
+doHomework('math', alertFinished);
+
+
+============================JS Websocket=======================
 
 
 
+=================null vs undefined - =======================
+
+https://codeburst.io/javascript-whats-the-difference-between-null-undefined-37793b5bfce6
+null is an assigned value. It means nothing.
+undefined means a variable has been declared but not defined yet.
+null is an object. undefined is of type undefined.
+null !== undefined but null == undefined.
 
 
-JS Use Strict - 
-JS this Keyword -
-JS Prototypes - https://www.w3schools.com/js/js_object_prototypes.asp
-JS callback -
-JS Websocket - 
-null vs undefined - 
-use strict - With strict mode, you can not, for example, use undeclared variables. also you cannot delete declared variables. It makes the JS secure.
-setInterval vs setTimeout - 
+================================use strict - 
+With strict mode, you can not, for example, use undeclared variables. also you cannot delete declared variables. It makes the JS secure.
+
+
+=========================setInterval vs setTimeout - 
+setTimeout(expression, timeout); runs the code/function once after the timeout. Once - AFTER x interval.
+setInterval(expression, timeout); runs the code/function in intervals, with the length of the timeout between them. Repetitive - EVERY x interval.
 
 The JavaScript prototype property also allows you to add new methods to objects constructors:
