@@ -543,3 +543,184 @@ toggle hide/show
 $("button").click(function(){
   $("p").toggle();
 });
+
+
+===============fade==================
+$(selector).fadeIn(speed, callback);
+$(selector).fadeOut(speed,callback);
+$(selector).fadeToggle(speed,callback);
+$(selector).fadeTo(speed,opacity,callback);
+
+$("button").click(function(){
+  $("#div1").fadeIn();
+  $("#div2").fadeIn("slow");
+  $("#div3").fadeIn(3000);
+});
+
+
+=================slide============
+$("#flip").click(function(){
+  $("#panel").slideDown();
+});
+
+$("#flip").click(function(){
+  $("#panel").slideUp();
+});
+
+$("#flip").click(function(){
+  $("#panel").slideToggle();
+});
+
+
+====================Javascript Closures===============
+var add = (function () {
+  var counter = 0;
+  return function () {counter += 1; return counter}
+})();
+
+add();
+add();
+add();
+
+// the counter is now 3
+
+The variable add is assigned the return value of a self-invoking function.
+The self-invoking function only runs once. It sets the counter to zero (0), and returns a function expression.
+This way add becomes a function. The "wonderful" part is that it can access the counter in the parent scope.
+This is called a JavaScript closure. It makes it possible for a function to have "private" variables.
+The counter is protected by the scope of the anonymous function, and can only be changed using the add function.
+
+A closure is a function having access to the parent scope, even after the parent function has closed.
+
+
+======================Javascript Prototypes===================
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+Person.prototype.nationality = "English";
+Person.prototype.name = function() {
+  return this.firstName + " " + this.lastName;
+};
+
+
+==========================var & let difference - 
+
+It can be said that a variable declared with var is defined throughout the program as compared to let. var can be difined anywhere in the progrom, but its scope is present in full program, on thee other hand let scope is only presenet after it is defined in a program only in the block - https://codeburst.io/difference-between-let-and-var-in-javascript-537410b2d707
+
+anonymous function javascript - https://helephant.com/2008/08/23/javascript-anonymous-functions/
+var flyToTheMoon = function()
+{
+  alert("Zoom! Zoom! Zoom!");
+}
+flyToTheMoon();
+
+===================css position - 
+
+static,relative,fixed,absolute,sticky
+difference absolute & relative - 
+	relative - means a block poistion will change relative to its own original position - top: 50px; it will shift its position 10 pixels down from where it would normally be, One is that it introduces the ability to use z-index on that element, which doesn't really work with statically positioned elements. Even if you don't set a z-index value, this element will now appear on top of any other statically positioned element. You can't fight it by setting a higher z-index value on a statically positioned element
+	#div-1 {
+		position:relative;
+		top:20px;
+		left:-40px;
+	} - this will move 20px lower and 40px left
+	absolute - This is a very powerful type of positioning that allows you to literally place any page element exactly where you want it. 
+	#div-1a {
+		position:absolute;
+		top:0;
+		right:0;
+		width:200px;
+	} - div-1a to the top right of the page
+	If we set relative positioning on div-1 (parent), any elements (child) within div-1 will be positioned relative to div-1. Then if we set absolute positioning on div-1a(child), we can move it to the top right of div-1:
+	
+	float - For variable height columns, absolute positioning does not work, so let's come up with another solution.
+	We can "float" an element to push it as far as possible to the right or to the left, and allow text to wrap around it. This is typically used for images, but we will use it for more complex layout tasks (because it's the only tool we have).
+	#div-1a {
+		float:left;
+		width:200px;
+	}
+	
+	z-index = The z-index property specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order.
+			Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky).
+			div#myBox {
+				position:absolute;
+				background-color:red;
+				z-index:auto;  -> values can be 0,1,2,3,4....
+			}
+			https://www.w3schools.com/cssref/playit.asp?filename=playcss_z-index
+
+
+=============CSS Pseudo class- 
+A pseudo-class is used to define a special state of an element.
+For example, it can be used to:
+Style an element when a user mouses over it
+Style visited and unvisited links differently
+Style an element when it gets focus
+
+/* unvisited link */
+a:link {  color: #FF0000;}
+/* visited link */
+a:visited {  color: #00FF00;}
+/* mouse over link */
+a:hover {  color: #FF00FF;}
+/* selected link */
+a:active {  color: #0000FF;}
+Note: a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective! a:active MUST come after a:hover in the CSS definition in order to be effective! Pseudo-class names are not case-sensitive.
+
+
+===================CSS Pseudo Elements
+
+The syntax of pseudo-elements:
+selector::pseudo-element {
+  property:value;
+}
+Notice the double colon notation - ::first-line versus :first-line
+The double colon replaced the single-colon notation for pseudo-elements in CSS3. This was an attempt from W3C to distinguish between pseudo-classes and pseudo-elements.
+
+different types
+p::first-line { color: #ff0000;}
+p::first-letter { color: #ff0000;}
+p.intro::first-letter { color: #ff0000;}
+
+add some content before h1 or after h1
+h1::before {content: url(smiley.gif);}
+h1::after {content: url(smiley.gif);}
+
+The ::selection pseudo-element matches the portion of an element that is selected by a user.
+::selection {  color: red;   background: yellow;}
+
+
+=========================CSS Specificity - 
+Specificity Rules
+1. If the element has inline styling, that automatically1 wins (1,0,0,0 points)
+2. For each ID value, apply 0,1,0,0 points
+3. For each class value (or pseudo-class or attribute selector), apply 0,0,1,0 points
+4. For each element reference, apply 0,0,0,1 point
+https://css-tricks.com/specifics-on-css-specificity/
+
+
+=========================CSS Gradients - 
+
+CSS gradients let you display smooth transitions between two or more specified colors.
+1. Linear Gradients (goes down/up/left/right/diagonally)
+		background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+		
+2. Radial Gradients (defined by their center)
+
+
+
+
+
+JS Use Strict - 
+JS this Keyword -
+JS Prototypes - https://www.w3schools.com/js/js_object_prototypes.asp
+JS callback -
+JS Websocket - 
+null vs undefined - 
+use strict - With strict mode, you can not, for example, use undeclared variables. also you cannot delete declared variables. It makes the JS secure.
+setInterval vs setTimeout - 
+
+The JavaScript prototype property also allows you to add new methods to objects constructors:
