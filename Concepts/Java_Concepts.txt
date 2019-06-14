@@ -1,1 +1,17 @@
 C++ supports multiple inheritance.			<->			Java doesn't support multiple inheritance through class. It can be achieved by interfaces in java.
+
+==============Java Constructor=====================												=====================Java Method================
+A constructor is used to initialize the state of an object.										A method is used to expose the behavior of an object.
+A constructor must not have a return type.														A method must have a return type.
+The constructor is invoked implicitly.															The method is invoked explicitly.
+The Java compiler provides a default constructor if you don't have any constructor in a class.	The method is not provided by the compiler in any case.
+The constructor name must be same as the class name.											The method name may or may not be same as the class name.
+
+Q) Does constructor return any value?
+Yes, it is the current class instance (You cannot use return type yet it returns a value).
+Q) Can constructor perform other tasks instead of initialization?
+Yes, like object creation, starting a thread, calling a method, etc. You can perform any operation in the constructor as you perform in the method.
+Q) Is there Constructor class in Java?
+Yes.
+Q) What is the purpose of Constructor class?
+Java provides a Constructor class which can be used to get the internal information of a constructor in the class. It is found in the java.lang.reflect package.
