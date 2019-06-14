@@ -1,0 +1,22 @@
+Array
+
+const arr1 = ['a', 'b', 'c', 'x'];
+const arr2 = ['m', 'n', 'x', 'y', 'r'];
+
+1. const set1 = new Set();
+	This is used to store different unique elements to the set1 and is used to find duplicates
+	set1.add(arr1[i]) -> is used to add non duplicate element
+	set1.has(arr2[i])	-> is used to check if the element already exist or not
+	
+2. Adding array to object
+	let tally={}; To add array to object, loop through each element in array to add like below - 
+	map[arr1[i]]=true; -> this will take the property as array value and the value is defaulted to true
+	
+3. arr1.some() -> this is used to check if arr1 matches the value passed in ()
+	Like arr1.some(item => arr2.includes(item)) - here arr1 each item is being checked in arr2 and return true is done if match found
+	
+4. str.split('') - this functions splits the string in the form of array
+
+5. str.split('').reverse() - this function reverses the split string array
+
+6. str.split('').reverse().join(''); - this function joins the reversed split str array

@@ -1,0 +1,367 @@
+Front-end:
+- Angular 2, 4, 5, 6
+- React.js
+- Material Design
+- Bootstrap
+
+Back-end:
+- Node.js
+- Express
+- GraphQL
+- Firebase
+
+Database:
+- MongoDB
+- MySQL
+- Firebase / Firestore
+
+Unit Testing:
+- Jest
+- Jasmine
+
+Source Control / CI:
+- Git
+- GitHub / GitLab / BitBucket
+- CircleCI
+- Travis CI
+
+Deployment:
+- AWS (Amazon Web Services)
+- GCP (Google Cloud Platform)
+- Heroku
+- DigitalOcean
+
+https://coggle.it/diagram/W5u8QkZs6r4sZM3J/t/master-the-interview
+https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link/c25f98c73a03f5b1107cd0e2f4bce29c9d78e31655e55cb0b785d56f0036c9d1
+
+https://github.com/aneagoie/resume-checklist
+https://www.resumemaker.online/
+Innovative optimized solution seeker. Excited to be at the deployment phase of my new career as a web developer. I am ambitious, adventurous, assiduous, animated, and an alliteration advocate.
+Working as a full stack developer for the past 2 years. my role involves development and point of contact for the offshore team, dealing with onshore team and client, gathering requirements.
+
+
+
+https://www.jobscan.co
+https://www.cakeresume.com/Engineering-resume-samples
+https://thisresumedoesnotexist.com/
+
+Resume Cheat Sheet
+✅ Use a pre-designed resume template
+✅ Make the resume fit on 1 page
+✅ Include words from job description
+✅ Include company name you are applying to
+✅ Does your first item on your resume reflect what they are looking for?
+✅ Experience titles demonstrate value
+✅ Do you have an online link?
+✅ Remove the word “I”
+✅ No buzzwords describing how great you are
+✅ Are you using Action words?
+✅ Measure everything in terms of impact, don’t just describe your responsibilities
+✅ Technical Knowledge/Skills should include what they are looking for. Only show years if it is impressive
+✅ Include only sections/items that are impressive: Experience, Projects, Education, Technical Skills
+✅ No typos or bad grammar
+
+https://github.com/aneagoie/gitfiti
+
+https://zero-to-mastery.github.io/ZtM-Job-Board/
+
+If you are looking for a quick and efficient way of building a portfolio page, I recommend these free templates:
+https://cruip.com/ (This is my favourite)
+http://www.mashup-template.com/templates.html
+https://mdbootstrap.com/freebies/
+https://www.creative-tim.com/bootstrap-themes/ui-kit?direction=asc&sort=price
+https://medium.freecodecamp.org/15-web-developer-portfolios-to-inspire-you-137fb1743cae
+
+Resources(Email)
+https://chrome.google.com/webstore/detail/hunter/hgmhmanijnjhaffoampdlllchpolkdnj?hl=en
+https://chrome.google.com/webstore/detail/find-anyones-email-contac/jjdemeiffadmmjhkbbpglgnlgeafomjo?hl=en
+https://chrome.google.com/webstore/detail/email-extractor/jdianbbpnakhcmfkcckaboohfgnngfcc?hl=en
+
+Resources: Where To Find Jobs?
+https://news.ycombinator.com/item?id=17902901
+https://angel.co/jobs
+
+Remote Jobs
+https://designmodo.com/jobs/
+https://www.remotelist.pw/
+https://remoteonly.io/
+https://weworkremotely.com/
+https://remoteok.io/
+
+Others
+https://hired.com/
+https://triplebyte.com/
+https://whitetruffle.com/
+https://www.ziprecruiter.com/
+https://www.meetup.com/
+
+
+
+Big(O) rules - 
+1. Worst Case - If we have O(1) as best case and O(n) as worst case, then our O(n) is the answer
+2. Remove constants - If we have O(4+5n), then constants are removed and answer is O(n)
+3. Different Terms for Inputs - 
+		a. If we have two inputs t function function(m, n) and there are two different loops on both m and n, then it is O(n+m)
+		b. If we have two loops, one nested in another then it becomes O(n*n) or O(n^2)
+4. Drop Non Dominants - If we have something like O(x^2+3x+100+x/2), then we drop the non dominants and it becomes O(x^2)
+
+http://bigocheatsheet.com/
+
+
+Types of data structures - https://en.wikipedia.org/wiki/List_of_data_structures
+Memory management - http://statmath.wu.ac.at/courses/data-analysis/itdtHTML/node55.html
+Registers and RAM - https://www.youtube.com/watch?v=fpnE6UAfbtU
+Var vs Let vs Const - https://dev.to/sethusenthil/var-vs-let-vs-const-1cgc
+Hash Visualization - https://www.cs.usfca.edu/~galles/visualization/OpenHash.html
+Visuo linked list - https://visualgo.net/en/list
+Arrays vs LinkedList - https://www.youtube.com/watch?v=DyG9S9nAlUM
+O(log(n)) - https://www.youtube.com/watch?v=M4ubFru2O80
+
+Binary Search tree iteration / avl tree - https://visualgo.net/bn/bst - explanation - 
+red black tree - https://www.cs.usfca.edu/~galles/visualization/RedBlack.html - explanation - https://medium.com/basecs/painting-nodes-black-with-red-black-trees-60eacb2be9a5
+heap tree - https://visualgo.net/en/heap - explanation - parents are always greater then child nodes
+Priority Queue - Nodes are added top to bottom and left to right, but if someone comes with higher priority, then lower priority one is shifted down
+Trie - Each name is stored in a tree data structure, top to bottom
+
+Sorting algo visual - https://www.toptal.com/developers/sorting-algorithms
+Sorting algo dance - https://www.youtube.com/watch?v=ywWBy6J5gz8
+
+
+Bubble Sort [Best: O(N), Worst:O(N^2)] - (compare side by side and keep shifting) Starting on the left, compare adjacent items and keep “bubbling” the larger one to the right (it’s in its final place). Bubble sort the remaining N -1 items.
+
+Selection Sort [Best/Worst: O(N^2)] - (scan for the smallest and replace at 1st item) Scan all items and find the smallest. Swap it into position as the first item. Repeat the selection sort on the remaining N-1 items.
+
+Insertion Sort [Best: O(N), Worst:O(N^2)] - Start with a sorted list of 1 element on the left, and N-1 unsorted items on the right. Take the first unsorted item (element #2) and insert it into the sorted list, moving elements as necessary. We now have a sorted list of size 2, and N -2 unsorted elements. Repeat for all elements.
+
+Merge Sort [Best: O(nlog(n)), Worst:O(nlog(n))] - Divide each element and do comparision and keep combining
+
+Quick Sort - refer doc, take piveot last and take first adn compare, if first is more then pivot switch places and change pivot to first, now start scan from lastand come forward
+
+Heap Sort - https://www.youtube.com/watch?v=HqPJF2L5h9U - Create a complete binary tree and insert the dat so that it remains complete binary and then swap with parent if the element is greater (max heap case), delete the data from the top head and bring the last element of the complete binary tree and then swap traverssing child so that max element comes to top. While deleting the top element we get the output as sorted array
+Binary Tree
+			A
+	B				C
+D		E		F		G
+
+Array - A,B,C,D,E,F,G
+Index - 1,2,3,4,5,6,7
+
+1. If a node is at index 	i 
+2. left child is at 		2*i
+3. right child is at 		2*i + 1
+4. parent is at 			i/2 (floor value)
+
+Full Binary Tree - number of nodes 2^(h+1) -1 - Binary Tree with full no of nodes is ful binary tree
+Complete Binary Tree - if array do not have missing empty array elemnts in between then complete binary tree
+		A complete binary tree of height h is already a full binary tree upto height h-1
+		
+
+========Heap===========
+Heap is a complete binary tree
+		Min Heap
+			10
+	30				20
+35		40		32		25
+
+		Max Heap
+			50
+	30				20
+15		10		8		16
+
+50,30,20,15,10,8,16
+
+---------Insert 60 in max heap, so insert from last as child of 15-----------
+				50
+		30				20
+	15		10		8		16
+60
+Now 60 will compare with 15, then with 30, then with 50 and swap places
+50,30,20,15,10,8,16,60 - 
+50,30,20,60,10,8,16,15 - 15 and 60 swap
+50,60,20,30,10,8,16,15 - 30 and 60 swap
+60,50,20,30,10,8,16,15 - 50 and 60 swap
+				60
+		50				20
+	30		10		8		16
+15
+Pefect now, time is O(log n) for swapping,  minimum is O(1)
+
+
+----------Delete 50 in max heap, delete from top like apple vendor making a pyramid-----------
+			50
+	30				20
+15		10		8		16
+
+50,30,20,15,10,8,16 - now delete 50 and bring last value of array to top
+16,30,20,15,10,8 - which child is greater, swap with that 30 with 16
+30,16,20,15,10,8 - desendents are okay, done
+TIme - O(log n)
+
+Everytime we remove element from max heap we get largest element, so if we remove all one by one then we get sorted descending array
+
+Heapify - Insert the numbers in a complete binary tree form and then start checking from last elemnt of the array too see if it is a heap and keep goinf up in array and keep shifting if needed
+
+Radix Sort - This works only on numbers, take the largest from the numbers (for say 105), and make all the other numbers padding 0 in fron to be equal to 3 digits as max number 105, now start comapring from last digit and add them in buckets with 0 to 9, and then pull out them from bottom, same with 2nd place and 1st place and same procedure, in last remove extra padded 0's to see sorted list - https://www.youtube.com/watch?v=YXFI4osELGU
+
+Counting Sort - https://www.youtube.com/watch?v=TTnvXY82dtM
+
+
+
+Quick sort should be used when average case performance matters more then worst performance
+Merge Sort is great and stable as nlogn, only space is higher
+
+Algorithm				Time Complexity						Space Complexity
+				Best		Average			Worst			Worst
+Bubble Sort		Ω(n)		Θ(n^2)			O(n^2)			O(1)
+Insertion Sort	Ω(n)		Θ(n^2)			O(n^2)			O(1)
+Selection Sort	Ω(n^2)		Θ(n^2)			O(n^2)			O(1)
+Quicksort		Ω(n log(n))	Θ(n log(n))		O(n^2)			O(log(n))
+Mergesort		Ω(n log(n))	Θ(n log(n))		O(n log(n))		O(n)
+Timsort			Ω(n)		Θ(n log(n))		O(n log(n))		O(n)
+Heapsort		Ω(n log(n))	Θ(n log(n))		O(n log(n))		O(1)
+Tree Sort		Ω(n log(n))	Θ(n log(n))		O(n^2)			O(n)
+Shell Sort		Ω(n log(n))	Θ(n(log(n))^2)	O(n(log(n))^2)	O(1)
+Bucket Sort		Ω(n+k)		Θ(n+k)			O(n^2)			O(n)
+Radix Sort		Ω(nk)		Θ(nk)			O(nk)			O(n+k)
+Counting Sort	Ω(n+k)		Θ(n+k)			O(n+k)			O(k)
+Cubesort		Ω(n)		Θ(n log(n))		O(n log(n))		O(n)
+
+Linear Search - Check item one by one linearly - o(n)
+Binary Search - Array is sorted, so start from middle and check if number is higher or lower, if higher go to right, then again go middle - O(log n)
+BFS - More memory, Shortest path, closer nodes
+DFS - Less memory, Does path exist, Can get Slow -https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr
+
+BFS and SFS do not consoider weightage edges in a graph, so this one (example google maps shortest path with weight aka traffic)
+Dijkstra - shortest path, does not accomodate negative weight (bit faster) O(n^2) - https://www.youtube.com/watch?v=XB4MIexjvY0
+Bellman - shortest path, it accomodate negative weight (bit slower) O(n^2) - https://www.youtube.com/watch?v=FtN3BYH2Zes
+
+Memoization - 
+
+
+===============JS functions================
+
+str.split('') - this functions splits the string in the form of array
+str.split('').reverse() - this function reverses the split string array
+str.split('').reverse().join(''); - this function joins the reversed split str array
+
+
+==========Binary Trees=================
+
+1. Perfect Binary Tree - All filled in, a node either have 0 child or no child
+2. Full Binary Tree - A node will have 0 or 2 child only.
+3. Binary Search tree - Go left number decreases, go right number increases
+
+========LeetCode================
+
+------Array-------
+https://leetcode.com/problems/maximum-subarray/description/
+https://leetcode.com/problems/move-zeroes/description/  --done
+https://leetcode.com/problems/contains-duplicate/description/  --done
+https://leetcode.com/problems/rotate-array/description/  --done
+https://www.coderbyte.com/language/Longest%20Word - regex  --done
+
+------Dynamic Programming-----------
+https://leetcode.com/problems/house-robber
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock
+https://leetcode.com/problems/climbing-stairs
+
+==========Red Black Tree Rules=================
+
+1. every node is red or black,
+2. the root node is black,
+3. no two red nodes appear consecutively,
+4. the path from the root node to all four null leaf nodes passes through two black nodes (either 2 and then 1, or 2 and then 3) on the way to the null leaves.
+
+
+------------Stories------------
+https://coggle.it/diagram/W5u8QkZs6r4sZM3J/t/master-the-interview
+1. Technical
+2. Success
+3. Leadership
+4. Challenge
+5. Tell Me About Yourself - discord - #job-hunting
+6. Why Us
+7. Why are you leaving your current company
+8. Tell me about problem + how you solved it
+9. Tell me about an interesting project
+10. What is you biggest weakness
+11. Any questions for me
+12. Secret Weapon 	- Simplicity over complexity
+					- Premature optimization is the root of evil
+					- Overall goal, not myopic
+					- No complaining about cient
+
+https://www.salary.com/
+https://www.payscale.com/
+https://stackoverflow.com/jobs/salary?utm_source=Iterable&utm_medium=email&utm_campaign=salary-calculator-2018
+negotiation - https://youtu.be/XY5SeCl_8NE
+
+Top Interview Questions
+
+#344 Reverse String   
+#412 Fizz Buzz    
+#136 Single Number    
+#104 Maximum Depth of Binary Tree    
+#283 Move Zeroes    
+#371 Sum of Two Integers    
+#206 Reverse Linked List    
+#171 Excel Sheet Column Number    
+#169 Majority Element    
+#13 Roman to Integer    
+#237 Delete Node in a Linked List    
+#122 Best Time to Buy and Sell Stock II    
+#242 Valid Anagram    
+#217 Contains Duplicate    
+#387 First Unique Character in a String    
+#108 Convert Sorted Array to Binary Search Tree    
+#268 Missing Number    
+#350 Intersection of Two Arrays II    
+#121 Best Time to Buy and Sell Stock    
+#21 Merge Two Sorted Lists    
+#202 Happy Number    
+#118 Pascal's Triangle    
+#70 Climbing Stairs    
+#101 Symmetric Tree    
+#53 Maximum Subarray    
+#326 Power of Three    
+#191 Number of 1 Bits    
+#198 House Robber    
+#66 Plus One    
+#1 Two Sum    
+#38 Count and Say    
+#26 Remove Duplicates from Sorted Array    
+#172 Factorial Trailing Zeroes    
+#20 Valid Parentheses    
+#141 Linked List Cycle    
+#234 Palindrome Linked List    
+#88 Merge Sorted Array    
+#155 Min Stack    
+#14 Longest Common Prefix    
+#160 Intersection of Two Linked Lists    
+#28 Implement strStr()    
+#69 Sqrt(x)    
+#190 Reverse Bits    
+#125 Valid Palindrome    
+#189 Rotate Array    
+#204 Count Primes    
+#7 Reverse Integer    
+#94 Binary Tree Inorder Traversal    
+- No ego
+
+
+
+
+1. The Complete Web Developer in 2018: Zero to Mastery
+2. The Complete Junior to Senior Web Developer Roadmap
+3. Advanced JavaScript Concepts
+EXISTINGSTUDENT138W
+
+This was a great course for the people looking forward to the interviews. Some of the interesting bits of the course
+Pros - 
+1. Great side material throughout the course.
+2. Clear and crisp explanation of the concepts.
+3. The course is really fresh and touches the correct pain points of the interviews.
+Cons - 
+1. Some of the algorithms were not explained instead a link was provided.
+
+https://adventofcode.com/

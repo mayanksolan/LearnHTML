@@ -1,0 +1,84 @@
+var data = [
+		{
+			name:"Salmon Creek", 
+			image:"https://farm8.staticflickr.com/7205/7121863467_eb0aa64193.jpg", 
+			description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+		},
+		{
+			name:"Granite hill", 
+			image:"https://farm3.staticflickr.com/2116/2164766085_0229ac3f08.jpg", 
+			description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+		},
+		{
+			name:"Yosemite Jungle", 
+			image:"https://farm4.staticflickr.com/3881/14146164489_0cb49d2904.jpg", 
+			description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+		},
+	];
+	
+
+
+GIT
+
+  git config --global user.email "mayanksolan@gmail.com"
+  git config --global user.name "Mayank Solan"
+
+1. Init 	- Run the command inside the directory where you want to initialize git - "init git"
+2. Rm 		- if you create git directory accidentally then write command = "rm -rf" to remove git
+3. Status	- To check the status of git
+4. Add		- Run the command "git add <filename>" or "git add", to make the files ready to be committed 
+			- "git add ." (to add all the changed files)
+			- "git add *.html" is used to add all the files of a type
+			- "git add -A" to add all files
+4.5. Remove	- To remove files from staging area (files which are added) - "git reset HEAD file2.txt"
+5. Commit	- Run the command "git commit -m "<message>""
+6. Add user	- git config --global user.email "mayanksolan@gmail.com"
+7. Log		- git log to see the history of changes
+8. checkout	- "git checkout <hash id>" to go back to an old state, but the master remains at new one only
+			- to bring back old code and master in sync with current state type - "git checkout master"
+			- "git revert --no-commit <hashid>..HEAD" eg. git revert --no-commit 1923a18d4ba35f7a97f5d1671f96f7c9d093f0bd..HEAD, this will revert to old hash id with branch master in sync
+9. .gitignore - touch this file and add the file names ot this file which you do not want to add, those files will not be visible for the files uncommitted in git status
+Run
+10. git branch - this will show which branch you are working on, if you do not have any branch then it will show master only, it is like status of branch
+11. git checkout -b <branch name> - this will switch to new branch and if we do git branch then it shows the new branch as green highlighted
+12. git checkout master - if you need to switch from one branch to another, here we moved from new branch we created in last step to master branch
+13. git merge feature1 - when you are in master branch and type this command, feature branch is merged to master branch
+14. git branch -d feature1 - this will remove the branch if the changes are already merged, else will throw error
+15. git branch -D feature1 - this will remove the branch even if the changes are not merged
+
+
+Heroku
+
+1. In Terminal run -> heroku login
+2. Commit the files to git
+3. heroku create -> https://cryptic-refuge-67615.herokuapp.com/ | https://git.heroku.com/cryptic-refuge-67615.git
+4. Make sure your package.json has - "start": "node app.js" in script tag
+5. run git remote -v -> this will show link to push and fetch
+6. git push heroku master
+https://expressjs.com/en/starter/hello-world.html
+
+https://pacific-everglades-14869.herokuapp.com/ | https://git.heroku.com/pacific-everglades-14869.git
+
+Yelpcamp - https://limitless-sands-45356.herokuapp.com/ | https://git.heroku.com/limitless-sands-45356.git
+
+mongodb+srv://devMays:<password>@cluster0-n0rgm.mongodb.net/test?retryWrites=true&w=majority
+
+
+
+=================Environment=============================
+
+mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
+
+for ide.goorm 	- export DATABASEURL=mongodb://localhost/yelp_camp_13
+for heroku 		- heroku config:set DATABASEURL=mongodb+srv://devMays:devColdplay@cluster0-n0rgm.mongodb.net/test?retryWrites=true
+				- you can go to app settings also, https://dashboard.heroku.com/apps/limitless-sands-45356/settings, add in config vars , key as DABASEURL and the link
+
+Server - 
+for ide.goorm 	- export PORT=3000
+for heroku 		- just use process.env.PORT
+
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_13";
+mongoose.connect(url, {useNewUrlParser: true});
+
+=========================================================
+
