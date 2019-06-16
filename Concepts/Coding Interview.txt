@@ -156,7 +156,7 @@ Complete Binary Tree - if array do not have missing empty array elemnts in betwe
 		A complete binary tree of height h is already a full binary tree upto height h-1
 		
 
-========Heap===========
+========Heap===============
 Heap is a complete binary tree
 		Min Heap
 			10
