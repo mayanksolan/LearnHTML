@@ -1,0 +1,9 @@
+https://cli.angular.io/
+
+Install Node from its site and then add angular using below command
+npm install -g @angular/cli@latest
+
+create your first app by going to the folder and type below command 
+ng new my-first-app
+
+Run the app (go to the app folder), run - ng serve
