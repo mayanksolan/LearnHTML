@@ -7,3 +7,12 @@ create your first app by going to the folder and type below command
 ng new my-first-app
 
 Run the app (go to the app folder), run - ng serve
+if any error
+npm install --save-dev @angular-devkit/build-angular
+
+npm install -g typescript
+npm link typescript
+
+or 
+
+npm install 
