@@ -16,3 +16,22 @@ npm link typescript
 or 
 
 npm install 
+
+Circle of execution of Angular project - 
+
+1. main.ts file gets started 
+2. we bootstrap an Angular application and we pass this module as an argument. 
+	->	In main.ts we have - import { AppModule } from './app/app.module';
+3. In this module, we tell Angular, hey there is this app component which you know when you try to start yourself 
+	-> in app.module.ts we have - import { AppComponent } from './app.component';
+4. Angular now analyzes the app component, reads the set up we pass here and therefore knows this selector, app-root
+	-> in app.component.ts - @Component({
+								selector: 'app-root',
+								templateUrl: './app.component.html',
+								styleUrls: ['./app.component.css']
+							})
+4. Angular is able to handle app-root in the index.html file and it knows
+	->	<app-root></app-root>
+	
+	
+COmponent - A webpage is built of several components with different functionalities
