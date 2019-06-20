@@ -4,23 +4,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import MyInfo from "./MyInfo"
+//import MyInfo from "./components/MyInfo"
 
-// function MyInfo() {
-//     return (
-//         <div>
-//             <h1>Mayank Solan</h1>
-//             <p>A budding Web Developer</p>
-//             <ol>
-//                 <li>Mauritius</li>
-//                 <li>Sweden</li>
-//                 <li>New Zealand</li>
-//             </ol>
-//         </div>
-//     )
-// }
 
-ReactDOM.render(<MyInfo />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 //ReactDOM.render(<h1>Hello world!</h1>, document.getElementById("root"))
 
