@@ -3,7 +3,7 @@ import Joke from "./Joke"
 import jokesData from "./jokesData"
 
 function App() {
-    const jokeComponent = jokesData.map(joke => <Joke key={joke.id} question={joke.question} punchLine={joke.punchLine} />)
+    const jokeComponent = jokesData.map(joke => <Joke key={joke.id} product={joke} />)
     return (
         <div>
             {jokeComponent}
