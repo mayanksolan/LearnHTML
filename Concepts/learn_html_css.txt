@@ -620,6 +620,7 @@ var flyToTheMoon = function()
 flyToTheMoon();
 
 ===================css position - 
+https://dzone.com/articles/css-position-relative-vs-position-absolute
 
 static,relative,fixed,absolute,sticky
 difference absolute & relative - 
