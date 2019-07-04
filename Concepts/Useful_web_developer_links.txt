@@ -194,8 +194,12 @@ https://goorm-ide-test-rvcmf.run.goorm.io/
 
 mongodb
 https://www.mongodb.com/cloud/atlas
-devMays - DevColdplay
+devMays - devColdplay
 mongodb+srv://devMays:<password>@cluster0-n0rgm.mongodb.net/test?retryWrites=true
+mongodb+srv://devMays:devColdplay@cluster0-n0rgm.mongodb.net/test?retryWrites=true
+
+On shell
+mongo "mongodb+srv://cluster0-n0rgm.mongodb.net/test" --username devMays
 
 Ian Node MongoDb setup Ian instructions
 https://www.youtube.com/watch?v=iJtOoeM_fS8
