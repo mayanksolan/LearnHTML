@@ -1,3 +1,11 @@
-html {
-  background-color: black !important;
+body {
+  background-color: #243665 !important;
+}
+
+.bg_gre {
+  background-color: #8bd8bd;
+}
+
+.bg_blu {
+  background-color: #243665;
 }
