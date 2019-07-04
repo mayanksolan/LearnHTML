@@ -9,3 +9,10 @@ body {
 .bg_blu {
   background-color: #243665;
 }
+
+.form-group {
+  width: 50%;
+  display: block;
+  text-align: center;
+  background-color: #4f6457;
+}
