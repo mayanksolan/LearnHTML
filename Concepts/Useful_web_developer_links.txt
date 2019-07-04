@@ -201,6 +201,9 @@ mongodb+srv://devMays:devColdplay@cluster0-n0rgm.mongodb.net/test?retryWrites=tr
 On shell
 mongo "mongodb+srv://cluster0-n0rgm.mongodb.net/test" --username devMays
 
+on cmd prompt (locally)
+mongod --dbpath c:\mongodb\data\db
+
 Ian Node MongoDb setup Ian instructions
 https://www.youtube.com/watch?v=iJtOoeM_fS8
 
