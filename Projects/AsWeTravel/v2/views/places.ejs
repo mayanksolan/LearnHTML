@@ -1,0 +1,43 @@
+<% include partials/header %> <% include partials/navbar %>
+<div class="container">
+  <header
+    class="jumbotron"
+    style="background-color: #ffffff; text-align: center; justify-content: center"
+  >
+    <div class="container" style="color: #4f6457">
+      <h1>Welcome to the home of our travel blog</h1>
+      <p>View our hand-picked places from all over the world</p>
+      <a
+        class="btn btn-large"
+        style="color: #ffffff; background-color: #4f6457"
+        href="/places/new"
+        >Add a New Place</a
+      >
+    </div>
+  </header>
+  <div class="row text-center" style="display: flex; flex-wrap:wrap">
+    <% places.forEach(place => {%>
+    <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 mb-4">
+      <div
+        class="card text-center"
+        style=" color: #4f6457; background-color:#ffffff"
+      >
+        <img src="<%= place.image%>" class="card-img-top" alt="" />
+        <div class="card-body">
+          <h5 class="card-title"><%=place.name%></h5>
+          <p class="card-text">
+            <%=place.description.substring(0,100)+" ..."%>
+          </p>
+          <a
+            href="#"
+            class="btn"
+            style="color: #ffffff; background-color: #4f6457"
+            >More Details</a
+          >
+        </div>
+      </div>
+    </div>
+    <%});%>
+  </div>
+  <% include partials/footer %>
+</div>

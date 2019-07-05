@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+mongoose.connect(
+  "mongodb+srv://devMays:devColdplay@cluster0-n0rgm.mongodb.net/test?retryWrites=true"
+);
 
 var places = [
   {

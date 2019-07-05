@@ -1,4 +1,9 @@
-<link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+https://medium.com/@austinbeaufort
+https://scrimba.com/g/glearnreact
+https://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
+https://medium.com/free-code-camp/learning-react-roadmap-from-scratch-to-advanced-bff7735531b6
+https://github.com/StephenGrider/redux-code/blob/master/diagrams/07/diagrams.xml
+https://scotch.io/tutorials/use-ejs-to-template-your-node-application
 
 border color - #bdc3c7
 date color - #3498db
@@ -224,6 +229,18 @@ https://github.com/nax3t/webdevbootcamp
 
 www.npmjs.com
 npm faker - fake data;
+
+
+Connecting database with vscode project - 
+
+const mongoose = require("mongoose");
+mongoose.connect(
+  "mongodb+srv://devMays:devColdplay@cluster0-n0rgm.mongodb.net/travel1?retryWrites=true",
+  { useNewUrlParser: true }
+  
+On shell prompt - 
+mongo "mongodb+srv://cluster0-n0rgm.mongodb.net/travel1" --username devMays
+);
 
 
 var sound = new Howl({
