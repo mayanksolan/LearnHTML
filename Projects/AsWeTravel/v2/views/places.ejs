@@ -17,7 +17,7 @@
   </header>
   <div class="row text-center" style="display: flex; flex-wrap:wrap">
     <% places.forEach(place => {%>
-    <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 mb-4">
+    <div class="col-xl-4 col-md-6 col-xs-12 mb-4">
       <div
         class="card text-center"
         style=" color: #4f6457; background-color:#ffffff"
@@ -25,11 +25,11 @@
         <img src="<%= place.image%>" class="card-img-top" alt="" />
         <div class="card-body">
           <h5 class="card-title"><%=place.name%></h5>
-          <p class="card-text">
+          <!-- <p class="card-text">
             <%=place.description.substring(0,100)+" ..."%>
-          </p>
+          </p> -->
           <a
-            href="#"
+            href="/places/<%=place._id%>"
             class="btn"
             style="color: #ffffff; background-color: #4f6457"
             >More Details</a

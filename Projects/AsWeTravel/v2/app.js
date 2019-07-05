@@ -98,6 +98,18 @@ app.post("/places", (req, res) => {
   });
 });
 
+app.get("/places/:id", (req, res) => {
+  Place.findById(req.params.id, (err, foundPlace) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("show", { place: foundPlace });
+    }
+  });
+});
+
+app.get("/places/:id/edit", (req, res) => {});
+
 const port = 5000;
 app.listen(port, () => {
   console.log(`Server started on port: ${port}`);
