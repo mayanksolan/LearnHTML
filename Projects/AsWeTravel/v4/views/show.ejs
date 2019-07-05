@@ -1,0 +1,16 @@
+<% include partials/header %> <% include partials/navbar %>
+
+<div class="container" style="text-align: center; color:#4f6457 ">
+  <h1 style="margin: 2%"><%=place.name%></h1>
+  <img src="<%=place.image%>" style="max-width: 90%; height:auto" />
+  <hr />
+  <p><%=place.description%></p>
+  <% place.comments.forEach(comment => { %>
+  <p>
+    <strong><%= comment.author %></strong>
+    - <%= comment.text %>
+  </p>
+  <%})%>
+</div>
+
+<% include partials/footer %>
