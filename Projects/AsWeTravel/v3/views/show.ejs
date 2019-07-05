@@ -1,0 +1,15 @@
+<% include partials/header %> <% include partials/navbar %>
+
+<div class="container" style="text-align: center; color:#4f6457 ">
+  <div class="row">
+    <div class="col">Map</div>
+    <div class="col">
+      <h1 style="margin: 2%"><%=place.name%></h1>
+      <img src="<%=place.image%>" />
+      <hr />
+      <p><%=place.description%></p>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer %>

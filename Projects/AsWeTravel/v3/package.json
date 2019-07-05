@@ -1,0 +1,20 @@
+{
+  "name": "aswetravel",
+  "version": "1.0.0",
+  "description": "Travel Diary by Sakshi & Mayank",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "travel"
+  ],
+  "author": "Mayank Solan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.3"
+  }
+}
