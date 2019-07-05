@@ -64,13 +64,16 @@ app.post("/places", (req, res) => {
 });
 
 app.get("/places/:id", (req, res) => {
-  Place.findById(req.params.id, (err, foundPlace) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render("show", { place: foundPlace });
-    }
-  });
+  Place.findById(req.params.id)
+    .populate("comments")
+    .exec((err, foundPlace) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(foundPlace);
+        res.render("show", { place: foundPlace });
+      }
+    });
 });
 
 app.get("/places/:id/edit", (req, res) => {});

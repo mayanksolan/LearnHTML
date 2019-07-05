@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Place = require("./models/place");
+const Comment = require("./models/comment");
 
 var data = [
   {
@@ -40,11 +41,26 @@ module.exports = function seedDB() {
       console.log("Places removed");
     }
     data.forEach(seed => {
-      Place.create(seed, (err, data) => {
+      Place.create(seed, (err, place) => {
         if (err) {
           console.log(err);
         } else {
           console.log("Place added");
+          Comment.create(
+            {
+              text: "Nice place",
+              author: "Mayank"
+            },
+            (err, comment) => {
+              if (err) {
+                console.log(err);
+              } else {
+                place.comments.push(comment);
+                place.save();
+                console.log("Comment created");
+              }
+            }
+          );
         }
       });
     });
