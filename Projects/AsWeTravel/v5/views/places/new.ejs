@@ -1,0 +1,55 @@
+<% include ../partials/header %> <% include ../partials/navbar %>
+<h2 style="margin-top: 1%; text-align: center">Add a new place</h2>
+<form
+  action="/places"
+  method="post"
+  class="container mt-2"
+  style="width:50%; padding:2%; display:block; text-align:center; border-radius:1rem; background-color:#4f6457; color:#ffffff"
+>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      aria-describedby="emailHelp"
+      placeholder="Enter name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea
+      class="form-control"
+      id="description"
+      name="description"
+      placeholder="Describe the place"
+    ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="image_src">Image Src</label>
+    <input
+      type="text"
+      class="form-control"
+      id="image_src"
+      name="image"
+      placeholder="Url for the image source"
+    />
+  </div>
+  <div style="display: flex; justify-content:space-around">
+    <a
+      href="/places"
+      class="btn"
+      style="background-color:#ffffff; color:#4f6457"
+      >Back</a
+    >
+    <button
+      type="submit"
+      class="btn"
+      style="background-color:#ffffff; color:#4f6457; font-weight: bolder"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+<% include ../partials/footer %>
