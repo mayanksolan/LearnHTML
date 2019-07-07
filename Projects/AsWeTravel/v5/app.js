@@ -2,9 +2,12 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
 const Place = require("./models/place");
 const seedDB = require("./seeds");
 const Comment = require("./models/comment");
+const User = require("./models/user");
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -12,8 +15,22 @@ mongoose.connect(
   "mongodb+srv://devMays:devColdplay@cluster0-n0rgm.mongodb.net/travel1?retryWrites=true",
   { useNewUrlParser: true }
 );
-
 seedDB();
+
+//Passport config
+
+app.use(
+  require("express-session")({
+    secret: "Coorg is a beautiful place",
+    resave: false,
+    saveUninitialized: true
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // Place.create(
 //   {
@@ -106,6 +123,28 @@ app.post("/places/:id/comments", (req, res) => {
           console.log("comment added to place yo");
           res.redirect("/places/" + foundPlace._id);
         }
+      });
+    }
+  });
+});
+
+//Auth routes
+
+//show register form
+app.get("/register", (req, res) => {
+  res.render("register");
+});
+
+//handle signup
+app.post("/register", (req, res) => {
+  const newUser = new User({ username: req.body.username });
+  User.register(newUser, req.body.password, (err, newUser) => {
+    if (err) {
+      console.log(err);
+      return res.render("register");
+    } else {
+      passport.authenticate("local")(req, res, () => {
+        res.redirect("/places");
       });
     }
   });

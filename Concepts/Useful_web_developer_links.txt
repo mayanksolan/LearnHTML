@@ -573,8 +573,56 @@ We can put them as comment[text] and comment[author]
 	Passport-Local Mongoose will add a username, hash and salt field to store the username, the hashed password and the salt value. Additionally Passport-Local Mongoose adds some methods to your Schema.
    
 	
-	
-	
+To setup user login - 
+
+in user.ejs
+
+const mongoose = require("mongoose");
+const passportLocalMongoose = require("passport-local-mongoose");
+var userSchema = new mongoose.Schema({
+  username: String,
+  password: String
+});
+userSchema.plugin(passportLocalMongoose);
+module.exports = mongoose.model("User", userSchema);
+
+
+in app.js
+
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+app.use(
+  require("express-session")({
+    secret: "Coorg is a beautiful place",
+    resave: false,
+    saveUninitialized: true
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+//show register form
+app.get("/register", (req, res) => {
+  res.render("register");
+});
+
+//handle signup
+app.post("/register", (req, res) => {
+  const newUser = new User({ username: req.body.username });
+  User.register(newUser, req.body.password, (err, newUser) => {
+    if (err) {
+      console.log(err);
+      return res.render("register");
+    } else {
+      passport.authenticate("local")(req, res, () => {
+        res.redirect("/places");
+      });
+    }
+  });
+});
 	
 	
 	
