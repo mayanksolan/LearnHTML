@@ -1,0 +1,48 @@
+<% include ../partials/header %> <% include ../partials/navbar %>
+<h2 style="margin-top: 1%; text-align: center">
+  Add new Comment to <%= place.name %>
+</h2>
+<form
+  action="/places/<%= place._id%>/comments"
+  method="post"
+  class="container mt-2"
+  style="width:50%; padding:2%; display:block; text-align:center; border-radius:1rem; background-color:#4f6457; color:#ffffff"
+>
+  <div class="form-group">
+    <label for="name">Comment</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="comment[text]"
+      aria-describedby="emailHelp"
+      placeholder="Comment"
+    />
+  </div>
+  <div class="form-group">
+    <label for="author">Author</label>
+    <input
+      type="text"
+      class="form-control"
+      id="author"
+      name="comment[author]"
+      placeholder="Author"
+    />
+  </div>
+  <div style="display: flex; justify-content:space-around">
+    <a
+      href="/places"
+      class="btn"
+      style="background-color:#ffffff; color:#4f6457"
+      >Back</a
+    >
+    <button
+      type="submit"
+      class="btn"
+      style="background-color:#ffffff; color:#4f6457; font-weight: bolder"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+<% include ../partials/footer %>

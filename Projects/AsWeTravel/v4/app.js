@@ -40,13 +40,13 @@ app.get("/places", (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.render("places", { places: allPlaces });
+      res.render("places/places", { places: allPlaces });
     }
   });
 });
 
 app.get("/places/new", (req, res) => {
-  res.render("new");
+  res.render("places/new");
 });
 
 app.post("/places", (req, res) => {
@@ -58,7 +58,7 @@ app.post("/places", (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.redirect("/places");
+      res.redirect("places/places");
     }
   });
 });
@@ -71,12 +71,22 @@ app.get("/places/:id", (req, res) => {
         console.log(err);
       } else {
         console.log(foundPlace);
-        res.render("show", { place: foundPlace });
+        res.render("places/show", { place: foundPlace });
       }
     });
 });
 
 //Comment Routes
+
+app.get("/places/:id/comments/new", (req, res) => {
+  Place.findById(req.params.id, (err, place) => {
+    if (err) {
+      console.log(error);
+    } else {
+      res.render("comments/new", { place: place });
+    }
+  });
+});
 
 const port = 5000;
 app.listen(port, () => {

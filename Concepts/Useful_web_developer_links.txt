@@ -531,6 +531,14 @@ Comments Routes
 	d. push the comment to campground - campground.comments.push(comment);
 										campground.save();
 										res.redirect("/campgrounds/"+campground._id);
+										
+										
+Place.findById(req.params.id)
+    .populate("comments")
+    .exec((err, foundPlace) => this is a reference between two schemas to join
+	
+When we declare the name in a form in webpage, instead of putting as "text" and "author"
+We can put them as comment[text] and comment[author]
 		
 		
 =======Different Require and meaning========================
