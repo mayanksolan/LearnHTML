@@ -625,7 +625,34 @@ app.post("/register", (req, res) => {
 });
 	
 	
+npm install --save method-override   -> 	to pass put/delete request
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
+
+
+<form action="/ideas/{{idea.id}}?_method=PUT" method="post">
+        <input type="hidden" name="_method" value="PUT">
+		
+		
+express router - 
+this is a feature where we define different routes
+1. Firstly we create a folder in root folder named routes
+2. then we create two .js files - ideas & users
+3. now bring all the app.something where /ideas exist tot he ideas.js file
+4. at the top of ideas.js add - 
+		const express = require("express");
+		const router = express.router();
+5. at the bottom add - 
+		module.exports = router;
+6. replace all the app. to router.
+7. replace all the /ideas to just /
+8 in app.js add - 
+		const ideas = require("./routes/ideas");
+9. In the end add - 
+		app.use("/ideas", ideas);
 	
 	
+342
+
 	
 	
