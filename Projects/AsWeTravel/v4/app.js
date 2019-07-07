@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Place = require("./models/place");
 const seedDB = require("./seeds");
+const Comment = require("./models/comment");
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -70,7 +71,7 @@ app.get("/places/:id", (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        console.log(foundPlace);
+        //console.log(foundPlace);
         res.render("places/show", { place: foundPlace });
       }
     });
@@ -84,6 +85,28 @@ app.get("/places/:id/comments/new", (req, res) => {
       console.log(error);
     } else {
       res.render("comments/new", { place: place });
+    }
+  });
+});
+
+app.post("/places/:id/comments", (req, res) => {
+  Place.findById(req.params.id, (err, foundPlace) => {
+    if (err) {
+      console.log(err);
+      res.redirect("/places");
+    } else {
+      console.log(foundPlace);
+      Comment.create(req.body.comment, (err, newCommentCreated) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(newCommentCreated);
+          foundPlace.comments.push(newCommentCreated);
+          foundPlace.save();
+          console.log("comment added to place yo");
+          res.redirect("/places/" + foundPlace._id);
+        }
+      });
     }
   });
 });

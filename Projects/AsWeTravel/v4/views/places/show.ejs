@@ -5,12 +5,27 @@
   <img src="<%=place.image%>" style="max-width: 90%; height:auto" />
   <hr />
   <p><%=place.description%></p>
-  <% place.comments.forEach(comment => { %>
-  <p>
-    <strong><%= comment.author %></strong>
-    - <%= comment.text %>
-  </p>
-  <%})%>
+  <hr />
+  <div class="well">
+    <div class="container" style="color:#4f6457; border: 3px solid #4f6457;">
+      <p style="margin: 1%">
+        <a
+          class="btn btn-sm float-right"
+          style="color: #ffffff; background-color: #4f6457"
+          href="/places/<%=place._id%>/comments/new"
+          >Add New Comment</a
+        >
+      </p>
+      <div style=" padding: 1%; text-align:left;">
+        <% place.comments.forEach(comment => { %>
+        <p>
+          <strong><%= comment.author %></strong>
+          - <%= comment.text %>
+        </p>
+        <%})%>
+      </div>
+    </div>
+  </div>
 </div>
 
 <% include ../partials/footer %>
