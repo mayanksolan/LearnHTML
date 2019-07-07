@@ -19,7 +19,7 @@ mongoose.Promise = global.Promise;
 //connect to mongoose
 mongoose
   .connect(
-    "mongodb+srv://devMays:devColdplay@cluster0-n0rgm.mongodb.net/vidjot?retryWrites=true",
+    "mongodb+srv://devMays:devColdplay@cluster0-n0rgm.mongodb.net/vidideas?retryWrites=true",
     { useNewUrlParser: true }
   )
   .then(() => console.log("MongoDB connected..."))
