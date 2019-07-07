@@ -570,7 +570,7 @@ We can put them as comment[text] and comment[author]
 	The local authentication strategy authenticates users using a username and password. The strategy requires a verify callback, which accepts these credentials and calls done providing a user.
 	
 7. var passportLocalMongoose = require("passport-local-mongoose");
-	Passport-Local Mongoose will add a username, hash and salt field to store the username, the hashed password and the salt value. Additionally Passport-Local Mongoose adds some methods to your Schema.
+	passport-local-mongoose will add a username, hash and salt field to store the username, the hashed password and the salt value. Additionally Passport-Local Mongoose adds some methods to your Schema.
    
 	
 To setup user login - 
