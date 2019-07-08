@@ -652,6 +652,9 @@ this is a feature where we define different routes
 		app.use("/ideas", ideas);
 	
 	
+npm install --save bcryptjs
+this is used to hash the password, so that it is safe
+	
 342
 
 	
