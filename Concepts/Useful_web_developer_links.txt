@@ -657,5 +657,17 @@ this is used to hash the password, so that it is safe
 	
 342
 
+
+Netlify
+1. git init
+2. netlify init
+3. Select - Yes, create manually deploy site
+4. choose unique sitename
+5. define variables in netlify
+5. npm run build
+6. netlify deploy --prod
+
+287
+
 	
 	
