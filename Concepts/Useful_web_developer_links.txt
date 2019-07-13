@@ -667,7 +667,10 @@ Netlify
 5. npm run build
 6. netlify deploy --prod
 
-287
+a get request is basically when you fetch data from the server you're just getting data 
+a post request is when you're submitting something to the server you're posting data you're you're filling out a registration form or you're adding a contact
+a put request is to update something that's already on the server
+a delete request is to delete something from the server.
 
 	
 	
