@@ -4,6 +4,9 @@ https://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
 https://medium.com/free-code-camp/learning-react-roadmap-from-scratch-to-advanced-bff7735531b6
 https://github.com/StephenGrider/redux-code/blob/master/diagrams/07/diagrams.xml
 https://scotch.io/tutorials/use-ejs-to-template-your-node-application
+https://github.com/airbnb/javascript/tree/master/react
+https://github.com/bradtraversy/contact-keeper
+https://github.com/bradtraversy/contact_keeper_api
 
 border color - #bdc3c7
 date color - #3498db
