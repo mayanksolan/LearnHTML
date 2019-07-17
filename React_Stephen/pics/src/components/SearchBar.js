@@ -8,6 +8,10 @@ class SearchBar extends React.Component {
     this.props.runMeOnSubmit(this.state.term);
   };
 
+  onChange = e => {
+    this.setState({ term: e.target.value });
+  };
+
   render() {
     return (
       <div className="ui segment">
@@ -17,9 +21,8 @@ class SearchBar extends React.Component {
             <input
               type="text"
               value={this.state.term}
-              onChange={e => this.setState({ term: e.target.value })}
+              onChange={this.onChange}
             />
-            {/*<input type="text" onChange={(e) => console.log(e.target.value)} />*/}
           </div>
         </form>
       </div>
