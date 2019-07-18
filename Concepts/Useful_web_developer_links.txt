@@ -7,6 +7,9 @@ https://scotch.io/tutorials/use-ejs-to-template-your-node-application
 https://github.com/airbnb/javascript/tree/master/react
 https://github.com/bradtraversy/contact-keeper
 https://github.com/bradtraversy/contact_keeper_api
+https://dev.to/stealthmusic/boost-your-productiveness-with-regex-a-little-2384
+https://www.robinwieruch.de/javascript-fundamentals-react-requirements/
+https://regexone.com/lesson/repeating_characters
 
 border color - #bdc3c7
 date color - #3498db
