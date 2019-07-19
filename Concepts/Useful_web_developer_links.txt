@@ -12,6 +12,7 @@ https://www.robinwieruch.de/javascript-fundamentals-react-requirements/
 https://regexone.com/lesson/repeating_characters
 https://reactjs.org/docs/thinking-in-react.html
 
+
 border color - #bdc3c7
 date color - #3498db
 h2 color - #2c3e50
