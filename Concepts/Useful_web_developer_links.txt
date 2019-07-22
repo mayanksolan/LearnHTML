@@ -12,6 +12,10 @@ https://www.robinwieruch.de/javascript-fundamentals-react-requirements/
 https://regexone.com/lesson/repeating_characters
 https://reactjs.org/docs/thinking-in-react.html
 https://study.cs50.net/recursion
+https://restcountries.eu/?source=post_page---------------------------#api-endpoints-all
+https://rapidapi.com/dev132/api/cricket-live-scores?utm_source=mashape&utm_medium=301
+https://github.com/public-apis/public-apis
+
 
 
 border color - #bdc3c7
