@@ -12,11 +12,18 @@ https://www.robinwieruch.de/javascript-fundamentals-react-requirements/
 https://regexone.com/lesson/repeating_characters
 https://reactjs.org/docs/thinking-in-react.html
 https://study.cs50.net/recursion
-https://restcountries.eu/?source=post_page---------------------------#api-endpoints-all
 https://rapidapi.com/dev132/api/cricket-live-scores?utm_source=mashape&utm_medium=301
 https://github.com/public-apis/public-apis
+https://github.com/sudheerj/reactjs-interview-questions
 
+batuta - 8dee6883ad073028809613217af80a37
+http://www.omdbapi.com/?i=tt3896198&apikey=9866420e
+http://www.omdbapi.com/?s=ocean&apikey=9866420e
 
+google api key = AIzaSyClW6qxzVNVI9ja4QNTKWnWtnpwtkXYwcg
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClW6qxzVNVI9ja4QNTKWnWtnpwtkXYwcg&libraries=places"></script>
+
+https://restcountries.eu/?source=post_page---------------------------#api-endpoints-all
 
 border color - #bdc3c7
 date color - #3498db

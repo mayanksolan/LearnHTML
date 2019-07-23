@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+/* Global Styles */
+:root {
+  --primary-color: #54c8ff;
+  --secondary-color: #545454;
+  --dark-color: #333333;
+  --orange-color: #ff851b;
+  --teal-color: #6dffff;
+  --light-color: #f4f4f4;
+  --danger-color: #ff695e;
+  --success-color: #2ecc40;
+  --brick-red: #c33c54;
+  --dark-slate-gray: #254e70;
+  --teal-blue: #37718e;
+  --baby-blue: #8ee3ef;
+  --pale-torquoise: #aef3e7;
+}
+
+body {
+  margin: 0;
+  background-color: var(--pale-torquoise);
+}
+
+.navbar {
+  background-color: var(--teal-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.navbar h1 {
+  margin: 0%;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  font-size: 120%;
+  margin-left: -15%;
+}
+
+.navbar ul li {
+  margin-right: 5%;
+}
+
+.navbarli {
+  text-decoration: none;
+  color: black;
+}
+
+/* Mobile Styles */
+@media (max-width: 400px) {
+  .hide-sm {
+    display: none;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Text Styles */
+  .x-large {
+    font-size: 3rem;
+  }
+
+  .large {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  /* Navbar */
+  .navbar {
+    background-color: var(--teal-blue);
+    display: block;
+    text-align: center;
+  }
+
+  .navbar ul {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    margin-block: 0%;
+  }
+
+  .navbar ul li {
+    text-align: center;
+    justify-content: center;
+    margin: 0% 5%;
+    padding-bottom: 2%;
+  }
+}
