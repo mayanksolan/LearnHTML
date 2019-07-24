@@ -5,12 +5,20 @@ import CountryCard from "./CountryCard";
 class CountryList extends React.Component {
   render() {
     const { countryList } = this.props;
-    const countries = countryList.map(country => {
-      console.log(country);
-      return <CountryCard key={uuid.v1()} country={country} />;
-    });
-    return <div>{countries}</div>;
+    return (
+      <div style={countryStyle}>
+        {countryList.map(country => (
+          <CountryCard key={uuid.v1()} country={country} />
+        ))}
+      </div>
+    );
   }
 }
+
+const countryStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gridGap: "2rem"
+};
 
 export default CountryList;

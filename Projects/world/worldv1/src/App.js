@@ -4,36 +4,34 @@ import Navigbar from "./components/layouts/Navigbar";
 import Search from "./components/countries/Search";
 import CountryList from "./components/countries/CountryList";
 import uuid from "uuid";
+import axios from "axios";
 
 class App extends React.Component {
-  state = {
-    countries: [
-      {
-        name: "India",
-        capital: "New Delhi",
-        flag: "https://restcountries.eu/data/ind.svg"
-      },
-      {
-        name: "Afghanistan",
-        capital: "Kabul",
-        flag: "https://restcountries.eu/data/afg.svg"
-      },
-      {
-        name: "Albania",
-        capital: "Tirana",
-        flag: "https://restcountries.eu/data/alb.svg"
-      }
-    ]
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      countries: []
+    };
+  }
+  componentDidMount() {
+    axios
+      .get("https://restcountries.eu/rest/v2/all")
+      .then(response => {
+        console.log(response.data);
+        this.setState({ countries: response.data });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
   render() {
     return (
       <div>
         <Navigbar />
-        <Search />
         <div className="container">
-          <div className="row">
-            <CountryList key={uuid.v1()} countryList={this.state.countries} />
-          </div>
+          <Search />
+          <CountryList key={uuid.v1()} countryList={this.state.countries} />
         </div>
       </div>
     );
@@ -41,3 +39,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+//
