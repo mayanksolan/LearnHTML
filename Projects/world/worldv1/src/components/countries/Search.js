@@ -14,7 +14,7 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-        <Form onSubmit={this.onSubmit}>
+        <Form onChange={this.onSubmit}>
           <Form.Group controlId="formBasic">
             <Form.Control
               type="text"

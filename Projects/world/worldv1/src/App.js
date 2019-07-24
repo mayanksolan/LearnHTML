@@ -25,20 +25,26 @@ class App extends React.Component {
       });
   }
   onSearchSubmit = term => {
-    if (term === "") {
+    console.log(term.length);
+    if (term.length <= 1) {
       axios.get("https://restcountries.eu/rest/v2/all").then(response => {
         this.setState({ countries: response.data });
       });
     } else {
-      const newArray = this.state.countries.filter(country => {
-        return country.name.toLowerCase().includes(term.toLowerCase())
-          ? country
-          : null;
-      });
-      console.log(newArray);
-      this.setState({
-        countries: newArray
-      });
+      axios
+        .get(`https://restcountries.eu/rest/v2/name/${term}`)
+        .then(response => {
+          this.setState({ countries: response.data });
+        });
+      // const newArray = this.state.countries.filter(country => {
+      //   return country.name.toLowerCase().includes(term.toLowerCase())
+      //     ? country
+      //     : null;
+      // });
+      // console.log(newArray);
+      // this.setState({
+      //   countries: newArray
+      // });
     }
   };
 
