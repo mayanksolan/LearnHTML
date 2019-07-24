@@ -2,14 +2,24 @@ import React from "react";
 import { Form } from "react-bootstrap";
 
 class Search extends React.Component {
+  state = { term: "" };
+  onSubmit = event => {
+    event.preventDefault();
+    this.props.runMeOnSubmit(this.state.term);
+  };
+  onChange = e => {
+    this.setState({ term: e.target.value });
+  };
+
   render() {
     return (
       <div>
-        <Form>
+        <Form onSubmit={this.onSubmit}>
           <Form.Group controlId="formBasic">
             <Form.Control
               type="text"
-              placeholder="Enter country to be searched"
+              value={this.state.term}
+              onChange={this.onChange}
             />
           </Form.Group>
         </Form>

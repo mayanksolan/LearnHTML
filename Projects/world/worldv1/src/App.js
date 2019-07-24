@@ -24,13 +24,22 @@ class App extends React.Component {
         console.log(error);
       });
   }
+  onSearchSubmit = term => {
+    const newArray = this.state.countries.filter(
+      country => country.name == term
+    );
+    console.log(newArray);
+    this.setState({
+      countries: newArray
+    });
+  };
 
   render() {
     return (
       <div>
         <Navigbar />
         <div className="container">
-          <Search />
+          <Search runMeOnSubmit={this.onSearchSubmit} />
           <CountryList key={uuid.v1()} countryList={this.state.countries} />
         </div>
       </div>
