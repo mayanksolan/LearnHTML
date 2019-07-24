@@ -25,10 +25,7 @@ google api key = AIzaSyClW6qxzVNVI9ja4QNTKWnWtnpwtkXYwcg
 
 https://restcountries.eu/?source=post_page---------------------------#api-endpoints-all
 
-border color - #bdc3c7
-date color - #3498db
-h2 color - #2c3e50
-font - source sans pro
+c33c54-254e70-37718e-8ee3ef-aef3e7
 
 hr style 
 
