@@ -17,7 +17,7 @@ class App extends React.Component {
     axios
       .get("https://restcountries.eu/rest/v2/all")
       .then(response => {
-        console.log(response.data);
+        //console.log(response.data);
         this.setState({ countries: response.data });
       })
       .catch(error => {
@@ -25,13 +25,21 @@ class App extends React.Component {
       });
   }
   onSearchSubmit = term => {
-    const newArray = this.state.countries.filter(
-      country => country.name == term
-    );
-    console.log(newArray);
-    this.setState({
-      countries: newArray
-    });
+    if (term === "") {
+      axios.get("https://restcountries.eu/rest/v2/all").then(response => {
+        this.setState({ countries: response.data });
+      });
+    } else {
+      const newArray = this.state.countries.filter(country => {
+        return country.name.toLowerCase().includes(term.toLowerCase())
+          ? country
+          : null;
+      });
+      console.log(newArray);
+      this.setState({
+        countries: newArray
+      });
+    }
   };
 
   render() {
