@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class CountryCard extends React.Component {
   render() {
@@ -12,7 +13,13 @@ class CountryCard extends React.Component {
             <Card.Title>{name}</Card.Title>
             <Card.Text>Capital City: {capital}</Card.Text>
             <Card.Text>Population: {population}</Card.Text>
-            <Button variant="dark">More Details</Button>
+            <Link
+              to={`/country/${name}`}
+              params={{ country: this.props.country }}
+              className="btn btn-dark btn-sm my-1"
+            >
+              More Details
+            </Link>
           </Card.Body>
         </Card>
       </div>

@@ -1,11 +1,15 @@
 import React from "react";
-import "./App.css";
-import Navigbar from "./components/layouts/Navigbar";
-import Search from "./components/countries/Search";
-import CountryList from "./components/countries/CountryList";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import uuid from "uuid";
 import axios from "axios";
+
+import Navigbar from "./components/layouts/Navigbar";
+import Search from "./components/countries/Search";
+import CountryList from "./components/countries/CountryList";
+import CountryDetail from "./components/countries/CountryDetail";
+
+import "./App.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -50,31 +54,37 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navigbar />
-        <div className="container">
-          <Search runMeOnSubmit={this.onSearchSubmit} />
-          {this.state.selectCountries.length !==
-            this.state.countries.length && (
-            <Button
-              variant="dark"
-              block
-              style={{ marginBottom: "2rem" }}
-              onClick={this.onButtonClick}
-            >
-              Show All Countires
-            </Button>
-          )}
-          <CountryList
-            key={uuid.v1()}
-            countryList={
-              this.state.selectCountries.length < this.state.countries.length
-                ? this.state.selectCountries
-                : this.state.countries
-            }
-          />
+      <Router>
+        <div>
+          <Navigbar />
+
+          <div className="container">
+            <Search runMeOnSubmit={this.onSearchSubmit} />
+            {this.state.selectCountries.length !==
+              this.state.countries.length && (
+              <Button
+                variant="dark"
+                block
+                style={{ marginBottom: "2rem" }}
+                onClick={this.onButtonClick}
+              >
+                Show All Countires
+              </Button>
+            )}
+            <CountryList
+              key={uuid.v1()}
+              countryList={
+                this.state.selectCountries.length < this.state.countries.length
+                  ? this.state.selectCountries
+                  : this.state.countries
+              }
+            />
+          </div>
+          <Switch>
+            <Route exact path="/country/:name" component={CountryDetail} />
+          </Switch>
         </div>
-      </div>
+      </Router>
     );
   }
 }
