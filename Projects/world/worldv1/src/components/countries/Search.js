@@ -3,18 +3,18 @@ import { Form } from "react-bootstrap";
 
 class Search extends React.Component {
   state = { term: "" };
-  onSubmit = event => {
-    event.preventDefault();
-    this.props.runMeOnSubmit(this.state.term);
+  onSubmit = async e => {
+    e.preventDefault();
+    await this.props.runMeOnSubmit(this.state.term);
   };
-  onChange = e => {
-    this.setState({ term: e.target.value });
+  onChange = async e => {
+    await this.setState({ term: e.target.value });
   };
 
   render() {
     return (
       <div>
-        <Form onChange={this.onSubmit}>
+        <Form onSubmit={this.onSubmit}>
           <Form.Group controlId="formBasic">
             <Form.Control
               type="text"

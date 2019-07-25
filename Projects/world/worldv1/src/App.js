@@ -3,6 +3,7 @@ import "./App.css";
 import Navigbar from "./components/layouts/Navigbar";
 import Search from "./components/countries/Search";
 import CountryList from "./components/countries/CountryList";
+import { Button } from "react-bootstrap";
 import uuid from "uuid";
 import axios from "axios";
 
@@ -10,42 +11,41 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      countries: []
+      countries: [],
+      selectCountries: []
     };
   }
   componentDidMount() {
     axios
       .get("https://restcountries.eu/rest/v2/all")
       .then(response => {
-        //console.log(response.data);
-        this.setState({ countries: response.data });
+        this.setState({
+          countries: response.data,
+          selectCountries: response.data
+        });
       })
       .catch(error => {
         console.log(error);
       });
   }
   onSearchSubmit = term => {
-    console.log(term.length);
-    if (term.length <= 1) {
-      axios.get("https://restcountries.eu/rest/v2/all").then(response => {
-        this.setState({ countries: response.data });
-      });
+    console.log(term, term.length);
+    if (term.length < 1) {
+      this.setState({ selectCountries: this.state.countries });
     } else {
-      axios
-        .get(`https://restcountries.eu/rest/v2/name/${term}`)
-        .then(response => {
-          this.setState({ countries: response.data });
-        });
-      // const newArray = this.state.countries.filter(country => {
-      //   return country.name.toLowerCase().includes(term.toLowerCase())
-      //     ? country
-      //     : null;
-      // });
-      // console.log(newArray);
-      // this.setState({
-      //   countries: newArray
-      // });
+      const newArray = this.state.countries.filter(country => {
+        return country.name.toLowerCase().includes(term.toLowerCase())
+          ? country
+          : null;
+      });
+      console.log(newArray);
+      this.setState({
+        selectCountries: newArray
+      });
     }
+  };
+  onButtonClick = () => {
+    this.setState({ selectCountries: this.state.countries });
   };
 
   render() {
@@ -54,7 +54,25 @@ class App extends React.Component {
         <Navigbar />
         <div className="container">
           <Search runMeOnSubmit={this.onSearchSubmit} />
-          <CountryList key={uuid.v1()} countryList={this.state.countries} />
+          {this.state.selectCountries.length !==
+            this.state.countries.length && (
+            <Button
+              variant="dark"
+              block
+              style={{ marginBottom: "2rem" }}
+              onClick={this.onButtonClick}
+            >
+              Show All Countires
+            </Button>
+          )}
+          <CountryList
+            key={uuid.v1()}
+            countryList={
+              this.state.selectCountries.length < this.state.countries.length
+                ? this.state.selectCountries
+                : this.state.countries
+            }
+          />
         </div>
       </div>
     );
@@ -62,5 +80,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-//
