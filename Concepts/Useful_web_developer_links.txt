@@ -14,7 +14,6 @@ https://reactjs.org/docs/thinking-in-react.html
 https://study.cs50.net/recursion
 https://rapidapi.com/dev132/api/cricket-live-scores?utm_source=mashape&utm_medium=301
 https://github.com/public-apis/public-apis
-arre bhai
 
 https://github.com/sudheerj/reactjs-interview-questions
 
