@@ -287,6 +287,9 @@ li { display: inline; } this will show all li elements in one one line (in a blo
 h1.hidden { display: none; } -> both will hide the heading - this one will remove from page
 h1.hidden { visibility:hidden; } - this will just hide it, but will remian on page
 
+Inline-Block
+Inline-block elements are similar to inline elements, except they can have padding and margins added on all four sides. You’ll have to declare display: inline-block in your CSS code.
+https://medium.com/@DaphneWatson/css-display-properties-block-inline-and-inline-block-how-to-tell-the-difference-7d3a1e6e3051
 
 ===============Float===============
 <style>img {  float: right;}</style>
