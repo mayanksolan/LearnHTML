@@ -330,6 +330,27 @@ perfect center
 }
 
 
+================FlexBox==============
+
+<div class="container">
+<h1 class="item">Hello</h1><h1 class="item">There,</h1><h1 class="item">Are</h1><h1 class="item">You</h1><h1 class="item">Ready</h1><h1 class="item">To</h1><h1 class="item">Rock</h1><h1 class="item">&</h1><h1 class="item">Roll, because we are are ready</h1>
+</div>
+
+.container {
+  display: flex;
+  flex-direction: row;  // row | row-reverse | column | column-reverse;  -> here reverse means that the the elements will be placed in reverse order
+  flex-wrap:wrap;	// nowrap | wrap | wrap-reverse;
+  justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly; //
+}
+
+.item {
+  flex-grow:1;	// this means that all the elements will be justified across container
+  border:1px solid powderBlue;
+  text-align:center;
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+
+
 ===============Mouse click events=============
 
 -------------onclick------------
