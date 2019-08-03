@@ -819,3 +819,13 @@ setTimeout(expression, timeout); runs the code/function once after the timeout. 
 setInterval(expression, timeout); runs the code/function in intervals, with the length of the timeout between them. Repetitive - EVERY x interval.
 
 The JavaScript prototype property also allows you to add new methods to objects constructors:
+
+in a form like below 
+
+<form onSubmit={this.onSubmit}>
+	<input type="text" />
+	<button>Submit</button>
+</form>
+
+if we place onClick inside button, that will make sure that onClick only triggers any action
+But, if we place onSubmit in the form tag then it will make sure that button click or press enter both are taken care off
