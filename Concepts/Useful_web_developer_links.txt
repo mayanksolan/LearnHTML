@@ -691,4 +691,5 @@ a put request is to update something that's already on the server
 a delete request is to delete something from the server.
 
 	
-	
+higher order component
+https://medium.com/@soorajchandran/introduction-to-higher-order-components-hoc-in-react-383c9343a3aa
