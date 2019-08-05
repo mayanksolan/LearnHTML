@@ -693,3 +693,9 @@ a delete request is to delete something from the server.
 	
 higher order component
 https://medium.com/@soorajchandran/introduction-to-higher-order-components-hoc-in-react-383c9343a3aa
+
+
+https://www.youtube.com/channel/UC80PWRj_ZU8Zu0HSMNVwKWw/playlists
+
+Pure components
+https://www.youtube.com/watch?v=YCRuTT31qR0
