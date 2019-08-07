@@ -278,6 +278,24 @@ table, th, td { border: 2px solid green; }
 Collapse the table borders into a single border.
 table { border-collapse: collapse; }
 
+<table>New Table
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td> 
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td> 
+    <td>94</td>
+  </tr>
+</table>
+
 
 =====================Display==================
 span { display: block; } this will display span across the full width
@@ -829,3 +847,19 @@ in a form like below
 
 if we place onClick inside button, that will make sure that onClick only triggers any action
 But, if we place onSubmit in the form tag then it will make sure that button click or press enter both are taken care off
+
+Semantic elements html 
+
+<article>
+<aside>
+<details>
+<figcaption>
+<figure>
+<footer>
+<header>
+<main>
+<mark>
+<nav>
+<section>
+<summary>
+<time>
