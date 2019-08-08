@@ -1,7 +1,51 @@
+body {
+  font-family: arial;
+  background: #f8f9fb; }
+
+html,
+body,
+ul,
+ol,
+li,
+form,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0; }
+
+fieldset,
+img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* VARIABLES */
 #main-nav {
   background: #032f3e; }
   #main-nav ul {
     width: 100%; }
+    #main-nav ul:after {
+      content: "";
+      display: block;
+      clear: both; }
   #main-nav li {
     float: left;
     width: 14%; }
@@ -11,11 +55,8 @@
     padding: 16px;
     display: block;
     text-align: center; }
-
-#main-nav ul:after {
-  content: "";
-  display: block;
-  clear: both; }
+    #main-nav a:hover {
+      background: #333; }
 
 section h1 {
   font-size: 24px;
@@ -33,13 +74,20 @@ section h1 {
   .lead-banner img {
     width: 100%; }
   .lead-banner span {
-    font-size: 46px;
+    font-size: 42px;
     display: block;
     text-transform: uppercase;
     font-weight: bold; }
-  .lead-banner span.title {
+    @media screen and (max-width: 3000px) and (min-width: 1200px) {
+      .lead-banner span {
+        font-size: 68px; } }
+  .lead-banner span.sub-title {
     font-weight: normal;
     margin-bottom: 30px; }
+  @media screen and (max-width: 1200px) {
+    .lead-banner {
+      max-height: 640px;
+      overflow: hidden; } }
 
 .lessons-banner {
   width: 100%;
@@ -52,10 +100,22 @@ section h1 {
   .lessons-banner img {
     width: 100%; }
   .lessons-banner span {
-    font-size: 46px;
+    font-size: 42px;
     display: block;
     text-transform: uppercase;
     font-weight: bold; }
-  .lessons-banner span.title {
+    @media screen and (max-width: 3000px) and (min-width: 1200px) {
+      .lessons-banner span {
+        font-size: 68px; } }
+  .lessons-banner span.sub-title {
     font-weight: normal;
     margin-bottom: 30px; }
+  @media screen and (max-width: 1200px) {
+    .lessons-banner {
+      max-height: 640px;
+      overflow: hidden; } }
+  .lessons-banner li {
+    text-transform: uppercase;
+    font-size: 20px;
+    max-width: 500px;
+    margin: 60px 0; }
