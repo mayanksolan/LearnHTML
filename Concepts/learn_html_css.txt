@@ -457,9 +457,34 @@ document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
 }
 
 
+((((((((((((DOM Selector methods))))))))))))
+document.getElementById()
+document.getElementsByClassName() - var tags = document.getElementsByClassName('bolded')[0];
+document.getElementsByTagName() - var tags = document.getElementsByTagName('li');
+document.querySelector() - FirstMatch
+	e.g. - 	var tag = document.querySelector('#highlight'); //
+			var tags = document.querySelector('li a.special');   // 
+			var tag = document.querySelector('input[type="number"]');
+document.querySelectorAll() - 
 
+var link = document.querySelector('a'); 
+		link.getAttribute('href');
+		link.setAttribute('href', 'https://www.yahoo.com/');
+		
+========== DOM Events==========
+element.addEventListener('type', functionToCall);
 
+var button = document.querySelector('button'); // select element 
+button.addEventListener('click', function() { // add event listener 
+	console.log('The button has been clicked.'); // run code 
+});
 
+var lis = document.querySelectorAll('li'); 
+for (var i = 0; i < lis.length; i++) { 
+	lis[i].addEventListener('click', function() { 
+		this.style.color = 'pink'; 
+	}); 
+}
 
 (((((((((((((((((((JSON)))))))))))))))))))
 
@@ -785,7 +810,23 @@ CAB -> Call, Apply, Bind
 	Call - Calling one function from another in same object, The call() method takes arguments separately.
 	Apply - The apply() method takes arguments as an array.
 	Bind - The bind() method takes arguments in an array, but any other remaining arguments can be passed while calling.
+	
+Call - 
+var firstPerson = { firstName: 'John', lastName: 'Doe', fullName: 
+					function() { return this.firstName + ' ' + this.lastName; } } 
+var secondPerson = { firstName: 'Mary', lastName: 'Jane' }
 
+firstPerson.fullName.call(secondPerson);
+
+
+Apply - 
+var firstP = { name: 'John', addNumbers: function(a, b, c, d) 
+							 { return this.name + ' calculated ' + (a+b+c+d); } } 
+var secondP = { name: 'Jane' }
+
+firstP.addNumbers.call(secondP, 1, 2, 3, 4); 
+or
+firstP.addNumbers.apply(secondP, [1, 2, 3, 4]);
 
 =====================JS callback=====================
 
