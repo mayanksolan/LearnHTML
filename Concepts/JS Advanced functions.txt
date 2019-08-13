@@ -121,6 +121,75 @@ const arr2 = ['m', 'n', 'x', 'y', 'r'];
 														// string so JS says okay string is here so lets concatenate and further ahead aslo it considers it as string hence 11Mayank86
 	
 17.	IIFE (Immediately Invoked Function Expression)
+
+18. Closures in JavaScript - 
+	a. 	Variables - Any function where you are using a variable from outise the scope are actually closures
+		Example - Variables	-	var passed = 3;
+								var addTo = function() {	var inner = 2;	return passed+inner;	}
+								console.log(addTo());	//returns 5
+	b. Closures are just functions which preserve data
+		var addTo = function(passed){    
+			var add = function(inner){
+			return passed + inner;  
+			};    
+		return add;   
+		};
+		var addThree = new addTo(3);
+		var addFour = new addTo(4);
+		console.dir(addThree(1));
+		console.dir(addFour(1));
+		// returns  4 then 5
+	
+19.	Promises - Makes sure if the conditions are matched then do the next job
+	let p = new Promise((resolve, reject) => {
+		let a=1+1;
+		if(a==2) {
+			resolve("Success");
+		} else {
+			reject("Failed");
+		}
+	});
+	
+	p.then((message) => {
+		console.log("This is in the then "+message);
+	}).catch((message) => {
+		console.log("This is in the catch "+message);
+	});
+	
+	// Output - This is in the then Success
+	
+	
+	Promises All - Returns the output message when all are completed
+	Below are three differencet promises
+	const recordVideoOne = new Promise((resolve, reject) => {
+	  resolve('Video 1 Recorded')
+	})
+
+	const recordVideoTwo = new Promise((resolve, reject) => {
+	  resolve('Video 2 Recorded')
+	})
+
+	const recordVideoThree = new Promise((resolve, reject) => {
+	  resolve('Video 3 Recorded')
+	})
+	
+	Promise.all([
+	  recordVideoOne,
+	  recordVideoTwo,
+	  recordVideoThree
+	]).then(messages => {
+	  console.log(messages)
+	})
+	
+	Promises Race - Returns the first function output as soon as anyone of them is completed
+	Promise.race([
+	  recordVideoOne,
+	  recordVideoTwo,
+	  recordVideoThree
+	]).then(message => {
+	  console.log(message)
+	})
+	
 	
 	
 	
@@ -145,3 +214,6 @@ Rapid Fire	-
 	
 6. 	Question:null == undefined
 	Answer: true
+	
+7. 	Question: Does JavaScript pass parameter by value or by reference?
+	Answer: Primitive type (string, number, etc.) are passed by value and objects are passed by reference.
