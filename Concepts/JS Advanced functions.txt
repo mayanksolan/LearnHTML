@@ -49,3 +49,9 @@ const arr2 = ['m', 'n', 'x', 'y', 'r'];
 11. Higher Order Functions - 
 
 	setInterval(function() { // code that you want to run every second; }, 1000);
+	
+12 Undefined vs Undeclared - undefined variables are those that are not assigned any value but declared in the program. if we try to read the value, undefined is displayed
+								var a;
+								alert(a);	// this will output undefined
+							undeclared values are those that are not declared in the program. If we try to read their values it will give runtime error.
+								alert("hello"+"--"+b);	//	Uncaught ReferenceError: b is not defined
