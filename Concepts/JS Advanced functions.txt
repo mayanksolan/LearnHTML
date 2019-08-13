@@ -120,7 +120,7 @@ const arr2 = ['m', 'n', 'x', 'y', 'r'];
 	let a=3, b=8, c=6; 	console.log(a+b+"Mayank"+b+c)	// prints 11Mayank86, here initially it starts with a which is number so it adds a and b, then it tries adding Mayank which is 
 														// string so JS says okay string is here so lets concatenate and further ahead aslo it considers it as string hence 11Mayank86
 	
-	
+17.	IIFE (Immediately Invoked Function Expression)
 	
 	
 	
@@ -139,3 +139,9 @@ Rapid Fire	-
 	
 4. 	!'bang' returns false
 	!!'bang' returns true
+	
+5. 	Question: What is the value of Math.max([2,3,4,5]);
+	Answer: NaN
+	
+6. 	Question:null == undefined
+	Answer: true
