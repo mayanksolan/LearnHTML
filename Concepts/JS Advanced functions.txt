@@ -55,3 +55,22 @@ const arr2 = ['m', 'n', 'x', 'y', 'r'];
 								alert(a);	// this will output undefined
 							undeclared values are those that are not declared in the program. If we try to read their values it will give runtime error.
 								alert("hello"+"--"+b);	//	Uncaught ReferenceError: b is not defined
+								
+13. Coercion in Javascript
+	let a=4; let b="4";
+	console.log(a+b);	// "44"
+	console.log(b+a);	// "44"
+	Rule for implicit coercion: Comparison by using == does implicit type conversion under the hood. And rules for implicit coercion are as follows-
+	->	If both operands are same type use ===
+	->	undefined == null
+	->	If one operands is string another is number, convert string to number
+	->	If one is boolean and another is non-boolean, convert boolean to number and then perform comparison
+	->	While comparing a string or number to an object, try to convert the object to a primitive type and then try to compare
+	
+	a. console.log("5" - 5);	//	returns 0
+	b. console.log("5" + 5);	//	returns 55
+	c. const giveType = typeof 5	// console log returns number
+	d. const giveType = typeof "5"	// console log returns string
+	e. const giveType = typeof {}	// console log returns object
+	f. const adder = true + 5;		// console log returns 6
+	g. const adder = false + 5;		// console log returns 5
