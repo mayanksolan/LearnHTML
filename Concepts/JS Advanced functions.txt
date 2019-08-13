@@ -74,3 +74,68 @@ const arr2 = ['m', 'n', 'x', 'y', 'r'];
 	e. const giveType = typeof {}	// console log returns object
 	f. const adder = true + 5;		// console log returns 6
 	g. const adder = false + 5;		// console log returns 5
+	
+	Values that interpret as false
+	a. false
+	b. 0
+	c. ""
+	d. null
+	e. undefined
+	f. NaN
+	
+	Everything else is true
+	
+	var a = {a: 1};
+	var b = {a: 1};
+	a == b //false
+	a === b //false
+	
+	
+	Some other cases
+	true%1	//	0
+	''%1	//	0
+	[]==true	//	false	//Since left and right side of the equality are two different types, JavaScript can't compare them directly . Hence, under the hood, JavaScript will 	 convert them to compare. first right side of the equality will be cooereced to a number and number of true would be 1.
+							//After that, JavaScript implementation will try to convert [] by usingtoPrimitive (of JavaScript implementation). since [].valueOf is not primitive will use toString and will get ""
+							//Now you are comparing "" == 1 and still left and right is not same type. Hence left side will be converted again to a number and empty string will be 0.
+	
+	
+14. Object Equality
+	
+	var e = {a:1,b:2,c:3};
+	var eProps = Object.getOwnPropertyNames(e);
+	console.log(eProps);	//	(3) ["a", "b", "c"]
+	
+15 Math.max to find max in array
+	let arr = [3,6,1,7,2,9,11,5];
+	function getMax(arr)	{
+		return Math.max.apply(null, arr);
+	}
+	getMax(arr);	// 11
+	
+16	= operator has associativity from right to left means - 
+	let a = 6; 	\\ this means the value defined on the right is assigned to left variable a
+	+, -, /, * operators have associativity from left to right (it follows bodmas rule) means -
+	console.log(+"3"+2+6);	// prints 11 because it starts checking from left, + opeartor comes, so it thinks this is addition operation so converts 3 to a number and move on
+	console.log("3"+2+6);	// prints 326	because it encounters " so it thinks this is string operation so concatenates
+	let a=3, b=8, c=6; 	console.log(a+b+"Mayank"+b+c)	// prints 11Mayank86, here initially it starts with a which is number so it adds a and b, then it tries adding Mayank which is 
+														// string so JS says okay string is here so lets concatenate and further ahead aslo it considers it as string hence 11Mayank86
+	
+	
+	
+	
+	
+	
+Rapid Fire	-
+
+1. 	Question: What is typeof [], typeof arguments
+	Answer: Object. Actually Array is derived from Object. If you want to check array use Array.isArray(arr)
+					arguments are array like but not array. it has length, can access by index but can't push pop, etc.
+					
+2.	What is the value of 4+3+2+"1"
+	"91"
+	
+3. 	var ab = (2,3,5);
+	console.log(ab);	// 5	//The comma operator evaluates each of its operands (from left to right) and returns the value of the last operand. ref: MDN
+	
+4. 	!'bang' returns false
+	!!'bang' returns true
