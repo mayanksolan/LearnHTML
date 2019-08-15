@@ -685,6 +685,8 @@ var flyToTheMoon = function()
 }
 flyToTheMoon();
 
+Yes do fly hello there
+
 ===================css position - 
 https://dzone.com/articles/css-position-relative-vs-position-absolute
 
