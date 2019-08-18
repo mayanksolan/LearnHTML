@@ -1,0 +1,111 @@
+
+
+Each Database and Collection combination define a namespace
+
+Databases can have multiple collections and each collection will have schema where we can have -
+	1. 
+Single field (document) with some values - for e.g. _id field
+	2. 
+Document with 2 nested fields - for e.g. airTemperature can have two fields - quality and value
+
+
+
+MongoDB supports hierarchical data structures - there can be multiple level of nesting of fields or say documents
+
+The datatype of a field with nested fields(documents) is actually document.
+But datatype of a field with nested array is Array of documents -  skyCoverLayer
+
+mongo exe inside bin folder is the mongo shell
+
+Setup the path - 
+	1. 
+Type in search box - Edit the system environment variables
+	2. 
+open the highlighted panel
+	3. 
+Advanced tab, enviornment variables
+	4. 
+select path in system variables and click edit
+	5. 
+Add this path - C:\Program Files\MongoDB\Server\4.2\bin and move it up to the top. Close it
+	6. 
+Open cmd and type mongo --nodb and press enter
+	7. 
+Mongo shell will get started
+	8. 
+type quit() to come out
+
+
+
+To Connect
+Run below command
+mongo "mongodb://cluster0-shard-00-00-jxeqq.mongodb.net:27017,cluster0-shard-00-01-jxeqq.mongodb.net:27017,cluster0-shard-00-02-jxeqq.mongodb.net:27017/test?replicaSet=Cluster0-shard-0" --authenticationDatabase admin --ssl --username m001-student --password m001-mongodb-basics
+
+Above command means
+	1. 
+firstly the different clusters means that if any of the cluster is down then use another cluster
+	2. 
+/test means the database we want to connect to, we can replace that to /100YWeatherSmall
+	3. 
+we are connect this using secure server as mentioned as ssl
+
+
+
+Once connected
+	1. 
+use - show collections to she the collections inside db
+	2. 
+or use video  to switch to another db
+
+
+
+On command prompt
+mongo "mongodb+srv://cluster0-n0rgm.mongodb.net/test" --authenticationDatabase admin --tls --username m001-student --password m001-mongodb-basics
+
+when at mongo shell and the same dir where you have db stored, you can use below command to load the database file to your db using
+load("loadMovieDetailsDataset.js")
+and then using show dbs you can view the new db
+
+To see the db collection in prettier format use 
+db.movieDetails.find().pretty()
+
+Connecting MongoDB compass to your own cluster - 
+	1. 
+Click on your cluster in mongodb
+	2. 
+Look for primary in the page and click it
+	3. 
+Copy the server address - ( cluster0-shard-00-00-n0rgm.mongodb.net) and paster it in your compass window 
+
+
+
+Inserting Data
+
+insertOne
+Go to the db - use video
+Insert using - db.moviesScratch.insertOne({title:"Star Trek II: The Wrath of Khan", year:1982, imdb:"tt0084726"})
+    _id is created as ObjectID which is unique
+We can also insert by specifieng the _unique _id as well
+db.moviesScratch.insertOne({_id:"tt0084726", title:"Star Trek II: The Wrath of Khan", year:1982, imdb:"tt0084726"})
+
+insertMany - insertMany does an ordered insert based on the _id so when insertMany command tries to insert multiple documents, it inserts until duplicate_id occurs. Default is ordered inserts
+if we pass second argument as - { "ordered": false }
+then the insert keeps on going inserting documents and in the end throws error for the documents which failed
+
+Finding Data
+You can use {mpaaRating:"PG-13", year:2009} filter in video collection in the shell like below
+In MongoDB Compass - db.movies.find({mpaaRating:"PG-13", year:2009}).pretty()
+In Shell - We need to use double quotes when using nested objects - for e.g.  db.data.find({"wind.direction.angle":290}).pretty()
+
+Exact matches can be done as, if any more members are there in the cast then the result dont show up
+db.movies.find({cast:["Jeff Bridges", "Tim Robbins"]}).pretty()
+
+If we use just one person as the filter in the array, means
+db.movies.find({cast:["Jeff Bridges"]}).pretty()
+this shows all the movies where the cast is only Jeff Bridges
+
+db.movies.find({cast:"Jeff Bridges"}).pretty()
+this shows where the cast atleast have Jeff Bridges
+
+db.movies.find({"cast.0":"Jeff Bridges"}).pretty()
+this shows where the cast has Jeff Bridges listed first
