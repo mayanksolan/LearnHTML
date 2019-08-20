@@ -113,3 +113,33 @@ this shows where the cast has Jeff Bridges listed first
 We can limit the columns to show as projection below - 
 db.movies.find({cast:["Jeff Bridges"]}, {title:1}).pretty() - this shows only title column, here 1 means that we want to see the column and 0 means do not include the column
 db.movies.find({cast:["Jeff Bridges"]}, {title:1,_id:0}).pretty() - this shows title column and id column is not shown
+
+
+Updating Data -  https://docs.mongodb.com/manual/reference/operator/update/
+We  can update one document by using updateOne function as below
+
+db.movieDetails.updateOne({
+    title:"The Martian"
+},    {
+    $set:    {
+        poster:"xyz"
+        }
+});
+This will update one document where the title is "The Martian" and $set is used to update or add the field, here poster key if not defined in the document will be added, if defined then it will be updated.
+
+Update Operators
+$set    Sets the value of a field in a document.
+$unset    Removes the specified field from a document.
+$inc    Increments the value of the field by the specified amount.
+$min    Only updates the field if the specified value is less than the existing field value.
+$max    Only updates the field if the specified value is greater than the existing field value.
+$mul    Multiplies the value of the field by the specified amount.
+$rename    Renames a field.
+$setOnInsert    Sets the value of a field if an update results in an insert of a document. Has no effect on update operations that modify existing documents.
+
+Array Operators
+$addToSet  Adds elements to an array only if they do not already exist in the set.
+$pop           Removes the first or last item of an array.
+$pull           Removes all array elements that match a specified query.
+$push          Adds an item to an array.
+$pullAll       Removes all matching values from an array.

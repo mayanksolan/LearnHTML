@@ -914,9 +914,14 @@ Semantic elements html
 <time>
 
 
+structure of the HTML webpage
+1.	DOCTYPE - DOCTYPE is used to convey to the browser about the HTML version.
+2.	HTML - All the html code will be placed into this html tag. It works as the container for the whole html page elements.
+3.	HEAD - Search Engine Optimization (SEO) techniques are written inside this tag. <title>, <meta> tags are written inside these tag. CSS and JS external links or internal CSS and JS are also written inside this tag.
+4.	BODY - Whatever html code is written inside these tags will be shown by the browser as website content.
 
-
-
+Meta tags in html are used by the developer to tell the browser about the page description, author of the template, character set, keywords and many more.
+Meta tags are used for search engine optimization to tell the search engine about the page contents.
 
 HTML Elements
 <p>My first paragraph.</p>
@@ -1013,3 +1018,4 @@ Media Queries
 https://www.w3schools.com/html/tryit.asp?filename=tryhtml_responsive_media_query
 
 placehold.it - images of your size
+
