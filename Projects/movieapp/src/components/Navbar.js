@@ -4,13 +4,15 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="navTitle">
-        <h3>Movies Hub</h3>
+        <h2>Movies Hub</h2>
       </div>
       <div className="navLinks">
-        <ul>
-          <li>Popular Movies</li>
-          <li>Latest Movies</li>
-        </ul>
+        <a href="#" className="navLi">
+          Popular Movies
+        </a>
+        <a href="#" className="navLi">
+          Latest Movies
+        </a>
       </div>
     </div>
   );

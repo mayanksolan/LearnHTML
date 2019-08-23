@@ -2,8 +2,8 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #3440e9;
-  --dark-color: #333333;
+  --primary-color: #5e66d8;
+  --dark-color: #000000;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -11,4 +11,45 @@
 
 .navbar {
   background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar .navTitle h2 {
+  margin: 0;
+  padding: 5px;
+}
+
+.navLinks {
+  display: flex;
+  margin: 0;
+}
+
+.navLi {
+  padding: 10px;
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+.navLi:hover {
+  color: var(--primary-color);
+  background-color: var(--dark-color);
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    display: block;
+    text-align: center;
+  }
+  .navLinks {
+    display: block;
+    text-align: center;
+  }
+  .navLi {
+    float: none;
+    width: 100%;
+    padding: 4px 0px;
+    margin-top: 2px 0px;
+    display: inline-block;
+  }
 }
