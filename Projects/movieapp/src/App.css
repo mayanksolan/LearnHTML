@@ -1,3 +1,14 @@
-.App {
-  text-align: center;
+/* @import url("https://fonts.googleapis.com/css?family=Roboto"); */
+
+/* Global Styles */
+:root {
+  --primary-color: #3440e9;
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
+.navbar {
+  background-color: var(--primary-color);
 }
