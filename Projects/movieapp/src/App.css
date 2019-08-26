@@ -7,6 +7,8 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --light-grey-color: lightgrey;
+  --dark-grey-color: darkgrey;
 }
 
 .navbar {
@@ -52,4 +54,24 @@
     margin-top: 2px 0px;
     display: inline-block;
   }
+}
+
+.container {
+  margin: 0 10%;
+}
+.movieList {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-columns: repeat(3, 1fr);
+  /*grid-column-gap: 1em;
+  grid-row-gap: 1em;*/
+  grid-gap: 1em;
+}
+
+.movieItem {
+  background: var(--light-grey-color);
+}
+
+.movieItem:nth-child(even) {
+  background: var(--dark-grey-color);
 }

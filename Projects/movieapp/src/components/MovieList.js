@@ -24,7 +24,11 @@ class MovieList extends Component {
     const movies = this.state.movieList.map(movie => {
       return <MovieItem key={movie.imdbID} movie={movie} />;
     });
-    return <div>{movies}</div>;
+    return (
+      <div className="container">
+        <div className="movieList">{movies}</div>
+      </div>
+    );
   }
 }
 
