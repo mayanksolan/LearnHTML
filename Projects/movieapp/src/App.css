@@ -2,13 +2,15 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #5e66d8;
+  --primary-color: #6368a7;
   --dark-color: #000000;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
-  --light-grey-color: lightgrey;
-  --dark-grey-color: darkgrey;
+}
+
+body {
+  background-color: var(--dark-color);
 }
 
 .navbar {
@@ -57,21 +59,117 @@
 }
 
 .container {
-  margin: 0 10%;
-}
-.movieList {
-  display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  grid-template-columns: repeat(3, 1fr);
-  /*grid-column-gap: 1em;
-  grid-row-gap: 1em;*/
-  grid-gap: 1em;
+  margin: 2% 10%;
 }
 
-.movieItem {
-  background: var(--light-grey-color);
+@media (min-width: 1200px) {
+  .movieList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    grid-auto-rows: minmax(300px, auto);
+  }
+
+  .movieItem {
+    background: var(--primary-color);
+    display: grid;
+    grid-template-rows: 1fr 0.5fr 5.5fr;
+    grid-gap: 0.1em;
+  }
+
+  .movieItem:nth-child(even) {
+    background: var(--primary-color);
+  }
+
+  .movieTitle {
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .movieYear {
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .movieImage {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-.movieItem:nth-child(even) {
-  background: var(--dark-grey-color);
+@media (max-width: 1200px) {
+  .movieList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+    grid-auto-rows: minmax(300px, auto);
+  }
+
+  .movieItem {
+    background: var(--primary-color);
+    display: grid;
+    grid-template-rows: 1fr 0.5fr 5.5fr;
+    grid-gap: 0.1em;
+  }
+
+  .movieTitle {
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .movieYear {
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .movieImage {
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .movieList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2em;
+    grid-auto-rows: minmax(300px, auto);
+  }
+
+  .movieItem {
+    background: var(--primary-color);
+    display: grid;
+    grid-template-rows: 1fr 0.5fr 5.5fr;
+    grid-gap: 0.1em;
+  }
+
+  .movieTitle {
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .movieYear {
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .movieImage {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

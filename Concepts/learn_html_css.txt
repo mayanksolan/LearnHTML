@@ -1112,3 +1112,7 @@ grid-row-gap: 1em;
 or 
 
 grid-gap: 1em;
+
+grid-auto-rows: 100px; 		makes sure that all the boxes are of height 100px irrespective of the content
+
+grid-auto-rows: minmax(300px, auto); 	this makes sure that if the hight of the box is more then 300px then it takes taht height and then on the same level other boxes as well
