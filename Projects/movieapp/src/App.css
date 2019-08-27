@@ -2,15 +2,16 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #6368a7;
+  --primary-color: #a594f9;
+  --lighter-color: #cdc1ff;
   --dark-color: #000000;
-  --light-color: #f4f4f4;
+  --light-color: #f5efff;
   --danger-color: #dc3545;
   --success-color: #28a745;
 }
 
 body {
-  background-color: var(--dark-color);
+  background-color: var(--light-color);
 }
 
 .navbar {
@@ -38,6 +39,18 @@ body {
 .navLi:hover {
   color: var(--primary-color);
   background-color: var(--dark-color);
+}
+
+.searchBar {
+  padding: 0;
+  margin: 2% 2%;
+}
+
+.searchBar > form > input {
+  border-radius: 10px;
+  padding: 1em 0;
+  width: 100%;
+  background: var(--light-color);
 }
 
 @media (max-width: 600px) {
@@ -71,14 +84,14 @@ body {
   }
 
   .movieItem {
-    background: var(--primary-color);
+    background: var(--lighter-color);
     display: grid;
     grid-template-rows: 1fr 0.5fr 5.5fr;
     grid-gap: 0.1em;
   }
 
   .movieItem:nth-child(even) {
-    background: var(--primary-color);
+    background: var(--lighter-color);
   }
 
   .movieTitle {
@@ -111,7 +124,7 @@ body {
   }
 
   .movieItem {
-    background: var(--primary-color);
+    background: var(--lighter-color);
     display: grid;
     grid-template-rows: 1fr 0.5fr 5.5fr;
     grid-gap: 0.1em;
@@ -147,7 +160,7 @@ body {
   }
 
   .movieItem {
-    background: var(--primary-color);
+    background: var(--lighter-color);
     display: grid;
     grid-template-rows: 1fr 0.5fr 5.5fr;
     grid-gap: 0.1em;
