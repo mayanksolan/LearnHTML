@@ -5,7 +5,8 @@ import MovieItem from "./MovieItem";
 class MovieList extends Component {
   state = {
     movieList: [],
-    term: "cars"
+    term: "cars",
+    selectedImdb: ""
   };
   apiCall(term) {
     let apikey = "9866420e";
@@ -34,10 +35,20 @@ class MovieList extends Component {
       });
     }
   }
+  submitHandler = imdbid => {
+    console.log(imdbid);
+    //this.setState({ selectedImdb: imdbid });
+  };
   render() {
     if (this.state.movieList) {
       var movies = this.state.movieList.map(movie => {
-        return <MovieItem key={movie.imdbID} movie={movie} />;
+        return (
+          <MovieItem
+            key={movie.imdbID}
+            movie={movie}
+            onSubmitButton={this.submitHandler}
+          />
+        );
       });
     }
     return (

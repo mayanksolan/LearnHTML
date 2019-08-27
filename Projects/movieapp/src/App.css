@@ -2,10 +2,10 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #a594f9;
-  --lighter-color: #cdc1ff;
+  --primary-color: #08415c;
+  --lighter-color: #6b818c;
   --dark-color: #000000;
-  --light-color: #f5efff;
+  --light-color: #eee5e9;
   --danger-color: #dc3545;
   --success-color: #28a745;
 }
@@ -18,6 +18,7 @@ body {
   background-color: var(--primary-color);
   display: flex;
   justify-content: space-between;
+  color: var(--light-color);
 }
 
 .navbar .navTitle h2 {
@@ -123,6 +124,7 @@ input:focus {
     background: var(--primary-color);
     padding: 2% 2%;
     border-radius: 10px;
+    color: var(--light-color);
   }
 }
 
@@ -166,6 +168,51 @@ input:focus {
     background: var(--primary-color);
     padding: 2% 2%;
     border-radius: 10px;
+    color: var(--light-color);
+  }
+}
+
+@media (max-width: 800px) {
+  .movieList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+    grid-auto-rows: minmax(300px, auto);
+  }
+
+  .movieItem {
+    background: var(--lighter-color);
+    display: grid;
+    grid-template-rows: 1fr 0.5fr 5.5fr 1fr;
+    grid-gap: 0.1em;
+  }
+
+  .movieTitle {
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .movieYear {
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .movieImage {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .movieButton {
+    align-self: center;
+    justify-self: center;
+    background: var(--primary-color);
+    padding: 2% 2%;
+    border-radius: 10px;
+    color: var(--light-color);
   }
 }
 
@@ -210,5 +257,6 @@ input:focus {
     background: var(--primary-color);
     padding: 2% 2%;
     border-radius: 10px;
+    color: var(--light-color);
   }
 }
