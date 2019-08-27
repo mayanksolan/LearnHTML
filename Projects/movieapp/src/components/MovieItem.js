@@ -7,6 +7,7 @@ export default function MovieItem(props) {
       <h3 className="movieTitle">{props.movie.Title}</h3>
       <h5 className="movieYear">Year of Release: {props.movie.Year}</h5>
       <img className="movieImage" src={props.movie.Poster} alt="poster" />
+      <button className="movieButton">Click for more details</button>
     </div>
   );
 }
