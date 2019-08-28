@@ -62,7 +62,6 @@ class App extends React.Component {
             />
           </Fragment>
           <Route
-            exact
             path="/movie/:imdbId"
             render={props => (
               <MovieDetail {...props} movieData={this.state.movieData} />
