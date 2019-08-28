@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 import MovieItem from "./MovieItem";
+import "./MovieList.css";
 
 class MovieList extends Component {
   state = {
     movieList: [],
-    term: "cars",
-    selectedImdb: ""
+    term: "godfather"
   };
   apiCall(term) {
     let apikey = "9866420e";
@@ -35,10 +35,10 @@ class MovieList extends Component {
       });
     }
   }
-  submitHandler = imdbid => {
-    console.log(imdbid);
-    //this.setState({ selectedImdb: imdbid });
-  };
+  // submitHandler = imdbid => {
+  //   console.log(imdbid);
+  //   //this.setState({ selectedImdb: imdbid });
+  // };
   render() {
     if (this.state.movieList) {
       var movies = this.state.movieList.map(movie => {
@@ -46,7 +46,7 @@ class MovieList extends Component {
           <MovieItem
             key={movie.imdbID}
             movie={movie}
-            onSubmitButton={this.submitHandler}
+            onSubmitButton={this.props.onSubmitButton}
           />
         );
       });

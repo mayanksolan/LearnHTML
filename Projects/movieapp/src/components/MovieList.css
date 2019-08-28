@@ -1,0 +1,89 @@
+/* Global Styles */
+:root {
+  --primary-color: #660000;
+  --lighter-color: #993333;
+  --dark-color: #000000;
+  --light-color: #ff9999;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.movieList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
+  grid-auto-rows: minmax(300px, auto);
+}
+
+.movieItem {
+  background: var(--lighter-color);
+  border-radius: 5%;
+  /* display: grid;
+  grid-template-rows: 1fr 0.5fr 2fr;
+  grid-gap: 0.1em; */
+}
+
+.movieTitle {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  color: var(--dark-color);
+}
+
+.movieYear {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  color: var(--dark-color);
+  margin: 0;
+}
+
+.movieImage {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 5% auto;
+  border-radius: 5%;
+}
+.movieButton {
+  align-self: center;
+  justify-self: center;
+  background: var(--primary-color);
+  padding: 2% 2%;
+  border-radius: 10px;
+  color: var(--light-color);
+}
+
+@media (max-width: 1200px) {
+  .movieList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .movieImage {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 800px) {
+  .movieList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .movieImage {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .movieList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .movieImage {
+    max-width: 300px;
+  }
+}
