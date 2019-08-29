@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import MovieItem from "./MovieItem";
-import "./MovieList.css";
+import "./styles/MovieList.css";
 
 class MovieList extends Component {
   state = {
@@ -13,7 +13,7 @@ class MovieList extends Component {
     axios
       .get(`http://www.omdbapi.com/?s=${term}&apikey=${apikey}`)
       .then(res => {
-        console.log(res.data.Search);
+        //console.log(res.data.Search);
         this.setState({
           movieList: res.data.Search
         });
@@ -23,7 +23,7 @@ class MovieList extends Component {
       });
   }
   componentDidMount() {
-    console.log(this.props);
+    //console.log(this.props);
     this.apiCall(this.state.term);
   }
   componentDidUpdate() {

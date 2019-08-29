@@ -1,0 +1,54 @@
+/* Global Styles */
+:root {
+  --primary-color: #660000;
+  --lighter-color: #993333;
+  --dark-color: #000000;
+  --light-color: #ff9999;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
+.container {
+  margin: 10%;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  background: var(--lighter-color);
+  padding: 0 1em;
+  margin: 2% 0;
+  border-radius: 2em;
+}
+
+.headLeft > h1 {
+  margin: 0;
+}
+.headRight > h2,
+h5 {
+  margin: 0;
+}
+
+.headRight {
+  text-align: center;
+}
+
+.image {
+  display: flex;
+  justify-content: space-between;
+  background: var(--lighter-color);
+  padding: 0 1em;
+  margin: 2% 0;
+  border-radius: 2em;
+}
+
+.imageLeft {
+  max-width: 200px;
+}
+
+.movieList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
+  grid-auto-rows: minmax(300px, auto);
+}

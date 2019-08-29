@@ -1,40 +1,19 @@
 import React, { Component, Fragment } from "react";
-import axios from "axios";
-import SearchBar from "./components/SearchBar";
-import MovieList from "./components/MovieList";
+import MovieList from "./MovieList";
+import SearchBar from "./SearchBar";
 
 class MainMovieList extends Component {
   state = {
     term: "",
-    movieId: "",
-    movieData: ""
+    movieId: ""
   };
   onSearchSubmit = term => {
     this.setState({ term: term }, () => {
       console.log(this.state);
     });
   };
-  movieApiCall() {
-    let apikey = "9866420e";
-    axios
-      .get(`http://www.omdbapi.com/?i=${this.state.movieId}&apikey=${apikey}`)
-      .then(res => {
-        console.log(res.data);
-        this.setState(
-          {
-            movieData: res.data
-          },
-          () => {
-            console.log(this.state);
-          }
-        );
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
   onSubmitButton = imdbID => {
-    console.log(imdbID);
+    //console.log(imdbID);
     this.setState(
       {
         movieId: imdbID
