@@ -39,22 +39,53 @@ export default class MovieDetail extends React.Component {
             <h1>{this.state.movieData.Title}</h1>
           </div>
           <div className="headRight">
-            <h2>Rating: {this.state.movieData.imdbRating}</h2>
-            <h5>Votes: {this.state.movieData.imdbVotes}</h5>
+            <h2>
+              IMDB Rating: <span>{this.state.movieData.imdbRating}</span>
+            </h2>
+            <h5>
+              IMDB Votes: <span>{this.state.movieData.imdbVotes}</span>
+            </h5>
           </div>
         </div>
         <div className="image">
           <div className="imageLeft">
-            <img src={this.state.movieData.Poster} alt="Movie Image" />
+            <img src={this.state.movieData.Poster} alt="Movie" />
           </div>
           <div className="imageRight">
-            <h2>Rating: {this.state.movieData.imdbRating}</h2>
-            <h5>Votes: {this.state.movieData.imdbVotes}</h5>
+            <div className="imageRight1">
+              <p>
+                Released: <strong>{this.state.movieData.Released}</strong>
+              </p>
+              <p>
+                Rated: <strong>{this.state.movieData.Rated}</strong>
+              </p>
+              <p>
+                Runtime: <strong>{this.state.movieData.Runtime}</strong>
+              </p>
+              <p>
+                Genre: <strong>{this.state.movieData.Genre}</strong>
+              </p>
+            </div>
+            <div className="imageRight2">
+              <p>
+                Plot: <strong>{this.state.movieData.Plot}</strong>
+              </p>
+            </div>
+            <div className="imageRight3">
+              <p>
+                Director: <strong>{this.state.movieData.Director}</strong>
+              </p>
+              <p>
+                Actors: <strong>{this.state.movieData.Actors}</strong>
+              </p>
+            </div>
+            <div className="imageRight4">
+              <p>
+                Awards: <strong>{this.state.movieData.Awards}</strong>
+              </p>
+            </div>
           </div>
         </div>
-        <div>{this.state.movieData.Year}</div>
-        <div>{this.state.movieData.Rated}</div>
-        <div>{this.state.movieData.Released}</div>
       </div>
     );
   }

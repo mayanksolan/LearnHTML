@@ -1,13 +1,3 @@
-/* Global Styles */
-:root {
-  --primary-color: #660000;
-  --lighter-color: #993333;
-  --dark-color: #000000;
-  --light-color: #ff9999;
-  --danger-color: #dc3545;
-  --success-color: #28a745;
-}
-
 .link {
   text-decoration: none;
 }

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import MovieList from "./MovieList";
 import SearchBar from "./SearchBar";
+import "./styles/MovieList.css";
 
 class MainMovieList extends Component {
   state = {
