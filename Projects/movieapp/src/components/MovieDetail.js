@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./styles/MovieDetail.css";
 
@@ -86,6 +87,9 @@ export default class MovieDetail extends React.Component {
             </div>
           </div>
         </div>
+        <Link to="/" className="backSearch">
+          Back To Search
+        </Link>
       </div>
     );
   }

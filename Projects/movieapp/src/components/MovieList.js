@@ -35,10 +35,6 @@ class MovieList extends Component {
       });
     }
   }
-  // submitHandler = imdbid => {
-  //   console.log(imdbid);
-  //   //this.setState({ selectedImdb: imdbid });
-  // };
   render() {
     if (this.state.movieList) {
       var movies = this.state.movieList.map(movie => {

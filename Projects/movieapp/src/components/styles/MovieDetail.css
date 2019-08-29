@@ -2,6 +2,15 @@
   margin: 5% 7.5%;
 }
 
+.backSearch {
+  background: var(--lighter-color);
+  text-decoration: none;
+  color: var(--light-color);
+  font-weight: bold;
+  padding: 1%;
+  border-radius: 1em;
+}
+
 .head {
   display: flex;
   justify-content: space-between;
