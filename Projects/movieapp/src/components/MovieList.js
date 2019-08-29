@@ -23,7 +23,7 @@ class MovieList extends Component {
       });
   }
   componentDidMount() {
-    //console.log(this.props);
+    console.log(this.props);
     this.apiCall(this.state.term);
   }
   componentDidUpdate() {
@@ -35,6 +35,29 @@ class MovieList extends Component {
       });
     }
   }
+  sortByYear = () => {
+    console.log(this.state.movieList);
+    let newMovieList = this.state.movieList;
+    for (let i = 0; i < newMovieList.length; i++) {
+      let min = newMovieList[i].Year;
+      let minInd = i;
+      for (let j = i + 1; j < newMovieList.length; j++) {
+        if (newMovieList[j].Year < min) {
+          min = newMovieList[j].Year;
+          minInd = j;
+        }
+      }
+      if (min !== newMovieList[i].Year) {
+        let swap = newMovieList[i];
+        newMovieList[i] = newMovieList[minInd];
+        newMovieList[minInd] = swap;
+      }
+    }
+    console.log(newMovieList);
+    this.setState({
+      movieList: newMovieList
+    });
+  };
   render() {
     if (this.state.movieList) {
       var movies = this.state.movieList.map(movie => {
@@ -49,6 +72,9 @@ class MovieList extends Component {
     }
     return (
       <div className="container">
+        <button className="sortByYear" onClick={this.sortByYear}>
+          Sort By Year
+        </button>
         <div className="movieList">{movies}</div>
       </div>
     );

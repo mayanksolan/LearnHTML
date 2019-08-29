@@ -2,6 +2,21 @@
   text-decoration: none;
 }
 
+.sortByYear {
+  display: block;
+  background: var(--lighter-color);
+  border: none;
+  padding: 1%;
+  color: var(--dark-color);
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 2% 0px 2% auto;
+}
+
+button:focus {
+  outline: none;
+}
+
 .movieList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -22,6 +37,7 @@
   justify-self: center;
   text-align: center;
   color: var(--dark-color);
+  margin: 2% 1%;
 }
 
 .movieYear {
