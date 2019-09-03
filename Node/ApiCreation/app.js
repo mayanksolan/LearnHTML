@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("Hello World!!!, Keep Rocking");
+  res.send("Hello World!!!, You Keep Rocking");
 });
 
 app.get("/api/courses", (req, res) => {
@@ -11,6 +11,10 @@ app.get("/api/courses", (req, res) => {
 });
 
 app.get("/api/courses/:id", (req, res) => {
+  res.send(req.params);
+});
+
+app.get("/api/courses/:year/:month", (req, res) => {
   res.send(req.params);
 });
 
