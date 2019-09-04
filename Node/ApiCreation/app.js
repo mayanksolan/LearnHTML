@@ -1,6 +1,9 @@
 const http = require("http");
+const Joi = require("@hapi/joi");
 const express = require("express");
 const app = express();
+
+app.use(express.json());
 
 const courses = [
   { id: 1, name: "Maths" },
@@ -14,6 +17,19 @@ app.get("/", (req, res) => {
 
 app.get("/api/courses", (req, res) => {
   res.send([1, 2, 3]);
+});
+
+app.post("/api/courses", (req, res) => {
+  if (!req.body.name || req.body.name.length < 3) {
+    res.status(400).send("Name is required and should be minimum 3 characers");
+    return;
+  }
+  const course = {
+    id: courses.length + 1,
+    name: req.body.name
+  };
+  courses.push(course);
+  res.send(course);
 });
 
 app.get("/api/courses/:id", (req, res) => {
