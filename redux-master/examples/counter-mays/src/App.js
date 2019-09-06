@@ -1,22 +1,37 @@
 import React from 'react'
-import { createStore } from 'redux'
 import Counter from '../src/components/Counter'
-import reducer from '../src/reducers/index'
-
-const store = createStore(reducer)
+import { connect } from 'react-redux'
 
 class App extends React.Component {
   render() {
+    //console.log(this.props)
     return (
       <div>
         <Counter
-          value={store.getState()}
-          onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
-          onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
+          value={this.props.state}
+          onIncrement={this.props.onIncrement}
+          onDecrement={this.props.onDecrement}
         />
       </div>
     )
   }
 }
 
-export default App
+const mapStateToProps = state => {
+  //console.log(state)
+  return {
+    state
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onIncrement: () => dispatch({ type: 'INCREMENT' }),
+    onDecrement: () => dispatch({ type: 'DECREMENT' })
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)

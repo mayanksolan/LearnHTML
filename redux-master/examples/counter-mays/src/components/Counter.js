@@ -12,9 +12,12 @@ class Counter extends React.Component {
       this.props.onIncrement()
     }
   }
+  incrementAsync = () => {
+    setTimeout(this.props.onIncrement, 1000)
+  }
   render() {
     const { value, onIncrement, onDecrement } = this.props
-    console.log(this.props)
+    //console.log(this.props)
     return (
       <div>
         Current Value is {value}
@@ -27,7 +30,7 @@ class Counter extends React.Component {
           <button onClick={this.incrementIfEven}>Increment if even</button>
         </div>
         <div>
-          <button>Increment async</button>
+          <button onClick={this.incrementAsync}>Increment async</button>
         </div>
       </div>
     )

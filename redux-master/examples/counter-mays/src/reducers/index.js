@@ -1,11 +1,12 @@
 const reducer = (state = 0, action) => {
+  let newState = state
   switch (action.type) {
     case 'INCREMENT':
-      return state + 1
+      return newState + 1
     case 'DECREMENT':
-      return state - 1
+      return newState - 1
     default:
-      return state
+      return newState
   }
 }
 
