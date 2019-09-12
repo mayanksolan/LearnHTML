@@ -401,7 +401,7 @@ Comments Routes
    app.use(passport.session());
 	Passport is Express-compatible authentication middleware for Node.js.
    passport.serializeUser(User.serializeUser());
-   passport.deserializeUser(User.deserializeUser());
+   passport.deserializeUser(User.deserializeUser());;;;;;
 	https://stackoverflow.com/questions/27637609/understanding-passport-serialize-deserialize
 	
 6. var LocalStrategy = require("passport-local");
