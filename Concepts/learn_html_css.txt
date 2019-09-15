@@ -8,6 +8,41 @@ If your screen size is too small then the columns in the grid will stack vertica
 To correct this issue you can change the col-lg-6  classes to col-md-6  instead.
 
 ===========Types of CSS selectors============
+
+1. The universal selector works like a wild card character, selecting all elements on a page
+* {
+   color: green;
+   font-size: 20px;
+   line-height: 25px;
+}
+
+2. Element Type Selector
+ul {
+   list-style: none;
+   border: solid 1px #ccc;
+}
+
+3. ID Selector - An ID selector is declared using a hash, or pound symbol (#) preceding a string of characters
+#container {
+   width: 960px;
+   margin: 0 auto;
+}
+
+4. Class Selector - The class selector is the most useful of all CSS selectors. It’s declared with a dot preceding a string of one or more characters
+.box {
+   padding: 20px;
+   margin: 10px;
+   width: 240px;
+}
+
+5. Descendant Combinator - The descendant selector or, more accurately, the descendant combinator lets you combine two or more selectors so you can be more specific in your selection method. For example:
+#container .box {
+   float: left;
+   padding-bottom: 15px;
+}
+It’s worth noting that the .box element doesn’t have to be an immediate child: there could be another element wrapping .box, and the styles would still apply.
+
+
 For
 <p class="dotted">A dotted outline</p>
 we can have -> p.dotted {outline-style: dotted;}
