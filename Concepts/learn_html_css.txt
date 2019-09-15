@@ -7,7 +7,8 @@ Deploy react+backend - https://www.freecodecamp.org/news/lessons-learned-from-de
 If your screen size is too small then the columns in the grid will stack vertically instead of sitting side-by-side. 
 To correct this issue you can change the col-lg-6  classes to col-md-6  instead.
 
-===========Types of CSS selectors============
+==========================Types of CSS selectors=======================================
+https://www.sitepoint.com/css-selectors/
 
 1. The universal selector works like a wild card character, selecting all elements on a page
 * {
@@ -42,16 +43,50 @@ ul {
 }
 It’s worth noting that the .box element doesn’t have to be an immediate child: there could be another element wrapping .box, and the styles would still apply.
 
+6. Child Combinator - A selector that uses the child combinator is similar to a selector that uses a descendant combinator, except it only targets immediate child elements:
+#container > .box {
+   float: left;
+   padding-bottom: 15px;
+}
 
-For
-<p class="dotted">A dotted outline</p>
-we can have -> p.dotted {outline-style: dotted;}
-the above p and class without space means that the element must have both classes for the rule to apply
+7. General Sibling Combinator - A selector that uses a general sibling combinator matches elements based on sibling relationships. That is to say, the selected elements are beside each other in the HTML.
+h2 ~ p {
+   margin-bottom: 20px;
+}
 
-we can have -> p .dotted {outline-style: dotted;}
-Spacing in between class specifiers means a ascendant -> descendant relationship.
+8. Adjacent Sibling Combinator - A selector that uses the adjacent sibling combinator uses the plus symbol (+), and is almost the same as the general sibling selector. The difference is that the targeted element must be an immediate sibling, not just a general sibling. Let’s see what the CSS code for this looks like:
+p + p {
+   text-indent: 1.5em;
+   margin-bottom: 0;
+}
+This example will apply the specified styles only to paragraph elements that immediately follow other paragraph elements. This means the first paragraph element on a page would not receive these styles. Also, if another element appeared between two paragraphs, the second paragraph of the two wouldn’t have the styles applied.
 
-==========background-repeat=============
+So, if we apply this selector to the following HTML:
+<h2>Title</h2>
+<p>Paragraph example.</p>
+<p>Paragraph example.</p>
+<p>Paragraph example.</p>
+
+<div class="box">
+  <p>Paragraph example.</p>
+  <p>Paragraph example.</p>
+</div>
+…the styles will apply only to the second, third, and fifth paragraphs in this section of HTML.
+
+9. Attribute Selector - There should not be a space before the opening square bracket unless you intend to use it along with a descendant combinator
+input[type="text"] {
+   background-color: #444;
+   width: 200px;
+}
+
+The attribute selector can also be declared using just the attribute itself, with no value, like this:
+input[type] {
+   background-color: #444;
+   width: 200px;
+}
+
+
+===============================background-repeat================================
 body {
   background-image: url("gradient_bg.png");
   background-repeat: repeat-x;
