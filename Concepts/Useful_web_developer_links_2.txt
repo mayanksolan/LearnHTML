@@ -1,5 +1,24 @@
 <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
 
+https://medium.com/@austinbeaufort
+https://scrimba.com/g/glearnreact
+https://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
+https://medium.com/free-code-camp/learning-react-roadmap-from-scratch-to-advanced-bff7735531b6
+https://github.com/StephenGrider/redux-code/blob/master/diagrams/07/diagrams.xml
+https://scotch.io/tutorials/use-ejs-to-template-your-node-application
+https://github.com/airbnb/javascript/tree/master/react
+https://github.com/bradtraversy/contact-keeper
+https://github.com/bradtraversy/contact_keeper_api
+https://dev.to/stealthmusic/boost-your-productiveness-with-regex-a-little-2384
+https://www.robinwieruch.de/javascript-fundamentals-react-requirements/
+https://regexone.com/lesson/repeating_characters
+https://reactjs.org/docs/thinking-in-react.html
+https://study.cs50.net/recursion
+https://rapidapi.com/dev132/api/cricket-live-scores?utm_source=mashape&utm_medium=301
+https://github.com/public-apis/public-apis
+
+https://github.com/sudheerj/reactjs-interview-questions
+
 border color - #bdc3c7
 date color - #3498db
 h2 color - #2c3e50
@@ -9,12 +28,6 @@ hr style
 
 yelp bootstap 3 to bootstrap 4
 https://www.youtube.com/watch?v=NHHh0sj1uKY
-
-
-
-
-
-
 
 
 https://unsplash.com/photos/JRNigKHvB1Q
@@ -378,7 +391,16 @@ Comments Routes
 										campground.save();
 										res.redirect("/campgrounds/"+campground._id);
 		
-		
+
+Place.findById(req.params.id)
+    .populate("comments")
+    .exec((err, foundPlace) => this is a reference between two schemas to join
+	
+When we declare the name in a form in webpage, instead of putting as "text" and "author"
+We can put them as comment[text] and comment[author]
+
+
+
 =======Different Require and meaning========================
 
 1. var express = require('express');
@@ -412,7 +434,116 @@ Comments Routes
    
 	
 	
+
 	
+To setup user login - 
+
+in user.ejs
+
+const mongoose = require("mongoose");
+const passportLocalMongoose = require("passport-local-mongoose");
+var userSchema = new mongoose.Schema({
+  username: String,
+  password: String
+});
+userSchema.plugin(passportLocalMongoose);
+module.exports = mongoose.model("User", userSchema);
+
+
+in app.js
+
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+app.use(
+  require("express-session")({
+    secret: "Coorg is a beautiful place",
+    resave: false,
+    saveUninitialized: true
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+//show register form
+app.get("/register", (req, res) => {
+  res.render("register");
+});
+
+//handle signup
+app.post("/register", (req, res) => {
+  const newUser = new User({ username: req.body.username });
+  User.register(newUser, req.body.password, (err, newUser) => {
+    if (err) {
+      console.log(err);
+      return res.render("register");
+    } else {
+      passport.authenticate("local")(req, res, () => {
+        res.redirect("/places");
+      });
+    }
+  });
+});
+	
+	
+npm install --save method-override   -> 	to pass put/delete request
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
+
+
+<form action="/ideas/{{idea.id}}?_method=PUT" method="post">
+        <input type="hidden" name="_method" value="PUT">
+		
+		
+express router - 
+this is a feature where we define different routes
+1. Firstly we create a folder in root folder named routes
+2. then we create two .js files - ideas & users
+3. now bring all the app.something where /ideas exist tot he ideas.js file
+4. at the top of ideas.js add - 
+		const express = require("express");
+		const router = express.router();
+5. at the bottom add - 
+		module.exports = router;
+6. replace all the app. to router.
+7. replace all the /ideas to just /
+8 in app.js add - 
+		const ideas = require("./routes/ideas");
+9. In the end add - 
+		app.use("/ideas", ideas);
+	
+	
+npm install --save bcryptjs
+this is used to hash the password, so that it is safe
+	
+342
+
+
+Netlify
+1. git init
+2. netlify init
+3. Select - Yes, create manually deploy site
+4. choose unique sitename
+5. define variables in netlify
+5. npm run build
+6. netlify deploy --prod
+
+a get request is basically when you fetch data from the server you're just getting data 
+a post request is when you're submitting something to the server you're posting data you're you're filling out a registration form or you're adding a contact
+a put request is to update something that's already on the server
+a delete request is to delete something from the server.
+
+	
+higher order component
+https://medium.com/@soorajchandran/introduction-to-higher-order-components-hoc-in-react-383c9343a3aa
+
+
+https://www.youtube.com/channel/UC80PWRj_ZU8Zu0HSMNVwKWw/playlists
+
+Pure components
+https://www.youtube.com/watch?v=YCRuTT31qR0
 	
 	
 	
