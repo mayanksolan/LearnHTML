@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 
-//its a function that returns higer order compoent
+//its a function that returns higer order component
 import { connect } from 'react-redux'
 
 class App extends Component {
