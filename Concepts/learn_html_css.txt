@@ -373,7 +373,8 @@ table { border-collapse: collapse; }
 </table>
 
 
-=====================Display==================
+=====================================Display======================================
+
 span { display: block; } this will display span across the full width
 
 li { display: inline; } this will show all li elements in one one line (in a block)
