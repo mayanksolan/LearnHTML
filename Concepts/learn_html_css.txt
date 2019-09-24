@@ -386,7 +386,8 @@ Inline-Block
 Inline-block elements are similar to inline elements, except they can have padding and margins added on all four sides. You’ll have to declare display: inline-block in your CSS code.
 https://medium.com/@DaphneWatson/css-display-properties-block-inline-and-inline-block-how-to-tell-the-difference-7d3a1e6e3051
 
-===============Float===============
+
+================================Float========================================
 <style>img {  float: right;}</style>
 The following example specifies that an image should float to the right in a text:
 <p><img src="pineapple.jpg" alt="Pineapple" style="width:170px;height:170px;margin-left:15px;">
