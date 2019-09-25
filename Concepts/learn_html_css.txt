@@ -388,6 +388,7 @@ https://medium.com/@DaphneWatson/css-display-properties-block-inline-and-inline-
 
 
 ================================Float========================================
+
 <style>img {  float: right;}</style>
 The following example specifies that an image should float to the right in a text:
 <p><img src="pineapple.jpg" alt="Pineapple" style="width:170px;height:170px;margin-left:15px;">
