@@ -1,8 +1,14 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-roter-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 const App = () => {
-  return <div>App</div>;
+  return <div>
+    <BrowserRouter>
+    <div>
+      <Route exact path="/" component={} />
+    </div>
+    </BrowserRouter>
+  </div>
 };
 
 export default App;
