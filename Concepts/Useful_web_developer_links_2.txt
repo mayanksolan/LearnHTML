@@ -546,7 +546,9 @@ Pure components
 https://www.youtube.com/watch?v=YCRuTT31qR0
 	
 	
-	
+Streamy - Streamer
+Google client id - 728173651275-j1el5d7bod3fj0bkc2v1nj1g3itic7nv.apps.googleusercontent.com
+<script src="https://apis.google.com/js/api.js"></script>
 	
 	
 	
