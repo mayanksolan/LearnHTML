@@ -152,7 +152,8 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 		console.dir(addFour(1));
 		// returns  4 then 5
 	
-19.	Promises - Makes sure if the conditions are matched then do the next job
+19.	Promises - Makes sure if the conditions are matched then do the next job, (pending, fulfilled or rejected). Promise is creaed inside the function which needs to be called and inside that only it is defined weather to resolve or reject, so that when function is called we can use .then and .catch 
+	Example 1
 	let p = new Promise((resolve, reject) => {
 		let a=1+1;
 		if(a==2) {
@@ -169,6 +170,7 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 	});
 	
 	// Output - This is in the then Success
+	
 	
 	
 	Promises All - Returns the output message when all are completed
