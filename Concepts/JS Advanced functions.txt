@@ -46,7 +46,7 @@ const arr2 = ['m', 'n', 'x', 'y', 'r'];
 		console.log(color); 		 // singular instance of any given element in 
 	}); 							 // the collection; call it whatever you want
 	
-11. Higher Order Functions - When you have a function which recieves a function as an argument, it is called as higher order function
+11. Higher Order Functions - When you have a function which recieves a function as an argument, it is called as higher order function, e.g. map, filter, reduce
 Example 1- 
 function add(x, y) {
 	return x+y;
