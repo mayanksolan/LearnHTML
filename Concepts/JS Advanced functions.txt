@@ -46,11 +46,23 @@ const arr2 = ['m', 'n', 'x', 'y', 'r'];
 		console.log(color); 		 // singular instance of any given element in 
 	}); 							 // the collection; call it whatever you want
 	
-11. Higher Order Functions - 
+11. Higher Order Functions - When you have a function which recieves a function as an argument, it is called as higher order function
+Example 1- 
+function add(x, y) {
+	return x+y;
+}
+function higherOrderFunction(a, callback) {
+	return callback(5, a);
+}
+higherOrderFunction(10, add)
 
-	setInterval(function() { // code that you want to run every second; }, 1000);
+this outputs 15
+
+Example 2
+setInterval(function() { // code that you want to run every second; }, 1000);
+
 	
-12 Undefined vs Undeclared - undefined variables are those that are not assigned any value but declared in the program. if we try to read the value, undefined is displayed
+12. Undefined vs Undeclared - undefined variables are those that are not assigned any value but declared in the program. if we try to read the value, undefined is displayed
 								var a;
 								alert(a);	// this will output undefined
 							undeclared values are those that are not declared in the program. If we try to read their values it will give runtime error.
