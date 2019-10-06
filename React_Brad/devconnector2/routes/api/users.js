@@ -10,7 +10,7 @@ const router = express.Router();
 // @desc    Register user
 // @access  Public
 router.post("/", (req, res) => {
-  req.body(req.body);
+  console.log(req.body);
   res.send("User route");
 });
 
