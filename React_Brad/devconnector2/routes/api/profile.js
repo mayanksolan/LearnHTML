@@ -11,6 +11,7 @@ const User = require("../../models/User");
 // @access  Private
 router.get("/me", auth, async (req, res) => {
   try {
+    console.log(req.user.id);
     const profile = await Profile.findOne({ user: req.user.id }).populate(
       "user",
       ["name", "avatar"]
@@ -64,6 +65,46 @@ router.post(
 
     // build profile object
     const profileFields = {};
+    profileFields.user = req.user.id;
+    if (company) profileFields.company = company;
+    if (website) profileFields.website = website;
+    if (location) profileFields.location = location;
+    if (bio) profileFields.bio = bio;
+    if (status) profileFields.status = status;
+    if (githubusername) profileFields.githubusername = githubusername;
+    if (skills) {
+      profileFields.skills = skills.split(",").map(skill => skill.trim());
+    }
+
+    //build social objects
+    profileFields.social = {};
+    if (twitter) profileFields.social.twitter = twitter;
+    if (facebook) profileFields.social.facebook = facebook;
+    if (linkedin) profileFields.social.linkedin = linkedin;
+    if (instagram) profileFields.social.instagram = instagram;
+    if (youtube) profileFields.social.youtube = youtube;
+
+    try {
+      let profile = await Profile.findOne({ user: req.user.id });
+      if (profile) {
+        //update
+        profile = await Profile.findOneAndUpdate(
+          { user: req.user.id }, //filter
+          { $set: profileFields }, // update what
+          { new: true } // return profile after updation
+        );
+        return res.json(profile);
+      }
+      //create
+      profile = new profile(profileFields);
+      await profile.save();
+      res.json(profile);
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send("Server Error");
+    }
+
+    res.send("Hello");
   }
 );
 
