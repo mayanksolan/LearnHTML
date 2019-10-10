@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://mayank123:mayank123@dev-connector-lfmo0.mongodb.net/devcon?retryWrites=true&w=majority",
-  "jwtsecret": "mayanksecrettoken"
+  "jwtsecret": "mayanksecrettoken",
+  "githubclientid": "4c5374b7f247fcf35001",
+  "githubsecret": "5593bcc1f3cf95fb571e93c718bd730727988053"
 }
