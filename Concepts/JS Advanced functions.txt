@@ -1,3 +1,6 @@
+Parameters are variables listed as a part of the function definition.
+Arguments are values passed to the function when it is invoked.
+
 Array
 
 const arr1 = ['a', 'b', 'c', 'x'];
