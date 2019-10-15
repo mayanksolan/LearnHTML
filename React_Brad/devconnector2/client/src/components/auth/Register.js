@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 //import axios from "axios";
 import { Link } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
+import { register } from "../../actions/auth";
 
-const Register = ({ setAlert }) => {
+const Register = ({ setAlert, register }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,7 +24,7 @@ const Register = ({ setAlert }) => {
     if (password !== password2) {
       setAlert("Passwords do not match", "danger", 3000);
     } else {
-      console.log("SUCCESS");
+      register({ name, email, password });
       // const newUser = {
       //   name,
       //   email,
@@ -59,7 +60,7 @@ const Register = ({ setAlert }) => {
             name="name"
             value={name}
             onChange={e => onChange(e)}
-            required
+            //required
           />
         </div>
         <div className="form-group">
@@ -69,7 +70,7 @@ const Register = ({ setAlert }) => {
             name="email"
             value={email}
             onChange={e => onChange(e)}
-            required
+            //required
           />
           <small className="form-text">
             This site uses Gravatar so if you want a profile image, use a
@@ -84,7 +85,7 @@ const Register = ({ setAlert }) => {
             minLength="6"
             value={password}
             onChange={e => onChange(e)}
-            required
+            //required
           />
         </div>
         <div className="form-group">
@@ -95,7 +96,7 @@ const Register = ({ setAlert }) => {
             minLength="6"
             value={password2}
             onChange={e => onChange(e)}
-            required
+            //required
           />
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
@@ -108,10 +109,11 @@ const Register = ({ setAlert }) => {
 };
 
 Register.propTypes = {
-  setAlert: PropTypes.func.isRequired
+  setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  { setAlert }
+  { setAlert, register }
 )(Register);
