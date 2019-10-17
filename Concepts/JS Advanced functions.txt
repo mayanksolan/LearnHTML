@@ -264,11 +264,24 @@ Rapid Fire	-
 			inner func:  self.foo = bar
 			
 
-10. Interperator vs Compiler
-	Interprator - reads the code line by line and then tries to solve the problem after converting it to byte code
-	Compiler - scans the full code and directly converts it into machine level language
+10. Interpreter vs Compiler
+	Interpreter - reads the code line by line and then tries to solve the problem after converting it to byte code
+	Compiler - scans the full code and directly converts it into machine level language, since it takes time but since it sees through full code, it can replace some function calls with the output or full function so to run faster
 	
 	High level language		->			Byte Code		->		Machine Code
-	Javascript code						Interperator			Compiler
+	Javascript code						Interpreter			Compiler
 	
 	We can use any of the above two to run the program.
+	
+
+11. Babel is a Javascript compiler that takes your modern JS code and returns  browser compatible JS (older JS code).
+	Typescript is a superset of Javascript that compiles down to Javascript.
+	
+12. JIT compiler - Combination of Interpreter and compiler
+
+13. V8 Engine of chrome - Steps it takes to run the code - 
+	a. JS code is send to the PARSER (Parse the code) and turn it into AST (ABSTRACT SYNTAX TREE)
+	b. And code then goes to Interpreter and it spits out bytecode and the program starts running.
+	c. Now this bytecode also goes to PROFILER and this checks how we can optimize the code.
+	d. If PROFILER sees any code which can be optimized then it sends the code to COMPILER.
+	e. THe compiler spits out optimized bytecode which then will be used instead of Interpreter bytecode.
