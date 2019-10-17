@@ -262,3 +262,13 @@ Rapid Fire	-
 			outer func:  self.foo = bar
 			inner func:  this.foo = undefined
 			inner func:  self.foo = bar
+			
+
+10. Interperator vs Compiler
+	Interprator - reads the code line by line and then tries to solve the problem after converting it to byte code
+	Compiler - scans the full code and directly converts it into machine level language
+	
+	High level language		->			Byte Code		->		Machine Code
+	Javascript code						Interperator			Compiler
+	
+	We can use any of the above two to run the program.
