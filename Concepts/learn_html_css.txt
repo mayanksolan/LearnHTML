@@ -977,7 +977,7 @@ in a form like below
 
 if we place onClick inside button, that will make sure that onClick only triggers any action
 But, if we place onSubmit in the form tag then it will make sure that button click or press enter both are taken care off
-
+ 
 Semantic elements html 
 
 <article>
@@ -1192,3 +1192,16 @@ grid-auto-rows: minmax(300px, auto); 	this makes sure that if the hight of the b
 
 ===============center=================
 https://www.freecodecamp.org/news/how-to-center-things-with-style-in-css-dc87b7542689/
+
+
+
+Layout in HTML
+
+Following are different HTML5 elements which are used to define the different parts of a webpage.
+
+<header>: It is used to define a header for a document or a section.
+<nav>: It is used to define a container for navigation links
+<section>: It is used to define a section in a document
+<article>: It is used to define an independent, self-contained article
+<aside>: It is used to define content aside from the content (like a sidebar)
+<footer>: It is used to define a footer for a document or a section
