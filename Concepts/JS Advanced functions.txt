@@ -285,3 +285,7 @@ Rapid Fire	-
 	c. Now this bytecode also goes to PROFILER and this checks how we can optimize the code.
 	d. If PROFILER sees any code which can be optimised than it sends the code to COMPILER.
 	e. The compiler spits out optimised bytecode which then will be used instead of Interpreter bytecode.
+
+14. Memory heap - This simple states that whenever we define a variable and assign a value, it gets stored in the memory heap randomly anywhere.
+
+15. Call Stack - Whenever we create a function and call it, the function gets send to call stack and after the completion of execution call stack removes the function.
