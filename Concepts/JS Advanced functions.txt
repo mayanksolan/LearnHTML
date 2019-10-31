@@ -289,3 +289,8 @@ Rapid Fire	-
 14. Memory heap - This simple states that whenever we define a variable and assign a value, it gets stored in the memory heap randomly anywhere.
 
 15. Call Stack - Whenever we create a function and call it, the function gets send to call stack and after the completion of execution call stack removes the function.
+
+16. Memory leak types
+	a. Gloabl Variables 
+	b. Event Listeners
+	c. SetInterval 
