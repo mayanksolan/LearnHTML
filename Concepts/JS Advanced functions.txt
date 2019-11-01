@@ -298,3 +298,28 @@ Rapid Fire	-
 17. Execution context
 	a. When executing the code, first execution is global and then the functions inside the code
 	b. this === window, this will return true
+
+18. Lexical Environment
+	a. THis means that whenever we create any function, a new world is created or for say a new lexical environment is created.
+	b. Execution context tells us which lexical environment is currently running then it means in which function the code is currently running.
+	c. The very first lexical environment is global lexical environment.
+
+19. Hoisting - This term means that when we write any code, then while running the compiler first scans through the whole code and allocates memory to the functions and var declarations. E.g.
+
+console.log("1.....");
+console.log(teddy);
+console.log(sing());
+console.log(sing2());
+var teddy = 'bear';
+function sing() {	//function declaration
+	console.log('Ohh la la la');
+}
+var sing2 = () => {	//function expression
+	console.log('Ohh la la la');
+}
+
+	a. Above will print 1....., 
+	b. then it prints undefined because compiler scans the code and assigns a memory for variable teddy but with value undefined (P.S. if we use let or const, this functionality does not happen)
+	c. then it prints 'Ohh la la la' beacuse function sing gets memory allocated when compiler scans the code.
+	d. then undefined is print because again var is defined which means undefined.
+	
