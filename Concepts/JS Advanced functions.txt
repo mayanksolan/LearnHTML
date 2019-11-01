@@ -339,3 +339,16 @@ Hoisting take aways -
   			console.log('bye')
 		}
 			// this prints bye
+
+e.g.
+function bigBrother(){
+  function littleBrother() {
+    return 'it is me!';
+  }
+  return littleBrother();
+  function littleBrother() {
+    return 'no me!';
+  }
+}
+bigBrother();
+// here the output is 'no me!' because when compiler scans the code, inside the lexical context of bigBrother() function, littleBrother function is scanned twice, so in memory no me is hold, now when the program is run then return littleBrother() will display no me output 
