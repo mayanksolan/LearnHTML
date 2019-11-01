@@ -352,3 +352,14 @@ function bigBrother(){
 }
 bigBrother();
 // here the output is 'no me!' because when compiler scans the code, inside the lexical context of bigBrother() function, littleBrother function is scanned twice, so in memory no me is hold, now when the program is run then return littleBrother() will display no me output 
+
+
+20. Function Invocation, Arguments
+	a. function marry(p1,p2) {
+		console.log(arguments);
+		return `${p1} is married to ${p2}`
+	}
+	marry('Tim', 'Tina')
+		// This outputs {0:'Tim', 1:'Tina'}
+						Tim is married to Tina
+						

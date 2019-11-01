@@ -959,7 +959,7 @@ null !== undefined but null == undefined.
 
 
 ================================use strict - 
-With strict mode, you can not, for example, use undeclared variables. also you cannot delete declared variables. It makes the JS secure.
+With strict mode, you can not, for example, use undeclared variables. also you cannot delete declared variables. It makes the JS secure. Although earlier without use Strict this was a problem in JS.
 
 
 =========================setInterval vs setTimeout - 
