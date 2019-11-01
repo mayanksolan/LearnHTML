@@ -294,3 +294,7 @@ Rapid Fire	-
 	a. Gloabl Variables 
 	b. Event Listeners
 	c. SetInterval 
+
+17. Execution context
+	a. When executing the code, first execution is global and then the functions inside the code
+	b. this === window, this will return true
