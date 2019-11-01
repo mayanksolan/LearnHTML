@@ -763,7 +763,7 @@ Person.prototype.name = function() {
 
 ==========================var & let difference - 
 
-It can be said that a variable declared with var is defined throughout the program as compared to let. var can be defined anywhere in the progrom, but its scope is present in full program, on thee other hand let scope is only presenet after it is defined in a program only in the block - https://codeburst.io/difference-between-let-and-var-in-javascript-537410b2d707
+It can be said that a variable declared with var is defined throughout the program as compared to let. var can be defined anywhere in the progrom, but its scope is present in full program, on the other hand let scope is only presenet after it is defined in a program only in the block - https://codeburst.io/difference-between-let-and-var-in-javascript-537410b2d707
 
 anonymous function javascript - https://helephant.com/2008/08/23/javascript-anonymous-functions/
 var flyToTheMoon = function()

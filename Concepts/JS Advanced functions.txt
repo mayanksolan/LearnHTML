@@ -314,12 +314,28 @@ var teddy = 'bear';
 function sing() {	//function declaration
 	console.log('Ohh la la la');
 }
-var sing2 = () => {	//function expression
-	console.log('Ohh la la la');
+var sing2 = function() {	//function expression
+	console.log('Uhh la la la');
 }
 
 	a. Above will print 1....., 
-	b. then it prints undefined because compiler scans the code and assigns a memory for variable teddy but with value undefined (P.S. if we use let or const, this functionality does not happen)
+	b. then it prints undefined because compiler scans the code and assigns a memory for variable teddy but with value undefined (P.S. if we use let or const, this functionality does not happen). 
 	c. then it prints 'Ohh la la la' beacuse function sing gets memory allocated when compiler scans the code.
-	d. then undefined is print because again var is defined which means undefined.
-	
+	d. then error is print because again var is defined which means undefined. If we just use sing2, then undefined is printed.
+
+Hoisting take aways - 
+	a. Variables are partially hoisted
+		console.log(one);
+		var one = 1;
+		var one = 2;	// compiler igores this line since one is already assigned a memory
+			// this prints undefined
+
+	b. Functions are fully hoisted 
+		a();
+		function a() {
+  			console.log('hi')
+		}
+		function a() {
+  			console.log('bye')
+		}
+			// this prints bye
