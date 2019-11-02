@@ -1,6 +1,9 @@
 Parameters are variables listed as a part of the function definition.
 Arguments are values passed to the function when it is invoked.
 
+this is the object that the function is a property of
+In global execution context, this 
+
 Array
 
 const arr1 = ['a', 'b', 'c', 'x'];
@@ -363,3 +366,7 @@ bigBrother();
 		// This outputs {0:'Tim', 1:'Tina'}
 						Tim is married to Tina
 						
+21. IIFE - Immediately invoked function expression
+	(function() {})()	// this is function expression which is Immediately invoked
+	(function(){}())	// this is also correct
+	function(){}()	//this is wrong, a function declared cannot be invoked there itself
