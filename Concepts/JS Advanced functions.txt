@@ -2,7 +2,20 @@ Parameters are variables listed as a part of the function definition.
 Arguments are values passed to the function when it is invoked.
 
 this is the object that the function is a property of
-In global execution context, this 
+https://www.udemy.com/course/advanced-javascript-concepts/learn/lecture/13772916#questions
+const obj = {
+	name:"Billy",
+	sing() {
+		return "lalala " + this.name
+	},
+	singAgain() {
+		return this.sing() + "!";
+	}
+}
+obj.sing();
+obj.singAgain();
+
+this refers to what is present on left side of the dot where the function is called
 
 Array
 
