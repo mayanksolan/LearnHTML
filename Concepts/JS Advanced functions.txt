@@ -31,27 +31,54 @@ In a function, in strict mode, this is undefined.
 In an event, this refers to the element that received the event.
 Methods like call(), and apply() can refer this to any object.
 
-CAB -> Call, Apply, Bind
-	Call - Calling one function from another in same object, The call() method takes arguments separately.
-	Apply - The apply() method takes arguments as an array.
-	Bind - The bind() method takes arguments in an array, but any other remaining arguments can be passed while calling.
+================CAB -> Call, Apply, Bind==========
+https://www.codementor.io/niladrisekhardutta/how-to-call-apply-and-bind-in-javascript-8i1jca6jp
+	Call - The first parameter in call() method sets the "this" value, which is the object, on which the function is invoked upon. The rest of the parameters are the arguments to the actual function.
+	Apply - The apply() is similar to call() only difference being method takes arguments as an array.
+	Bind - we are returning a bound function with the context which will be invoked later.
+
+Uses - You can use call()/apply() to invoke the function immediately. bind() returns a bound function that, when executed later, will have the correct context ("this") for calling the original function. So bind() can be used when the function needs to be called later in certain events when it's useful.
 	
 Call - 
-var firstPerson = { firstName: 'John', lastName: 'Doe', fullName: 
-					function() { return this.firstName + ' ' + this.lastName; } } 
-var secondPerson = { firstName: 'Mary', lastName: 'Jane' }
-
-firstPerson.fullName.call(secondPerson);
-
+//Demo with javascript .call()
+var obj = {name:"Niladri"};
+var greeting = function(a,b,c){
+    return "welcome "+this.name+" to "+a+" "+b+" in "+c;
+};
+console.log(greeting.call(obj,"Newtown","KOLKATA","WB"));
+// returns output as welcome Niladri to Newtown KOLKATA in WB
 
 Apply - 
-var firstP = { name: 'John', addNumbers: function(a, b, c, d) 
-							 { return this.name + ' calculated ' + (a+b+c+d); } } 
-var secondP = { name: 'Jane' }
+//Demo with javascript .apply()
+var obj = {name:"Niladri"};
+var greeting = function(a,b,c){
+    return "welcome "+this.name+" to "+a+" "+b+" in "+c;
+};
+// array of arguments to the actual function
+var args = ["Newtown","KOLKATA","WB"];  
+console.log("Output using .apply() below ")
+console.log(greeting.apply(obj,args));
+/* The output will be 
+  Output using .apply() below
+ welcome Niladri to Newtown KOLKATA in WB */
 
-firstP.addNumbers.call(secondP, 1, 2, 3, 4); 
-or
-firstP.addNumbers.apply(secondP, [1, 2, 3, 4]);
+Bind - 
+var obj = {name:"Niladri"};
+
+var greeting = function(a,b,c){
+    return "welcome "+this.name+" to "+a+" "+b+" in "+c;
+};
+
+//creates a bound function that has same body and parameters 
+var bound = greeting.bind(obj); 
+
+console.dir(bound); ///returns a function
+console.log("Output using .bind() below ");
+console.log(bound("Newtown","KOLKATA","WB")); //call the bound function
+
+/* the output will be 
+Output using .bind() below
+welcome Niladri to Newtown KOLKATA in WB */
 
 =====================JS callback=====================
 
