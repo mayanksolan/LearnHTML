@@ -70,11 +70,11 @@ var greeting = function(a,b,c){
 };
 
 //creates a bound function that has same body and parameters 
-var bound = greeting.bind(obj); 
+var bound = greeting.bind(obj, 'Newtown'); 	// we can provide any number of arguments we want to pass static here. this is also called function currying
 
 console.dir(bound); ///returns a function
 console.log("Output using .bind() below ");
-console.log(bound("Newtown","KOLKATA","WB")); //call the bound function
+console.log(bound("KOLKATA","WB")); //call the bound function
 
 /* the output will be 
 Output using .bind() below
