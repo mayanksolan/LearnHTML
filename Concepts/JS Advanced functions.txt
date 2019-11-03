@@ -474,3 +474,16 @@ bigBrother();
 	(function() {})()	// this is function expression which is Immediately invoked
 	(function(){}())	// this is also correct
 	function(){}()	//this is wrong, a function declared cannot be invoked there itself
+
+22. Check if any variable is an array use - 
+		Array.isArray([])
+
+23. Primitive types (total 7 types)(number, bigint, string, null, undefined, boolean, symbol) are pass by value
+		var a=5; var b=a; b++; clg(a); clg(b)	//5		6
+	Non-Primitive types (object, array) are pass by reference
+
+24. Best way to compare two objects
+	var user1 = {name : "nerd", org: "dev"};
+	var user2 = {name : "nerd", org: "dev"};
+	var eq = JSON.stringify(user1) === JSON.stringify(user2);
+	alert(eq);
