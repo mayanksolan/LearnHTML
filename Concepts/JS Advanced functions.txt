@@ -179,6 +179,7 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 								alert("hello"+"--"+b);	//	Uncaught ReferenceError: b is not defined
 								
 13. Coercion in Javascript
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
 	let a=4; let b="4";
 	console.log(a+b);	// "44"
 	console.log(b+a);	// "44"
@@ -487,3 +488,11 @@ bigBrother();
 	var user2 = {name : "nerd", org: "dev"};
 	var eq = JSON.stringify(user1) === JSON.stringify(user2);
 	alert(eq);
+
+25. Static vs Dynamic language - 
+	In static type language we need to define the type of the variable. e.g in C++, int a = 100;
+	In dynamic we do not need to define the type. e.g. javascript, var a = 100; Typescript allows us to make javascript to behave like a static type language, it adds types to javascript, so it makes javascrit extra safe.
+
+26. Strong vs Weak Language - 
+	In Strongly typed language, we cannot add string to integer. e.g. in python a="Hello"; a+17	//will throw an error
+	In Weakly typed language, we can add string to integer. e.g. var a="Hello"; a+17	//will output Hello17
