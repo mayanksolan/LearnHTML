@@ -599,6 +599,11 @@ var obj = JSON.parse('{ name: "John", age: 30, city: "New York" }');
 
 (((((((((((((((((((JQuery)))))))))))))))))))
 
+Add this to the HTML header
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+add js file to the last in the body
+<script src="effects.js"></script> 
+
 Basic syntax is: $(selector).action()
 
 <script>
@@ -629,10 +634,10 @@ $("tr:odd")					      Selects all odd <tr> elements
 =================events=======================
 
 Mouse Events	Keyboard Events		Form Events		Document/Window Events
-click			  keypress			submit			load
-dblclick		keydown				change			resize
-mouseenter	keyup				  focus			  scroll
-mouseleave	blur			    unload
+click			    keypress			    submit			  load
+dblclick		  keydown				    change			  resize
+mouseenter	  keyup				      focus			    scroll
+mouseleave	  blur			        unload
 
 $("p").click(function(){
   $(this).hide();
