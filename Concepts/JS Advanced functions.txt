@@ -496,3 +496,34 @@ bigBrother();
 26. Strong vs Weak Language - 
 	In Strongly typed language, we cannot add string to integer. e.g. in python a="Hello"; a+17	//will throw an error
 	In Weakly typed language, we can add string to integer. e.g. var a="Hello"; a+17	//will output Hello17
+
+
+
+
+======================Javascript Prototypes===================
+
+https://www.w3schools.com/js/js_object_prototypes.asp
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+Person.prototype.nationality = "English";
+Person.prototype.name = function() {
+  return this.firstName + " " + this.lastName;
+};
+
+
+==========================var & let difference - 
+
+It can be said that a variable declared with var is defined throughout the program as compared to let. var can be defined anywhere in the progrom, but its scope is present in full program, on the other hand let scope is only presenet after it is defined in a program only in the block - https://codeburst.io/difference-between-let-and-var-in-javascript-537410b2d707
+
+anonymous function javascript - https://helephant.com/2008/08/23/javascript-anonymous-functions/
+var flyToTheMoon = function()
+{
+  alert("Zoom! Zoom! Zoom!");
+}
+flyToTheMoon();
+
+Yes do fly hello there

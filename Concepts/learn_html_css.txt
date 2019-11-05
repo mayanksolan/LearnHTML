@@ -757,33 +757,6 @@ The counter is protected by the scope of the anonymous function, and can only be
 A closure is a function having access to the parent scope, even after the parent function has closed.
 
 
-======================Javascript Prototypes===================
-
-https://www.w3schools.com/js/js_object_prototypes.asp
-function Person(first, last, age, eye) {
-  this.firstName = first;
-  this.lastName = last;
-  this.age = age;
-  this.eyeColor = eye;
-}
-Person.prototype.nationality = "English";
-Person.prototype.name = function() {
-  return this.firstName + " " + this.lastName;
-};
-
-
-==========================var & let difference - 
-
-It can be said that a variable declared with var is defined throughout the program as compared to let. var can be defined anywhere in the progrom, but its scope is present in full program, on the other hand let scope is only presenet after it is defined in a program only in the block - https://codeburst.io/difference-between-let-and-var-in-javascript-537410b2d707
-
-anonymous function javascript - https://helephant.com/2008/08/23/javascript-anonymous-functions/
-var flyToTheMoon = function()
-{
-  alert("Zoom! Zoom! Zoom!");
-}
-flyToTheMoon();
-
-Yes do fly hello there
 
 ===================css position - 
 https://dzone.com/articles/css-position-relative-vs-position-absolute
