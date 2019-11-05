@@ -430,6 +430,7 @@ perfect center
 
 ================FlexBox==============
 
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 <div class="container">
 	<h1 class="item">Hello</h1>
 	<h1 class="item">There,</h1>
@@ -470,17 +471,17 @@ function displayDate() {
 
 
 -----------------onmouseover---------------
-<div onmouseover="mOver(this)" onmouseout="mOut(this)" 
-style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
-Mouse Over Me</div>
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="display:inline;background-color:green">
+  Mouse Over Me</div>
 
 <script>
-function mOver(obj) {
-  obj.innerHTML = "Thank You"
-}
-function mOut(obj) {
-  obj.innerHTML = "Mouse Over Me"
-}
+  function mOver(obj) {
+    obj.innerHTML = "Thank You"
+  }
+
+  function mOut(obj) {
+    obj.innerHTML = "Mouse Over Me"
+  }
 </script>
 
 ----------onmousedown, onmouseup-------------
