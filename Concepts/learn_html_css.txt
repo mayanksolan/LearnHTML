@@ -538,9 +538,16 @@ window.addEventListener("resize", function(){
 });
 
 ++++++++Bubbling vs Capturing++++++++
+Event bubbling and capturing are two ways of event propagation in the HTML DOM API, when an event occurs in an element inside another element, and both elements have registered a handle for that event.
+With bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
+
+With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+
 addEventListener(event, function, useCapture);
 useCapture by default is false, which means when an inner element is click, its eventlister is activated, then the outer element
 when it is true, outer element then inner element
+
+By default javascript is set the event propagation to Bubble . If we want to use capture we have to set the 3rd argument in the addEventListener function to true.
 
 +++++++remove eventlistener+++++++++
 document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
