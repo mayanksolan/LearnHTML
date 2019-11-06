@@ -85,6 +85,23 @@ input[type] {
    width: 200px;
 }
 
+10. first-child & last-child
+    If we have an article and there are several p tags inside, to select first p child use - 
+    article p:first-child {
+      color:red;
+    }
+    To select last child
+    article p:last-child {
+      color:red;
+    }
+
+11. first-of-type and last-of-type - when we do not have any tag as first or last, then we can use this - 
+    article p:first-of-type {
+      color:red;
+    }
+    article p:last-of-type {
+      color:red;
+    }
 
 ===============================background-repeat================================
 body {
@@ -761,7 +778,11 @@ A closure is a function having access to the parent scope, even after the parent
 ===================css position - 
 https://dzone.com/articles/css-position-relative-vs-position-absolute
 
-static,relative,fixed,absolute,sticky
+static
+relative - change position based on its original position
+fixed
+absolute - The positioning is done relative to the first relatively (or absolutely) positioned parent element. 
+sticky
 difference absolute & relative - 
 	relative - means a block poistion will change relative to its own original position - top: 50px; it will shift its position 10 pixels down from where it would normally be, One is that it introduces the ability to use z-index on that element, which doesn't really work with statically positioned elements. Even if you don't set a z-index value, this element will now appear on top of any other statically positioned element. You can't fight it by setting a higher z-index value on a statically positioned element
 	#div-1 {
@@ -812,6 +833,16 @@ a:hover {  color: #FF00FF;}
 a:active {  color: #0000FF;}
 Note: a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective! a:active MUST come after a:hover in the CSS definition in order to be effective! Pseudo-class names are not case-sensitive.
 
+li:nth-child(1), li:nth-child(7) {
+  color:red;
+}
+
+li:nth-child(even) {
+  color:red;
+}
+
+
+=======CSS selectors=====
 
 ===================CSS Pseudo Elements
 
