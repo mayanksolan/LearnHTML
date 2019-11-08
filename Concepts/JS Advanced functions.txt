@@ -248,7 +248,7 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 18. Closures in JavaScript - 
 	Closure is simply that a combination of function and the lexical environment from which it was declared. Closures allow a function to access variables from an enclosing scope or environment even after it leaves the scope in which it was declared.
 	a. 	Variables - Any function where you are using a variable from outside the scope are actually closures
-		Example1 - Below once the function a() is run then grandpa variable is stored in closure box instead of garbage collecting it (since function reached the end (return statement)), similarly with father variable because when the execution reaches a();, the compiler knows that grandpa and father variables are being used by child, if there is any other variable like num which is not used by child those are not stored in closure box.
+	Example1 - Below once the function a() is run then grandpa variable is stored in closure box instead of garbage collecting it (since function reached the end (return statement)), similarly with father variable because when the execution reaches a();, the compiler knows that grandpa and father variables are being used by child, if there is any other variable like num which is not used by child those are not stored in closure box.
 		function a() {
   			let grandpa = 'grandpa'
 			let num = 123
@@ -262,11 +262,11 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 		}
 		a();
 
-		Example2 - 
+	Example2 - 
 		const boo = (string) => (name) => (name2) => console.log(`hi ${name} ${name2}`)
 		boo('hi')('john')('tanya');
 
-		Example3 - If we put the var callMe in the start or the end, it does not matter because setTimeout is web api which gets pushed to the web api part of event loop and when it comes back by that time callMe is initialized.
+	Example3 - If we put the var callMe in the start or the end, it does not matter because setTimeout is web api which gets pushed to the web api part of event loop and when it comes back by that time callMe is initialized.
 		function callMeMaybe() {
     		const callMe = 'Hi!';
     		setTimeout(function() {
@@ -276,7 +276,7 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 		}
 		callMeMaybe();
 
-		Example4 - Memory efficient
+	Example4 - Memory efficient
 		function heavyDuty(item) {
   			const bigArray = new Array(7000).fill('😄')
   			console.log('created!');
@@ -298,6 +298,23 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 		getHeavyDuty(699)
 		getHeavyDuty(699)
 		getHeavyDuty(699)
+
+	Example 5 - Here we cannot run launch function because launch function is encapsulated and we want some functions to be hidden from the world
+	const makeNuclearButton = () => {
+  		let timeWithoutDestruction = 0;
+  		const passTime = () => timeWithoutDestruction++;
+  		const totalPeaceTime = () => timeWithoutDestruction;
+  		const launch = () => {
+    		timeWithoutDestruction = -1;
+    		return '💥';
+  		}
+	  	setInterval(passTime, 1000);
+  		return {totalPeaceTime}
+	}
+	const ww3 = makeNuclearButton();
+	ww3.totalPeaceTime()
+	ww3.launch();	
+
 	b. Closures are just functions which preserve data
 		var addTo = function(passed){    
 			var add = function(inner){
