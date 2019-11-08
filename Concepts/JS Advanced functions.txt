@@ -246,10 +246,21 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 17.	IIFE (Immediately Invoked Function Expression)
 
 18. Closures in JavaScript - 
-	a. 	Variables - Any function where you are using a variable from outise the scope are actually closures
-		Example - Variables	-	var passed = 3;
-								var addTo = function() {	var inner = 2;	return passed+inner;	}
-								console.log(addTo());	//returns 5
+	Closure is simply that a combination of function and the lexical environment from which it was declared. Closures allow a function to access variables from an enclosing scope or environment even after it leaves the scope in which it was declared.
+	a. 	Variables - Any function where you are using a variable from outside the scope are actually closures
+		Example - Variables	- Below once the function a() is run then grandpa variable is stored in closure box, similarly with father variable because when the execution reaches a();, the compiler knows that grandpa and father variables are being used by child, if there is any other variable like num which is not used by child those are not stored in closure box.
+		function a() {
+  			let grandpa = 'grandpa'
+			let num = 123
+  			return function b() {
+    			let father = 'father'
+    			return function c() {
+      				let son = 'son'
+      				return `${grandpa} > ${father} > ${son}`
+    			}
+  			}
+		}
+		a();
 	b. Closures are just functions which preserve data
 		var addTo = function(passed){    
 			var add = function(inner){
