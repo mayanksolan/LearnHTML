@@ -556,14 +556,14 @@ bigBrother();
 
 25. Static vs Dynamic language - 
 	In static type language we need to define the type of the variable. e.g in C++, int a = 100;
-	In dynamic we do not need to define the type. e.g. javascript, var a = 100; Typescript allows us to make javascript to behave like a static type language, it adds types to javascript, so it makes javascrit extra safe.
+	In dynamic we do not need to define the type. e.g. javascript, var a = 100; Typescript allows us to make javascript to behave like a static type language, it adds types to javascript, so it makes javascript extra safe.
 
 26. Strong vs Weak Language - 
 	In Strongly typed language, we cannot add string to integer. e.g. in python a="Hello"; a+17	//will throw an error
 	In Weakly typed language, we can add string to integer. e.g. var a="Hello"; a+17	//will output Hello17
 
 
-27. Prototypal Inheritence
+27. Prototypal Inheritance
 	Every function or array is an object in javascript.
 	In the console if we create an array	-> let array = [];
 	and type array.__proto__, we get properties which we can use for array
@@ -589,6 +589,19 @@ let lizard = {
     return 1
   }
 }
+lizard.__proto__ = dragon;		//here we define that all the methods and variables can be used by lizard, BUT THIS IS BAD FOR PERFORMANCE
+dragon.isPrototypeOf(lizard);	//here we check if lizard inherit from dragon, yes 
+console.log(lizard.fire)
+console.log(lizard.sing())
+
+	Example 2 - 
+function multiplyBy5(num) {
+  return num*5
+}
+multiplyBy5.__proto__	// this is the pointer to __proto__ native function
+Function.prototype		// this is the same function above command is referencing to
+Object.prototype		// give the properties of base object
+						// __proto__ is just a pointer to up the chain prototype object, __proto__ property lives on prototype 
 
 
 
@@ -609,7 +622,7 @@ Person.prototype.name = function() {
 
 ==========================var & let difference - 
 
-It can be said that a variable declared with var is defined throughout the program as compared to let. var can be defined anywhere in the progrom, but its scope is present in full program, on the other hand let scope is only presenet after it is defined in a program only in the block - https://codeburst.io/difference-between-let-and-var-in-javascript-537410b2d707
+It can be said that a variable declared with var is defined throughout the program as compared to let. var can be defined anywhere in the program, but its scope is present in full program, on the other hand let scope is only present after it is defined in a program only in the block - https://codeburst.io/difference-between-let-and-var-in-javascript-537410b2d707
 
 anonymous function javascript - https://helephant.com/2008/08/23/javascript-anonymous-functions/
 var flyToTheMoon = function()
