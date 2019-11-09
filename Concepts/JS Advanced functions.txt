@@ -603,6 +603,29 @@ Function.prototype		// this is the same function above command is referencing to
 Object.prototype		// give the properties of base object
 						// __proto__ is just a pointer to up the chain prototype object, __proto__ property lives on prototype 
 
+	Example 3 - Instead of using __proto__ use Object.create for better performance
+// Create our own prototypes:
+var human = {mortal: true}
+var socrates = Object.create(human);
+human.isPrototypeOf(socrates); // true
+
+DEEP CONCEPTS 
+
+Deepest level 	- Object.prototype			//{constructor: ƒ, __defineGetter__: ƒ, ƒ, hasOwnProperty: ƒ, etc}
+1 level up		- function a() { return 1+1 };, 
+						a.__proto__.__proto__	// function pointing to deepest level
+2 level up		- a.__proto__				// function we created pointed to function
+
+So, to explain here, if we create a function and then we need to reference the methods defined inside base prototype object, then we need to use a.__proto__.call or bind etc 
+IF we create and empty object or an array or none of them has access to prototype, only functions have prototype
+String.prototype is possible and same case with Boolean, Number, etc 
+Check Evernote for more.... Object in JS
+
+Date.prototype.lastYear = function() {
+	const year = this.toString().slice(11, 15)
+  return year - 1;
+}
+new Date('2019-10-10').lastYear();
 
 
 ======================Javascript Prototypes===================
