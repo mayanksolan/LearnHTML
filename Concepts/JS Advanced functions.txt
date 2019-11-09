@@ -563,6 +563,12 @@ bigBrother();
 	In Weakly typed language, we can add string to integer. e.g. var a="Hello"; a+17	//will output Hello17
 
 
+27. Prototypal Inheritence
+	Every function or array is an object in javascript.
+	In the console if we create an array	-> let array = [];
+	and type array.__proto__, we get properties which we can use for array
+	if we type array.__proto__.__proto__, we get the base object
+	Same case with function 
 
 
 ======================Javascript Prototypes===================
