@@ -21,6 +21,39 @@ In javascript our lexical scope that is available data variables where the funct
 defined determines are available variables not where the function is called which is called Dynamic
 
 
+========Ways to call a function========
+
+1. Invoking a Function as a Function
+function myFunction(a, b) {
+  return a * b;
+}
+myFunction(10, 2); 
+
+2. Invoking a Function as an Object Method
+var myObject = {
+  firstName:"John",
+  lastName: "Doe",
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  }
+}
+myObject.fullName();  
+
+3. Invoking a Function with a Function Constructor
+// This is a function constructor:
+function myFunction(arg1, arg2) {
+  this.firstName = arg1;
+  this.lastName  = arg2;
+}
+
+// This creates a new object
+var x = new myFunction("John", "Doe");
+x.firstName;                             // Will return "John"
+
+4. Invoking function with apply() and call() methods-
+explained after next this section
+
+
 ========================JS this Keyword -
 
 https://codeburst.io/all-about-this-and-new-keywords-in-javascript-38039f71780c
