@@ -737,8 +737,7 @@ const sam = createElf('Sam', 'bow');
 const peter = createElf('Peter', 'bow');
 sam.attack()
 
-2. Create separate function and variables separate - Constructor functions 
-//Constructor Functions
+2. Create separate function and variables separate - Object.create
 const elfFunctions = {
 	attack() { 
   	return 'attack with ' + this.weapon
@@ -753,3 +752,16 @@ function createElf(name, weapon) {
 const sam = createElf('Sam', 'bow');
 console.log(sam.attack())
 const peter = createElf('Peter', 'bow');
+
+3. Constructor Functions - Here we have to use new property to define the function and those functions need to start with capital letters, 
+********THIS WAS THE NORM TO CREATE OOP BEFORE CLASSES WERE INTRODUCED (USING PROTOTYPE)**********
+function Elf(name, weapon) {
+  this.name = name;
+  this.weapon = weapon;
+}
+Elf.prototype.attack = function() { 
+  return 'attack with ' + this.weapon
+}
+const sam = new Elf('Sam', 'bow');
+const peter = new Elf('Peter', 'bow');
+sam.attack()
