@@ -722,6 +722,7 @@ But, if we place onSubmit in the form tag then it will make sure that button cli
 
 =====================OOP CONCEPTS===================
 
+1. Create a function and create objects on top of it
 function createElf(name, weapon) {
   //we can also have closures here to hide properties from being changed.
   return {
@@ -734,5 +735,21 @@ function createElf(name, weapon) {
 }
 const sam = createElf('Sam', 'bow');
 const peter = createElf('Peter', 'bow');
-
 sam.attack()
+
+2. Create separate function and variables separate - Constructor functions 
+//Constructor Functions
+const elfFunctions = {
+	attack() { 
+  	return 'attack with ' + this.weapon
+	}
+}
+function createElf(name, weapon) {
+	let newElf = Object.create(elfFunctions);	//Prototype inheritance
+  	newElf.name = name;
+  	newElf.weapon = weapon;
+	return newElf;
+}
+const sam = createElf('Sam', 'bow');
+console.log(sam.attack())
+const peter = createElf('Peter', 'bow');
