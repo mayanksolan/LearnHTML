@@ -719,3 +719,20 @@ in a form like below
 if we place onClick inside button, that will make sure that onClick only triggers any action
 But, if we place onSubmit in the form tag then it will make sure that button click or press enter both are taken care off
  
+
+=====================OOP CONCEPTS===================
+
+function createElf(name, weapon) {
+  //we can also have closures here to hide properties from being changed.
+  return {
+    name: name,
+    weapon: weapon,
+    attack() {
+      return 'attack with ' + weapon
+    }
+  }
+}
+const sam = createElf('Sam', 'bow');
+const peter = createElf('Peter', 'bow');
+
+sam.attack()
