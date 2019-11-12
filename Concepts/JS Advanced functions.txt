@@ -860,8 +860,11 @@ class Ogre extends Character {
   }
 }
 
-const houseElf = new Elf('Dolby', 'cloth', 'house')
-//houseElf.makeFort() // error
+const dolby = new Elf('Dolby', 'cloth', 'house')
+dolby.attack();
+console.log(dolby instanceOf Ogre)	//false
+console.log(dolby instanceOf Elf)	//true
+console.log(dolby instanceOf Character)	//true
 const shrek = new Ogre('Shrek', 'club', 'green')
 shrek.attack()
 
