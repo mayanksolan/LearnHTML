@@ -957,3 +957,15 @@ curriedMult(4)(5);
 //above is useful by
 const curriedMultBy5 = curriedMult(5);
 curriedMultBy5(6);
+
+
+7. Partial Application
+//Curried Multiply approach to multiply 3 nums
+const curriedMultiply = (a) => (b) => (c) => a*b*c;
+curriedMultiply(5)(3)(10);
+
+// now if we need 5 and other parameters after
+const multiply = (a,b,c) => a*b*c;
+const partialMultiplyBy5 = multiply.bind(null, 5);
+partialMultiplyBy5(4,10);
+
