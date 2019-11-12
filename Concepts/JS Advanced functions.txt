@@ -868,3 +868,11 @@ console.log(dolby instanceOf Character)	//true
 const shrek = new Ogre('Shrek', 'club', 'green')
 shrek.attack()
 
+
+
+=============Pure Functions============
+A function cannot modify anything outside the function.
+function a() {
+	console.log('Hi')
+}
+a()	// this is NOT a pure function because it is outputting something to the outside world
