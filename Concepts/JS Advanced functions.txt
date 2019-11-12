@@ -896,3 +896,16 @@ function imde(num) {
 imde(5);
 A function which calls itself and get sus the same result is also Indempotence function. e.g.
 MAth.abs(math.abs(-50))
+
+
+2. Imperative vs Declarative
+Imperative code is the code which tells the machine what to do and how to do. e.g program to bring water
+Declarative code is the code which tells the machine what to do and what should happen. e.g. ask human to bring water 
+
+for(let i=0; i<1000; i++) {		//Imperative
+	console.log(i);
+}
+[].forEach(item => console.log(item))	//declarative
+
+jQuery is Imperative, since we tell exactly what and how to do
+React is Declarative
