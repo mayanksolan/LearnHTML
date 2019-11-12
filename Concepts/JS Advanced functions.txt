@@ -907,5 +907,22 @@ for(let i=0; i<1000; i++) {		//Imperative
 }
 [].forEach(item => console.log(item))	//declarative
 
+
+3. Immutability
+const obj = {name: 'Andrei'}
+function clone(obj) {
+  return {...obj}; // this is pure
+}
+
+function updateName(obj) {
+  const obj2 = clone
+  (obj);
+  obj2.name = 'Nana'
+  return obj2
+}
+
+const updatedObj = updateName(obj)
+console.log(obj, updatedObj)
+
 jQuery is Imperative, since we tell exactly what and how to do
 React is Declarative
