@@ -189,7 +189,7 @@ const arr2 = ['m', 'n', 'x', 'y', 'r'];
 		console.log(color); 		 // singular instance of any given element in 
 	}); 							 // the collection; call it whatever you want
 	
-11. Higher Order Functions - When you have a function which recieves a function as an argument, it is called as higher order function, e.g. map, filter, reduce
+11. Higher Order Functions - When you have a function which receives a function as an argument, it is called as higher order function, e.g. map, filter, reduce
 Example 1- 
 function add(x, y) {
 	return x+y;
@@ -907,6 +907,9 @@ for(let i=0; i<1000; i++) {		//Imperative
 }
 [].forEach(item => console.log(item))	//declarative
 
+jQuery is Imperative, since we tell exactly what and how to do
+React is Declarative
+
 
 3. Immutability
 const obj = {name: 'Andrei'}
@@ -924,5 +927,24 @@ function updateName(obj) {
 const updatedObj = updateName(obj)
 console.log(obj, updatedObj)
 
-jQuery is Imperative, since we tell exactly what and how to do
-React is Declarative
+
+4. higherOrderFunction (HOF) -
+const hof = () => () => 5;
+hof()();
+
+
+5.  Closure -
+const closure = function() {
+  let count = 0;
+  return function increment() {
+    return count++;
+  }
+}
+const incrementFn = closure();	//incrementFn remembers the variable value outside the inner function
+incrementFn()
+incrementFn()
+incrementFn()
+
+
+6. Currying - 
+
