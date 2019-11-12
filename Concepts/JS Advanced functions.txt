@@ -947,4 +947,13 @@ incrementFn()
 
 
 6. Currying - 
+const multiply = (a,b) => a*b;
+multiply(3,4)
 
+//we can change this to currying
+const curriedMult = (a) => (b) => a*b;
+curriedMult(4)(5);
+
+//above is useful by
+const curriedMultBy5 = curriedMult(5);
+curriedMultBy5(6);
