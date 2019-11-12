@@ -871,8 +871,28 @@ shrek.attack()
 
 
 =============Pure Functions============
-A function cannot modify anything outside the function.
-function a() {
+Pure functions are functions that accept an input and returns a value without modifying any data outside its scope(Side Effects). Its output or return value must depend on the input/arguments and pure functions must return a value.
+function a(num1, num2) {
+	return num1+num2;
+}
+function pure(num) {
+	return num*2;
+}
+pure(a(3,4));
+
+function impure() {
 	console.log('Hi')
 }
-a()	// this is NOT a pure function because it is outputting something to the outside world
+impure()	// this is NOT a pure function because it is outputting something to the outside world and using the window object using console.log
+
+
+
+=========Functions Properties==========
+
+1. Indempotence - Function which always returns what we expect it to do. e.g. api call
+function imde(num) {
+	return num
+}
+imde(5);
+A function which calls itself and get sus the same result is also Indempotence function. e.g.
+MAth.abs(math.abs(-50))
