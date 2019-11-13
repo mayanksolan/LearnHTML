@@ -979,3 +979,6 @@ multiplyBy3AndAbs(-50)
 
 Pipe - Left to right
 const compose = (f,g) =>(data) => g(f(data))
+
+
+9. Arity - Number of arguments a function takes
