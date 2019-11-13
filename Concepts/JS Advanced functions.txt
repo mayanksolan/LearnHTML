@@ -969,3 +969,13 @@ const multiply = (a,b,c) => a*b*c;
 const partialMultiplyBy5 = multiply.bind(null, 5);
 partialMultiplyBy5(4,10);
 
+
+8. Compose - Right to left
+const compose = (f,g) =>(data) => f(g(data))
+const mutiplyBy3 = (num) => num*3
+const makePositive = (num) -> Math.abs(num)
+const multiplyBy3AndAbs = compose(mutiplyBy3, makePositive)
+multiplyBy3AndAbs(-50)
+
+Pipe - Left to right
+const compose = (f,g) =>(data) => g(f(data))
