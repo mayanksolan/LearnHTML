@@ -362,6 +362,8 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 		// returns  4 then 5
 	
 19.	Promises - Makes sure if the conditions are matched then do the next job, (pending, fulfilled or rejected). Promise is created inside the function which needs to be called and inside that only it is defined weather to resolve or reject, so that when function is called we can use .then and .catch 
+A promise is an object that may produce a single value sometime in the future either resolved or rejected with a reason why it was rejected and a promise maybe in three possible states(pending, fulfilled or rejected)
+https://medium.com/@kevinyckim33/what-are-promises-in-javascript-f1a5fc5b34bf
 	Example 1
 	let p = new Promise((resolve, reject) => {
 		let a=1+1;
@@ -435,8 +437,36 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 	let winIcecream = (message) => new Promise((resolve,reject) => resolve(`${message}, So I got to eat some ice cream`))
 	
 	cleanRoom().then(result => removeGarbage(result)).then(result => winIcecream(result)).then(result => console.log(result + " so now I can sleep"))
+
+	Output //I cleaned the room, I threw away the trash, So I got to eat some ice cream so now I can sleep
 	
-	
+	fetch('https://jsonplaceholder.typicode.com/todos')
+  		.then(response => response.json())
+  		.then(json => console.log(json))
+
+================Async Await (ES8)===========
+async function fetchUsers() { 
+	const resp = await fetch('https://jsonplaceholder.typicode.com/users')
+	const data = await resp.json();
+	console.log(data);
+}
+
+
+===========ES9 (2018)=============
+1. Spread Operator
+	const animals = {tiger:23, lion:5, monkey:2, bird:40}
+	const {tiger, ...rest} = animals;
+	// output 	tiger	5
+				rest	{lion: 5, monkey: 2, bird:40}
+
+2. function objectSpread(p1,p2,p3) {
+	console.log(p1); console.log(p2); console.log(p3);
+   }
+   const {tiger, lion, ...rest} = animals;
+   objectSpread(tiger, lion, rest);		//23, 5, {monkey: 2, bird:40}}
+
+
+
 Rapid Fire	-
 
 1. 	Question: What is typeof [], typeof arguments
