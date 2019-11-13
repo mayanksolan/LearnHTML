@@ -361,7 +361,7 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 		console.dir(addFour(1));
 		// returns  4 then 5
 	
-19.	Promises - Makes sure if the conditions are matched then do the next job, (pending, fulfilled or rejected). Promise is creaed inside the function which needs to be called and inside that only it is defined weather to resolve or reject, so that when function is called we can use .then and .catch 
+19.	Promises - Makes sure if the conditions are matched then do the next job, (pending, fulfilled or rejected). Promise is created inside the function which needs to be called and inside that only it is defined weather to resolve or reject, so that when function is called we can use .then and .catch 
 	Example 1
 	let p = new Promise((resolve, reject) => {
 		let a=1+1;
@@ -383,7 +383,7 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 	
 	
 	Promises All - Returns the output message when all are completed
-	Below are three differencet promises
+	Below are three differences promises
 	const recordVideoOne = new Promise((resolve, reject) => {
 	  resolve('Video 1 Recorded')
 	})
@@ -413,8 +413,28 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 	  console.log(message)
 	})
 	
+	Example - 
+	let promiseToStudy = new Promise((resolve,reject) => {
+		let studied = true;
+		if(studied) {
+			resolve('Play')
+		} else {
+			reject('Cannot play')
+		}
+	})
+	promiseToStudy.then((result) => {
+		console.log(`You can go and ${result}`)
+	}).catch((result) => {
+		console.log(`You ${result}`)
+	})
 	
+
+	Example nested promises- 
+	let cleanRoom = () => new Promise((resolve,reject) => resolve("I cleaned the room"));
+	let removeGarbage = (message) => new Promise((resolve,reject) => resolve(`${message}, I threw away the trash`))
+	let winIcecream = (message) => new Promise((resolve,reject) => resolve(`${message}, So I got to eat some ice cream`))
 	
+	cleanRoom().then(result => removeGarbage(result)).then(result => winIcecream(result)).then(result => console.log(result + " so now I can sleep"))
 	
 	
 Rapid Fire	-
