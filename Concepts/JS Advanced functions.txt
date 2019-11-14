@@ -1074,3 +1074,38 @@ this.onMessage = e => {
 		this.postMessage({result:e.data.addThis.num1+e.data.addThis.num2});
 	};
 }
+
+
+============Modules=============
+In an html file we can have multiple js files, where we can have variables where two variables with same name are present in js files, so that when we run the scripts one of the variables gets overwritten.
+So the concept of modules came in
+Earlier
+	//Global scope
+		//Function scope
+			//Block scope
+
+Now
+	//Global scope
+		//Module scope
+			//Function scope
+				//Block scope
+
+Function as modules
+IIFE
+var fightModule = (function() {
+
+})()
+
+
+CommonJS and AMD==============
+var module1 = require('module1');
+function fight() {
+
+}
+module.exports = {
+	fight:fight
+}
+
+ES6 Modules==============
+import module1 from 'module1'
+import module2 from 'module2'
