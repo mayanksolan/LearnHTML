@@ -1119,3 +1119,22 @@ myError.name, myError.message, myError.stack
 
 new SyntaxError
 new ReferenceError
+
+
+try-catch=================
+function fail() {
+  try {
+    console.log('this works');	//returns
+    throw new Error('oopsie');	//returns
+  } catch(e) {
+    console.log('error', e);
+  } finally {
+    console.log('still good');	//returns
+    return 'returning from fail';	//returns
+  }
+  console.log('never going to get here'); // not reachable
+}
+fail();
+
+
+Async Error handling=========
