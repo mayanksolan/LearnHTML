@@ -1032,3 +1032,10 @@ const compose = (f,g) =>(data) => g(f(data))
 
 
 9. Arity - Number of arguments a function takes
+
+
+============Web Worker============
+Web worker acts like a separate thread which can run parallel to the main JS thread, for example running api calls for Node.js
+Example
+var worker = new Worker('worker.js)
+worker.postMessage('Hello')
