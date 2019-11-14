@@ -1039,3 +1039,38 @@ Web worker acts like a separate thread which can run parallel to the main JS thr
 Example
 var worker = new Worker('worker.js)
 worker.postMessage('Hello')
+
+
+Web Worker
+Web worker is separate Javascript thread which works in background and returns the output for anything send to it
+Web Workers is a code of JavaScript which runs in the background threads without disturbing the performance of the page. It is used for computing-heavy tasks like an access database or function.
+It has postMessage(object) and onMessage(e) functions where 
+1. postMessage is used to send the object to the web worker or send teh result object back to the window.
+2. onMessage recieves the input from the postMessage as e which can be used to access the object like e.data.<object>
+
+Properties of Web Worker - 
+Web Worker has no access to - window object, document object, parent object
+Web Worker has access to - 	navigator object(userAgent, geoLocation, cookeyEnabled)
+							location object(host, hostname, href, pathname... etc)
+							XMLHTTPRequest(Ajax, setTimeout)
+Web worker can spawn more web workers
+worker can be terminated using myWorker.terminate();
+
+e.g. webWorkerTest.html
+<script>
+if(window.worker)	{
+	var myWorker = new Worker("worker.js");			//define the worker file
+	var message = {addThis: {num1:1,num2:3}};		//define the message
+	myWorker.postMessage(message);					//call the worker file function
+	myWorker.onMessage = e => {
+		console.log(e.data.result);
+	};
+}
+</script>
+
+worker.js
+this.onMessage = e => {
+	if(e.data.addThis !== undefined)	{
+		this.postMessage({result:e.data.addThis.num1+e.data.addThis.num2});
+	};
+}
