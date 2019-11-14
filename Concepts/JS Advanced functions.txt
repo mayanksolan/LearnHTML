@@ -1109,3 +1109,13 @@ module.exports = {
 ES6 Modules==============
 import module1 from 'module1'
 import module2 from 'module2'
+
+
+Error===================
+throw new Error		//this throws error and does not execute anything after this line
+
+const myError = new Error("oopsie");
+myError.name, myError.message, myError.stack
+
+new SyntaxError
+new ReferenceError
