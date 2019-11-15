@@ -281,7 +281,7 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 	console.log(+"3"+2+6);	// prints 11 because it starts checking from left, + opeartor comes, so it thinks this is addition operation so converts 3 to a number and move on
 	console.log("3"+2+6);	// prints 326	because it encounters " so it thinks this is string operation so concatenates
 	let a=3, b=8, c=6; 	console.log(a+b+"Mayank"+b+c)	// prints 11Mayank86, here initially it starts with a which is number so it adds a and b, then it tries adding Mayank which is 
-														// string so JS says okay string is here so lets concatenate and further ahead aslo it considers it as string hence 11Mayank86
+														// string so JS says okay string is here so lets concatenate and further ahead also it considers it as string hence 11Mayank86
 	
 17.	IIFE (Immediately Invoked Function Expression)
 
@@ -326,7 +326,7 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 		heavyDuty(699)
 		heavyDuty(699)
 
-		// but in above approach array gets created everytime, we need to overcome this by below solution
+		// but in above approach array gets created every time, we need to overcome this by below solution
 		function heavyDuty2() {
   			const bigArray = new Array(7000).fill('😄')
   			console.log('created Again!')
