@@ -214,6 +214,7 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 								
 13. Coercion in Javascript
 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
+	https://www.valentinog.com/blog/coercion/
 	let a=4; let b="4";
 	console.log(a+b);	// "44"
 	console.log(b+a);	// "44"
@@ -223,6 +224,10 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 	->	If one operands is string another is number, convert string to number
 	->	If one is boolean and another is non-boolean, convert boolean to number and then perform comparison
 	->	While comparing a string or number to an object, try to convert the object to a primitive type and then try to compare
+	-> The addition operator + in JavaScript automatically converts any of the two operands to a string if at least one of them is… a string	//"5" + 5 gives 55
+	-> The subtraction or division operator does not convert to string and works normally while converting them to number	//"5"-5 gives 0 and //"5" - "hello" gives NaN
+	-> Rule is implemented from left to right	//5+5+"hello"	gives 10Hello
+
 	
 	a. console.log("5" - 5);	//	returns 0
 	b. console.log("5" + 5);	//	returns 55
@@ -231,6 +236,7 @@ setInterval(function() { // code that you want to run every second; }, 1000);
 	e. const giveType = typeof {}	// console log returns object
 	f. const adder = true + 5;		// console log returns 6
 	g. const adder = false + 5;		// console log returns 5
+	h. "hello"+{name:"Mayank"}		// "hello[object Object]"
 	
 	Values that interpret as false
 	a. false
