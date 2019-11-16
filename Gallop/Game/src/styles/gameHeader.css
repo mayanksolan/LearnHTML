@@ -1,0 +1,37 @@
+::root{
+    font-size: 16px;
+}
+
+/*By Satish Sharma*/
+body{
+    background: #fff;
+    font-family: 'Roboto';
+}
+/* h1,h2,h3,h4,h5,h6{
+    font-family: 'Roboto';
+} */
+
+.no-padding{
+    padding: 0px;
+}
+.custom-dropdwn{
+    position: relative;
+    right: 50px;
+}
+/* .align-item.navbar-nav .nav-link.active{
+    font-weight: 700;
+    color: #fff;
+} */
+.align-item.navbar-nav .nav-link{
+    padding-right: 50px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #fff;
+}
+.align-item.navbar-nav .nav-link:hover{
+    color: #fff;
+}
+
+.header-color{
+    background-color: #2d72d9;
+}

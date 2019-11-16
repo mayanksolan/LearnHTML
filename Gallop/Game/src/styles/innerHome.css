@@ -1,0 +1,117 @@
+.selectItem{
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: inset 0 -1px 0 0 #e0e5ee;
+    background-color: #ffffff;
+    height: 130px;
+}
+.droupDwnBtn{
+    margin-top: 20px;
+}
+.commonMargin{
+	margin-bottom: 30px;
+}
+.customMargin{
+	margin-top: 30px;
+}
+
+.itemSecond{
+    display: inline-block
+}
+.selectPlayer{
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 8px 0 rgba(0, 69, 179, 0.24), 0 0 12px 5px rgba(0, 127, 255, 0.24);
+		background-color: #ffffff;
+		padding-bottom: 40px;
+		padding-top: 30px;
+
+}
+.selectBtn>.dropdown>.btn-success{
+	background-color: #4472c4;
+	border-color: #31538f;
+}
+.selectBtn>.dropdown>.btn-success:hover{
+	background-color: #4472c4;
+	border-color: #31538f;
+	box-shadow: 0 0 0 0.2rem rgba(49,83,143);
+}
+.selectBtn>.dropdown>.btn-success:focus{
+	box-shadow: 0 0 0 0.2rem rgba(49,83,143);
+}
+.selectPlayer span{
+	font-size: 24px;
+	font-weight: 500;
+	color: #16325c;
+}
+.one{
+	font-size: 16px;
+	font-weight: 500;
+	color: #fff;
+	text-align: center;
+    border: #ac5b23;
+    border-radius: 4px;
+    background-color: #ed7d31;
+
+}
+.ratingBox{
+	padding-bottom: 25px;
+    background-color: chocolate;
+    max-width: 400px;
+    min-height: 250px;
+    position: relative;
+    /* right: 40px; */
+    left: 50px;
+    top: 0;
+    bottom: 0;
+}
+h2.cardHeading{
+	text-align: center;
+	font-size: 25px;
+	color: #000;
+	padding: 20px 0px 20px 0px;
+}
+.customForm{
+	padding: 15px;
+}
+
+.tableAlign ul{
+	list-style: none;
+	margin: 0 auto;
+}
+.tableAlign ul li{
+	display: inline-block;
+	width: 50%;
+	color: #000;
+	font-size: 16px;
+}
+
+.searchBtn>input{
+	border-radius: 4px;
+	border: solid 1px #a8b7c7;
+	background-color: #ffffff;
+}
+
+.paymentBtn{
+	align-items: center;
+    display: flex;
+	justify-content: center;
+	top: 25px;
+
+}
+
+/*Score Card CSS Start*/
+.cardBody{
+
+	width: 100%;
+	border-radius: 8px;
+	box-shadow: 0 0 8px 0 rgba(0, 69, 179, 0.24), 0 0 12px 5px rgba(0, 127, 255, 0.24);
+	background-color: #ffffff;
+	padding-bottom: 40px;
+	padding-top: 30px;
+}
+.btn-width{
+	width: 225px;
+}
+/*Score Card CSS End*/
