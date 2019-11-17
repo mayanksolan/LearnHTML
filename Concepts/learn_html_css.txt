@@ -1011,6 +1011,14 @@ html layout
   <p>Footer</p>
 </footer>
 
+Footer at the end of page
+#footer {
+  background-color: lightblue;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
 FLOAT - here nav takes 30% width and on the left and article takes rest 70% width and stacks on the right side of nav
 nav {
   float: left;

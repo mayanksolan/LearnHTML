@@ -22,6 +22,14 @@
   width: 400px;
 }
 
+#loginForm label {
+  padding: 10px;
+}
+
+#loginForm input[type="submit"] {
+  margin: 10px;
+}
+
 #footer {
   background-color: lightblue;
   padding: 20px;
