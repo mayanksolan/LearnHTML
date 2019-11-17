@@ -203,7 +203,7 @@ p.ex1 {
   margin-left: inherit;
 }
 
-horizonatally center 
+horizontally center 
 div {
   width: 300px;
   margin: auto;
