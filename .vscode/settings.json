@@ -1,4 +1,6 @@
 {
     "git.ignoreLimitWarning": true,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }

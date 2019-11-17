@@ -38,8 +38,9 @@ class App extends React.Component {
   componentDidMount() {
     var object = {};
     const { cookies } = this.props;
-    console.log("App Mount");
+    console.log("App Mount", this.props);
     var session = cookies.get("sessionId");
+    console.log(session);
 
     if (session !== undefined) {
       const options = {
