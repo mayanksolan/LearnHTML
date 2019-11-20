@@ -177,7 +177,7 @@ this removes the auto border created with html
 border-collapse: collapse;
 
 
-==========Margins====================
+==========Margins=======++++=============
 p {
   margin: 25px 50px 75px 100px;
 }
