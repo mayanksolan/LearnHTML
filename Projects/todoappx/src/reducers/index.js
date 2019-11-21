@@ -2,6 +2,19 @@ import { combineReducers } from "redux";
 
 const bucketList = [
   {
+    num: -1,
+    name: "Create New Bucket or Select Existing Bucket",
+    todoList: [],
+    checkedList: []
+  },
+  {
+    num: 0,
+    name: "Create New Bucket",
+    todoList: [],
+    checkedList: []
+  },
+  {
+    num: 1,
     name: "One",
     todoList: [
       { num: 1, item: "Milk" },
@@ -19,6 +32,15 @@ const bucketReducer = () => {
   return bucketList;
 };
 
+const selectedBucketReducer = (selectedBucket = null, action) => {
+  if (action.type === "BUCKET_SELECTED") {
+    return action.payload;
+  } else {
+    return selectedBucket;
+  }
+};
+
 export default combineReducers({
-  bucket: bucketReducer
+  bucket: bucketReducer,
+  selectedBucket: selectedBucketReducer
 });

@@ -18,7 +18,7 @@ class CheckedList extends Component {
 
 const mapStateToProps = state => {
   return {
-    bucket: state.bucket
+    bucket: state.bucket.slice(2)
   };
 };
 

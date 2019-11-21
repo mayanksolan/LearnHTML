@@ -2,32 +2,26 @@
   text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+.new_bucket_button {
+  font-size: 1.5em;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 20px;
 }
 
 .bucket_style {
-  width: 30%;
   background-color: skyblue;
   border: 3px solid skyblue;
   margin-bottom: 2px;
+  display: inline-block;
+  width: 300px;
 }
 
 .todo_style {
-  width: 30%;
   border: 3px solid lightcoral;
   margin-bottom: 1px;
+  display: inline-block;
+  width: 300px;
 }
 
 .todo_item_style {
@@ -40,7 +34,7 @@
 }
 
 .newtodo_style {
-  border-top: 2px solid lightcoral;
+  border: 2px solid lightcoral;
   border-style: none;
   margin-top: 1px;
   padding: 5px;
@@ -50,10 +44,11 @@
 }
 
 .checked_style {
-  width: 30%;
   border-top: 3px solid lightseagreen;
   border-right: 3px solid lightseagreen;
   border-left: 3px solid lightseagreen;
+  display: inline-block;
+  width: 300px;
 }
 
 .checked_item_style {

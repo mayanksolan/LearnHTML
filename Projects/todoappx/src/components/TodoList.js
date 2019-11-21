@@ -14,8 +14,8 @@ class TodoList extends Component {
   onChangeHandler = () => {};
   render() {
     return (
-      <div className="todo_style">
-        <div>{this.todoListRender()}</div>
+      <div>
+        <div className="todo_style">{this.todoListRender()}</div>
         <form id="add_text_style">
           <input
             type="text"
@@ -32,7 +32,7 @@ class TodoList extends Component {
 
 const mapStateToProps = state => {
   return {
-    bucket: state.bucket
+    bucket: state.bucket.slice(2)
   };
 };
 
