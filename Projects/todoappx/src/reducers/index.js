@@ -15,15 +15,10 @@ const bucketList = [
   }
 ];
 
-const todoListReducer = () => {
-  return bucketList[0].todoList;
-};
-
-const checkedListReducer = () => {
-  return bucketList[0].checkedList;
+const bucketReducer = () => {
+  return bucketList;
 };
 
 export default combineReducers({
-  todoList: todoListReducer,
-  checkedList: checkedListReducer
+  bucket: bucketReducer
 });

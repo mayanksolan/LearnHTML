@@ -3,18 +3,22 @@ import { connect } from "react-redux";
 
 class CheckedList extends Component {
   checkedListRender() {
-    return this.props.checkedList.map(item => {
-      return <div key={item.num}>{item.item}</div>;
-    });
+    return this.props.bucket.map(bucketItem =>
+      bucketItem.checkedList.map(item => (
+        <div className="checked_item_style" key={item.num}>
+          {item.item}
+        </div>
+      ))
+    );
   }
   render() {
-    return <div>{this.checkedListRender()}</div>;
+    return <div className="checked_style">{this.checkedListRender()}</div>;
   }
 }
 
 const mapStateToProps = state => {
   return {
-    checkedList: state.checkedList
+    bucket: state.bucket
   };
 };
 
