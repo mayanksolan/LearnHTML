@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 
 class TodoList extends Component {
   todoListRender() {
-    return this.props.todoList.map((item, index) => {
-      return <div key={index}>{item}</div>;
+    return this.props.todoList.map(item => {
+      return <div key={item.num}>{item.item}</div>;
     });
   }
   render() {
