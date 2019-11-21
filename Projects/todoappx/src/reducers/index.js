@@ -27,14 +27,20 @@ const bucketList = [
     ]
   }
 ];
+const selectedBucket = null;
+
+const selectedBucketReducer = () => {
+  return selectedBucket;
+};
 
 const bucketReducer = () => {
   return bucketList;
 };
 
-const selectedBucketReducer = (selectedBucket = null, action) => {
+const selectBucketReducer = (selectedBucket = null, action) => {
   if (action.type === "BUCKET_SELECTED") {
-    return action.payload;
+    selectedBucket = action.payload;
+    return selectedBucket;
   } else {
     return selectedBucket;
   }
@@ -42,5 +48,6 @@ const selectedBucketReducer = (selectedBucket = null, action) => {
 
 export default combineReducers({
   bucket: bucketReducer,
-  selectedBucket: selectedBucketReducer
+  selectBucket: selectBucketReducer,
+  selectedBucket: selectedBucket
 });

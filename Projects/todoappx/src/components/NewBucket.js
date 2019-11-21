@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { selectBucket } from "../actions";
 
 class NewBucket extends Component {
   zeroBucket() {
@@ -7,7 +8,9 @@ class NewBucket extends Component {
   }
   someBucket() {
     return this.props.bucket.map(item => (
-      <option value={item.name}>{item.name}</option>
+      <option key={item.num} value={item.num}>
+        {item.name}
+      </option>
     ));
   }
   renderOption() {
@@ -15,11 +18,15 @@ class NewBucket extends Component {
       ? this.zeroBucket()
       : this.someBucket();
   }
+  selectedBucket = e => {
+    console.log(e.target.value);
+    this.props.selectBucket(e.target.value);
+  };
   render() {
     return (
       <div>
         <div className="new_bucket_button">
-          <select>{this.renderOption()}</select>
+          <select onChange={this.selectedBucket}>{this.renderOption()}</select>
         </div>
       </div>
     );
@@ -32,4 +39,12 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(NewBucket);
+const mapDispatchToProps = dispatch => {
+  return {
+    selectBucket: num => {
+      dispatch(selectBucket(num));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewBucket);

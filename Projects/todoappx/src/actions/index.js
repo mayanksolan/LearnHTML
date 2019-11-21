@@ -1,7 +1,7 @@
 //action creator
-export const selectBucket = bucket => {
+export const selectBucket = num => {
   return {
     type: "BUCKET_SELECTED",
-    payload: bucket
+    payload: num
   };
 };
