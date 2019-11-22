@@ -7,21 +7,19 @@ class TodoList extends Component {
     super(props);
 
     this.state = {
-      user: "",
+      bucketNum: "",
       todoText: ""
     };
   }
 
   todoListRender() {
     return this.props.selectedBucket === null ||
-      this.props.selectedBucket === "-1" ||
-      this.props.selectedBucket === "0" ? (
+      this.props.selectedBucket === -1 ||
+      this.props.selectedBucket === 0 ? (
       <div></div>
     ) : (
       this.props.bucket
-        .filter(
-          bucketItem => bucketItem.num.toString() === this.props.selectedBucket
-        )[0]
+        .filter(bucketItem => bucketItem.num === this.props.selectedBucket)[0]
         .todoList.map(item => (
           <div className="todo_item_style" key={item.num}>
             <span>
@@ -35,7 +33,8 @@ class TodoList extends Component {
   onChangeHandler = e => {
     //console.log(e.target.value);
     this.setState({
-      todoText: e.target.value
+      todoText: e.target.value,
+      bucketNum: this.props.selectedBucket
     });
   };
 
@@ -43,7 +42,7 @@ class TodoList extends Component {
     //console.log(this.state.todoText);
     e.preventDefault();
     // todo make sure we call callback from parent component
-    this.props.addNewTodo(this.state.todoText);
+    this.props.addNewTodo(this.state);
   };
 
   render() {
@@ -69,7 +68,7 @@ const mapStateToProps = state => {
   //console.log(state);
   return {
     bucket: state.bucket.slice(2),
-    selectedBucket: state.selectedBucket
+    selectedBucket: state.selectBucket.selectedBucket
   };
 };
 

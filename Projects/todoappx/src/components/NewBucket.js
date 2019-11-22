@@ -14,13 +14,14 @@ class NewBucket extends Component {
     ));
   }
   renderOption() {
+    //console.log(this.props.bucket);
     return this.props.bucket.length <= 2
       ? this.zeroBucket()
       : this.someBucket();
   }
   selectBucket = e => {
     console.log(e.target.value);
-    this.props.selectBucket(e.target.value);
+    this.props.selectBucket(Number(e.target.value));
   };
   render() {
     //console.log(this.props);
@@ -35,10 +36,9 @@ class NewBucket extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
+  //console.log(state);
   return {
-    bucket: state.bucket,
-    selectedBucket: state.selectedBucket
+    bucket: state.bucket
   };
 };
 
