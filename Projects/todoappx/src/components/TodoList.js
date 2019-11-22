@@ -3,16 +3,24 @@ import { connect } from "react-redux";
 
 class TodoList extends Component {
   todoListRender() {
-    return this.props.bucket.map(bucketItem =>
-      bucketItem.todoList.map(item => (
-        <div className="todo_item_style" key={item.num}>
-          {item.item}
-        </div>
-      ))
+    return this.props.selectBucket === null ||
+      this.props.selectBucket === -1 ? (
+      <div></div>
+    ) : (
+      this.props.bucket.map(bucketItem =>
+        bucketItem.todoList.map(item => (
+          <div className="todo_item_style" key={item.num}>
+            {item.item}
+          </div>
+        ))
+      )
     );
+    //(this.props.bucket.map(item => console.log(item.num, this.props.selectedBucket)))
   }
   onChangeHandler = () => {};
+
   render() {
+    //console.log(this.props);
     return (
       <div>
         <div className="todo_style">{this.todoListRender()}</div>
@@ -31,8 +39,10 @@ class TodoList extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
-    bucket: state.bucket.slice(2)
+    bucket: state.bucket.slice(2),
+    selectBucket: state.selectBucket
   };
 };
 

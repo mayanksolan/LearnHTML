@@ -40,6 +40,7 @@ const bucketReducer = () => {
 const selectBucketReducer = (selectedBucket = null, action) => {
   if (action.type === "BUCKET_SELECTED") {
     selectedBucket = action.payload;
+    console.log("selectedBucket=" + selectedBucket);
     return selectedBucket;
   } else {
     return selectedBucket;
@@ -49,5 +50,5 @@ const selectBucketReducer = (selectedBucket = null, action) => {
 export default combineReducers({
   bucket: bucketReducer,
   selectBucket: selectBucketReducer,
-  selectedBucket: selectedBucket
+  selectedBucket: selectedBucketReducer
 });
