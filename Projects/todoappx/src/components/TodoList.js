@@ -4,18 +4,32 @@ import { connect } from "react-redux";
 class TodoList extends Component {
   todoListRender() {
     return this.props.selectBucket === null ||
-      this.props.selectBucket === -1 ? (
-      <div></div>
+      this.props.selectBucket === "-1" ||
+      this.props.selectBucket === "0" ? (
+      <div>Hello</div>
     ) : (
-      this.props.bucket.map(bucketItem =>
-        bucketItem.todoList.map(item => (
+      this.props.bucket
+        .filter(
+          bucketItem => bucketItem.num.toString() === this.props.selectBucket
+        )[0]
+        .todoList.map(item => (
           <div className="todo_item_style" key={item.num}>
+            <span>
+              <input type="checkbox"></input>
+            </span>
             {item.item}
           </div>
         ))
-      )
     );
     //(this.props.bucket.map(item => console.log(item.num, this.props.selectedBucket)))
+    // bucketItem.todoList.map(item => (
+    //   <div className="todo_item_style" key={item.num}>
+    //     <span>
+    //       <input type="checkbox"></input>
+    //     </span>
+    //     {item.item}
+    //   </div>
+    // ))
   }
   onChangeHandler = () => {};
 
@@ -39,7 +53,7 @@ class TodoList extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
+  //console.log(state);
   return {
     bucket: state.bucket.slice(2),
     selectBucket: state.selectBucket

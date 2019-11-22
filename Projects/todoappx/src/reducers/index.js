@@ -25,6 +25,19 @@ const bucketList = [
       { num: 1, item: "Bread" },
       { num: 2, item: "Curd" }
     ]
+  },
+  {
+    num: 2,
+    name: "Two",
+    todoList: [
+      { num: 1, item: "Pillow" },
+      { num: 2, item: "Chair" },
+      { num: 3, item: "Sofa" }
+    ],
+    checkedList: [
+      { num: 1, item: "Mobile" },
+      { num: 2, item: "Cover" }
+    ]
   }
 ];
 const selectedBucket = null;
