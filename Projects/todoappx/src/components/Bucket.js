@@ -3,13 +3,14 @@ import { connect } from "react-redux";
 
 export class Bucket extends Component {
   renderBucket() {
-    return this.props.selectBucket === null ||
-      this.props.selectBucket === "-1" ||
-      this.props.selectBucket === "0" ? (
-      <div>Hello</div>
+    //console.log(this.props.bucket, this.props.selectedBucket);
+    return this.props.selectedBucket === null ||
+      this.props.selectedBucket === "-1" ||
+      this.props.selectedBucket === "0" ? (
+      <div></div>
     ) : (
       this.props.bucket.filter(
-        bucketItem => bucketItem.num.toString() === this.props.selectBucket
+        bucketItem => bucketItem.num.toString() === this.props.selectedBucket
       )[0].name
     );
   }
@@ -19,9 +20,10 @@ export class Bucket extends Component {
 }
 
 const mapStateToProps = state => {
+  //console.log(state);
   return {
     bucket: state.bucket.slice(2),
-    selectBucket: state.selectBucket
+    selectedBucket: state.selectedBucket
   };
 };
 

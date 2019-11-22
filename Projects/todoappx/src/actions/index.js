@@ -5,3 +5,10 @@ export const selectBucket = num => {
     payload: num
   };
 };
+
+export const addNewTodo = todoText => {
+  return {
+    type: "ADD_NEW_TODO",
+    payload: todoText
+  };
+};

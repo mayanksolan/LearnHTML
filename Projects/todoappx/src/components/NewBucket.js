@@ -19,7 +19,7 @@ class NewBucket extends Component {
       : this.someBucket();
   }
   selectBucket = e => {
-    //console.log(e.target.value);
+    console.log(e.target.value);
     this.props.selectBucket(e.target.value);
   };
   render() {
@@ -35,7 +35,7 @@ class NewBucket extends Component {
 }
 
 const mapStateToProps = state => {
-  //console.log(state);
+  console.log(state);
   return {
     bucket: state.bucket,
     selectedBucket: state.selectedBucket
