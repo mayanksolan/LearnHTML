@@ -3,12 +3,20 @@ import { connect } from "react-redux";
 
 class CheckedList extends Component {
   checkedListRender() {
-    return this.props.bucket.map(bucketItem =>
-      bucketItem.checkedList.map(item => (
-        <div className="checked_item_style" key={item.num}>
-          {item.item}
-        </div>
-      ))
+    return this.props.selectBucket === null ||
+      this.props.selectBucket === "-1" ||
+      this.props.selectBucket === "0" ? (
+      <div>Hello</div>
+    ) : (
+      this.props.bucket
+        .filter(
+          bucketItem => bucketItem.num.toString() === this.props.selectBucket
+        )[0]
+        .checkedList.map(item => (
+          <div className="checked_item_style" key={item.num}>
+            {item.item}
+          </div>
+        ))
     );
   }
   render() {
@@ -18,7 +26,8 @@ class CheckedList extends Component {
 
 const mapStateToProps = state => {
   return {
-    bucket: state.bucket.slice(2)
+    bucket: state.bucket.slice(2),
+    selectBucket: state.selectBucket
   };
 };
 

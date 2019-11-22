@@ -21,15 +21,6 @@ class TodoList extends Component {
           </div>
         ))
     );
-    //(this.props.bucket.map(item => console.log(item.num, this.props.selectedBucket)))
-    // bucketItem.todoList.map(item => (
-    //   <div className="todo_item_style" key={item.num}>
-    //     <span>
-    //       <input type="checkbox"></input>
-    //     </span>
-    //     {item.item}
-    //   </div>
-    // ))
   }
   onChangeHandler = () => {};
 
