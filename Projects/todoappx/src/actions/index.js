@@ -12,3 +12,10 @@ export const addNewTodo = todoText => {
     payload: todoText
   };
 };
+
+export const checkedTodo = checkedObj => {
+  return {
+    type: "CHECKED_TODO",
+    payload: checkedObj
+  };
+};

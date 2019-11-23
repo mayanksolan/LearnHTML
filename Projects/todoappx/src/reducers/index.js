@@ -64,17 +64,25 @@ const selectBucketReducer = (state = initialState, action) => {
 
 const addNewTodoReducer = (state = initialState, action) => {
   if (action.type === "ADD_NEW_TODO") {
-    //selectedBucket = action.payload;
-    console.log("state=", state, "payload=", action.payload);
+    const newTodo = {
+      num: state.bucket[action.payload.bucketNum + 1].todoList.length + 1,
+      item: action.payload.todoText
+    };
     return {
       ...state,
       bucket: [
         ...state.bucket,
-        state.bucket[action.payload.bucketNum + 1].todoList.push(
-          action.payload.todoText
-        )
+        state.bucket[action.payload.bucketNum + 1].todoList.push(newTodo)
       ]
     };
+  } else {
+    return state;
+  }
+};
+
+const checkedTodoReducer = (state = initialState, action) => {
+  if (action.type === "CHECKED_TODO") {
+    return state;
   } else {
     return state;
   }
@@ -84,5 +92,6 @@ export default combineReducers({
   bucket: bucketReducer,
   selectBucket: selectBucketReducer,
   //selectedBucket: selectedBucketReducer,
-  addNewTodo: addNewTodoReducer
+  addNewTodo: addNewTodoReducer,
+  checkedTodo: checkedTodoReducer
 });

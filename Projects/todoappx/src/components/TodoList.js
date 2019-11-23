@@ -5,12 +5,16 @@ import { addNewTodo } from "../actions";
 class TodoList extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       bucketNum: "",
-      todoText: ""
+      todoText: "",
+      checkedTodoNum: null
     };
   }
+
+  onCheckClickHandler = e => {
+    console.log("clicked", e.target.value);
+  };
 
   todoListRender() {
     return this.props.selectedBucket === null ||
@@ -23,7 +27,11 @@ class TodoList extends Component {
         .todoList.map(item => (
           <div className="todo_item_style" key={item.num}>
             <span>
-              <input type="checkbox"></input>
+              <input
+                type="checkbox"
+                onChange={this.onCheckClickHandler}
+                value={item.num}
+              ></input>
             </span>
             {item.item}
           </div>
@@ -31,7 +39,6 @@ class TodoList extends Component {
     );
   }
   onChangeHandler = e => {
-    //console.log(e.target.value);
     this.setState({
       todoText: e.target.value,
       bucketNum: this.props.selectedBucket
@@ -39,10 +46,11 @@ class TodoList extends Component {
   };
 
   onFormSubmit = e => {
-    //console.log(this.state.todoText);
     e.preventDefault();
-    // todo make sure we call callback from parent component
     this.props.addNewTodo(this.state);
+    this.setState({
+      todoText: ""
+    });
   };
 
   render() {
