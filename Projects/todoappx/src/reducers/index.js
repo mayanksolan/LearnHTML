@@ -55,7 +55,7 @@ const bucketReducer = () => {
 const selectBucketReducer = (state = initialState, action) => {
   if (action.type === "BUCKET_SELECTED") {
     //console.log("state=", state, "payload=", action.payload);
-    console.log(state, action);
+    //console.log(state, action);
     return { ...state, selectedBucket: action.payload };
   } else {
     return state;
@@ -82,7 +82,34 @@ const addNewTodoReducer = (state = initialState, action) => {
 
 const checkedTodoReducer = (state = initialState, action) => {
   if (action.type === "CHECKED_TODO") {
-    return state;
+    const newTodoList = state.bucket[
+      action.payload.bucketNum + 1
+    ].todoList.filter(todoItem => todoItem.item !== action.payload.todoText);
+    const newCheckedList = state.bucket[
+      action.payload.bucketNum + 1
+    ].checkedList.push({
+      num: state.bucket[action.payload.bucketNum + 1].checkedList.length,
+      item: action.payload.todoText
+    });
+    console.log(
+      "action.payload=",
+      action.payload,
+      "old array=",
+      state.bucket[action.payload.bucketNum + 1].todoList,
+      " newTodoList=",
+      newTodoList,
+      " newCheckedList",
+      newCheckedList
+    );
+    return {
+      ...state,
+      bucket: [
+        ...state.bucket
+        // state.bucket[action.payload.bucketNum + 1].todoList.filter(
+        //   todoItem => todoItem.item !== action.payload.todoText
+        // )
+      ]
+    };
   } else {
     return state;
   }

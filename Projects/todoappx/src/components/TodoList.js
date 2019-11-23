@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addNewTodo } from "../actions";
+import { addNewTodo, checkedTodo } from "../actions";
 
 class TodoList extends Component {
   constructor(props) {
@@ -14,6 +14,14 @@ class TodoList extends Component {
 
   onCheckClickHandler = e => {
     console.log("clicked", e.target.value);
+    this.setState(
+      {
+        bucketNum: this.props.selectedBucket,
+        //checkedTodoNum: e.target.value,
+        todoText: e.target.value
+      },
+      () => this.props.checkedTodo(this.state)
+    );
   };
 
   todoListRender() {
@@ -30,7 +38,7 @@ class TodoList extends Component {
               <input
                 type="checkbox"
                 onChange={this.onCheckClickHandler}
-                value={item.num}
+                value={item.item}
               ></input>
             </span>
             {item.item}
@@ -84,6 +92,9 @@ const mapDispatchToProps = dispatch => {
   return {
     addNewTodo: todoText => {
       dispatch(addNewTodo(todoText));
+    },
+    checkedTodo: checkedText => {
+      dispatch(checkedTodo(checkedText));
     }
   };
 };

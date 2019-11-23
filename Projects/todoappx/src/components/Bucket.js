@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 export class Bucket extends Component {
   renderBucket() {
-    console.log(this.props.bucket, this.props.selectedBucket);
+    //console.log(this.props.bucket, this.props.selectedBucket);
     return this.props.selectedBucket === null ||
       this.props.selectedBucket === -1 ||
       this.props.selectedBucket === 0 ? (
