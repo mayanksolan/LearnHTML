@@ -19,3 +19,10 @@ export const checkedTodo = checkedObj => {
     payload: checkedObj
   };
 };
+
+export const changeBucketName = newName => {
+  return {
+    type: "CHANGE_BUCKET_NAME",
+    payload: newName
+  };
+};

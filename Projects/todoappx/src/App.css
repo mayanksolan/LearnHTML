@@ -25,7 +25,7 @@
 }
 
 .todo_item_style {
-  border-bottom: 3px solid lightcoral;
+  border-bottom: 2px solid lightcoral;
   padding: 5px;
 }
 
@@ -44,14 +44,12 @@
 }
 
 .checked_style {
-  border-top: 3px solid lightseagreen;
-  border-right: 3px solid lightseagreen;
-  border-left: 3px solid lightseagreen;
+  border: 3px solid lightseagreen;
   display: inline-block;
   width: 300px;
 }
 
 .checked_item_style {
-  border-bottom: 3px solid lightseagreen;
+  border-bottom: 2px solid lightseagreen;
   padding: 5px;
 }

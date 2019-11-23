@@ -109,10 +109,19 @@ const checkedTodoReducer = (state = initialState, action) => {
   }
 };
 
+const changeBucketNameReducer = (state = initialState, action) => {
+  if (action.type === "CHANGE_BUCKET_NAME") {
+    return state;
+  } else {
+    return state;
+  }
+};
+
 export default combineReducers({
   bucket: bucketReducer,
   selectBucket: selectBucketReducer,
   //selectedBucket: selectedBucketReducer,
   addNewTodo: addNewTodoReducer,
-  checkedTodo: checkedTodoReducer
+  checkedTodo: checkedTodoReducer,
+  changeBucketName: changeBucketNameReducer
 });
