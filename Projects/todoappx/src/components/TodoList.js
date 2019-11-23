@@ -8,7 +8,8 @@ class TodoList extends Component {
     this.state = {
       bucketNum: "",
       todoText: "",
-      checkedTodoNum: null
+      checkedTodoNum: null,
+      sendTodoText: ""
     };
   }
 
@@ -18,7 +19,7 @@ class TodoList extends Component {
       {
         bucketNum: this.props.selectedBucket,
         //checkedTodoNum: e.target.value,
-        todoText: e.target.value
+        sendTodoText: e.target.value
       },
       () => this.props.checkedTodo(this.state)
     );

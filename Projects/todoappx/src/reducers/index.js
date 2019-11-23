@@ -82,34 +82,28 @@ const addNewTodoReducer = (state = initialState, action) => {
 
 const checkedTodoReducer = (state = initialState, action) => {
   if (action.type === "CHECKED_TODO") {
-    const newTodoList = state.bucket[
-      action.payload.bucketNum + 1
-    ].todoList.filter(todoItem => todoItem.item !== action.payload.todoText);
-    const newCheckedList = state.bucket[
-      action.payload.bucketNum + 1
-    ].checkedList.push({
-      num: state.bucket[action.payload.bucketNum + 1].checkedList.length,
-      item: action.payload.todoText
-    });
-    console.log(
-      "action.payload=",
-      action.payload,
-      "old array=",
-      state.bucket[action.payload.bucketNum + 1].todoList,
-      " newTodoList=",
-      newTodoList,
-      " newCheckedList",
-      newCheckedList
+    const newTodoList = [
+      ...state.bucket[action.payload.bucketNum + 1].todoList
+    ];
+    const yesNewTodoList = newTodoList.filter(
+      todoItem => todoItem.item !== action.payload.sendTodoText
     );
-    return {
-      ...state,
-      bucket: [
-        ...state.bucket
-        // state.bucket[action.payload.bucketNum + 1].todoList.filter(
-        //   todoItem => todoItem.item !== action.payload.todoText
-        // )
-      ]
-    };
+    const newCheckedList = [
+      ...state.bucket[action.payload.bucketNum + 1].checkedList
+    ];
+    const yesNewCheckedList = [
+      ...newCheckedList,
+      {
+        num: state.bucket[action.payload.bucketNum + 1].checkedList.length + 1,
+        item: action.payload.sendTodoText
+      }
+    ];
+    const newState = { ...state };
+    newState.bucket[action.payload.bucketNum + 1].todoList = yesNewTodoList;
+    newState.bucket[
+      action.payload.bucketNum + 1
+    ].checkedList = yesNewCheckedList;
+    return newState;
   } else {
     return state;
   }
