@@ -109,9 +109,47 @@ const checkedTodoReducer = (state = initialState, action) => {
   }
 };
 
+const todoCheckedReducer = (state = initialState, action) => {
+  if (action.type === "TODO_CHECKED") {
+    console.log(action.payload);
+    const newCheckedList = [
+      ...state.bucket[action.payload.bucketNum + 1].checkedList
+    ];
+    const yesNewCheckedList = newCheckedList.filter(
+      checkedItem => checkedItem.item !== action.payload.sendCheckedText
+    );
+    console.log("yesNewCheckedList=", yesNewCheckedList);
+    const newTodoList = [
+      ...state.bucket[action.payload.bucketNum + 1].todoList
+    ];
+    //const maxNum = state.bucket[action.payload.bucketNum + 1].todoList.num
+    const yesNewTodoList = [
+      ...newTodoList,
+      {
+        num: state.bucket[action.payload.bucketNum + 1].todoList.length + 1,
+        item: action.payload.sendCheckedText
+      }
+    ];
+    console.log("yesNewTodoList=", yesNewTodoList);
+    const newState = { ...state };
+    newState.bucket[
+      action.payload.bucketNum + 1
+    ].checkedList = yesNewCheckedList;
+    newState.bucket[action.payload.bucketNum + 1].todoList = yesNewTodoList;
+    console.log(newState);
+    return newState;
+  } else {
+    return state;
+  }
+};
+
 const changeBucketNameReducer = (state = initialState, action) => {
   if (action.type === "CHANGE_BUCKET_NAME") {
-    return state;
+    console.log(action.payload);
+    const newState = { ...state };
+    newState.bucket[action.payload.selectedBucket + 1].name =
+      action.payload.newName;
+    return newState;
   } else {
     return state;
   }
@@ -123,5 +161,6 @@ export default combineReducers({
   //selectedBucket: selectedBucketReducer,
   addNewTodo: addNewTodoReducer,
   checkedTodo: checkedTodoReducer,
+  todoChecked: todoCheckedReducer,
   changeBucketName: changeBucketNameReducer
 });

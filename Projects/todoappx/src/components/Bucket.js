@@ -6,20 +6,22 @@ export class Bucket extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      newName: ""
+      newName: "",
+      selectedBucket: null
     };
   }
 
   onClickHandler = () => {
-    console.log(this.props.buckets);
     var oldName = this.props.buckets[this.props.selectedBucket + 1].name;
     var newName = prompt("Please enter new bucket name:", oldName);
     if (newName !== oldName) {
+      console.log(newName, oldName);
       this.setState(
         {
-          newName
+          newName: newName,
+          selectedBucket: this.props.selectedBucket
         },
-        this.props.changeBucketName(this.state.newName)
+        () => this.props.changeBucketName(this.state)
       );
     }
   };

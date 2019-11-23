@@ -1,7 +1,28 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { todoChecked } from "../actions";
 
 class CheckedList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      bucketNum: "",
+      checkedText: "",
+      todoCheckedNum: null,
+      sendCheckedText: ""
+    };
+  }
+  onCheckClickHandler = e => {
+    console.log("clicked", e.target.value);
+    this.setState(
+      {
+        bucketNum: this.props.selectedBucket,
+        sendCheckedText: e.target.value
+      },
+      //() => console.log(this.state)
+      () => this.props.todoChecked(this.state)
+    );
+  };
   checkedListRender() {
     return this.props.selectedBucket === null ||
       this.props.selectedBucket === -1 ||
@@ -10,8 +31,15 @@ class CheckedList extends Component {
     ) : (
       this.props.bucket
         .filter(bucketItem => bucketItem.num === this.props.selectedBucket)[0]
-        .checkedList.map(item => (
-          <div className="checked_item_style" key={item.num}>
+        .checkedList.map((item, index) => (
+          <div className="checked_item_style" key={index}>
+            <span>
+              <input
+                type="checkbox"
+                onChange={this.onCheckClickHandler}
+                value={item.item}
+              ></input>
+            </span>
             {item.item}
           </div>
         ))
@@ -29,4 +57,12 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(CheckedList);
+const mapDispatchToProps = dispatch => {
+  return {
+    todoChecked: todoText => {
+      dispatch(todoChecked(todoText));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckedList);

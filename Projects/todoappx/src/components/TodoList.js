@@ -33,8 +33,8 @@ class TodoList extends Component {
     ) : (
       this.props.bucket
         .filter(bucketItem => bucketItem.num === this.props.selectedBucket)[0]
-        .todoList.map(item => (
-          <div className="todo_item_style" key={item.num}>
+        .todoList.map((item, index) => (
+          <div className="todo_item_style" key={index}>
             <span>
               <input
                 type="checkbox"

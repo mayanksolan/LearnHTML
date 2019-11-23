@@ -20,6 +20,13 @@ export const checkedTodo = checkedObj => {
   };
 };
 
+export const todoChecked = todoObj => {
+  return {
+    type: "TODO_CHECKED",
+    payload: todoObj
+  };
+};
+
 export const changeBucketName = newName => {
   return {
     type: "CHANGE_BUCKET_NAME",
