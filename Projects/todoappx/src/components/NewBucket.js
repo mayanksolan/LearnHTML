@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { selectBucket } from "../actions";
+import { selectBucket, newBucket } from "../actions";
 
 class NewBucket extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      optionBucket: null
+    };
+  }
+
   zeroBucket() {
     return <option value="Create new Bucket">Create new Bucket</option>;
   }
@@ -13,6 +20,12 @@ class NewBucket extends Component {
       </option>
     ));
   }
+  newBucket() {
+    if (this.state.optionBucket === 0) {
+      var newName = prompt("Please enter new bucket name:");
+      this.props.newBucket(newName);
+    }
+  }
   renderOption() {
     //console.log(this.props.bucket);
     return this.props.bucket.length <= 2
@@ -21,6 +34,12 @@ class NewBucket extends Component {
   }
   selectBucket = e => {
     console.log(e.target.value);
+    this.setState(
+      {
+        optionBucket: Number(e.target.value)
+      },
+      () => this.newBucket()
+    );
     this.props.selectBucket(Number(e.target.value));
   };
   render() {
@@ -46,6 +65,9 @@ const mapDispatchToProps = dispatch => {
   return {
     selectBucket: num => {
       dispatch(selectBucket(num));
+    },
+    newBucket: bucketName => {
+      dispatch(newBucket(bucketName));
     }
   };
 };

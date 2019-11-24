@@ -33,3 +33,10 @@ export const changeBucketName = newName => {
     payload: newName
   };
 };
+
+export const newBucket = newBucketName => {
+  return {
+    type: "NEW_BUCKET",
+    payload: newBucketName
+  };
+};
