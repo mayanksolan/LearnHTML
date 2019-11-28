@@ -1,13 +1,17 @@
 import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import "./App.css";
+
+import Header from "./components/layout/Header";
 
 function App() {
   return (
-    <div className="App">
-      <div className="headerBar">
-        <div className="headerTitle">MovieBuff</div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
