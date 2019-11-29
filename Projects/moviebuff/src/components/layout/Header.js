@@ -3,34 +3,53 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div className="headerBar">
-      <div className="headerTitle">MovieBuff</div>
-      <div className="headerList">
-        <ul>
-          <li>
-            <a href="#!">Top Rated Movies</a>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-            <Link to="/register">Login</Link>
-          </li>
-        </ul>
-      </div>
-
-      <div class="dropdown">
-        <button class="dropbtn">
-          Dropdown
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div>
-    </div>
+    <nav>
+      <p>MovieBuff</p>
+      <ul>
+        <li>
+          <a href="#">TV</a>
+          <ul>
+            <li>
+              <a href="">Popular TV shows</a>
+            </li>
+            <li>
+              <a href="">Top rated TV shows</a>
+            </li>
+            <li>
+              <a href="">On the air TV shows</a>
+            </li>
+            <li>
+              <a href="">Airing today TV shows</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Movies</a>
+          <ul>
+            <li>
+              <a href="">Top rated movies</a>
+            </li>
+            <li>
+              <a href="">Upcoming movies</a>
+            </li>
+            <li>
+              <a href="">Now playing movies</a>
+            </li>
+            <li>
+              <a href="">Popular movies</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <Link to="/register">Register</Link>
+        </li>
+        <li>
+          <Link to="/register">Login</Link>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
