@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #ffccbc;
-  --dark-color: #cb9b8c;
-  --light-color: #ffffee;
+  --primary-color: ##81d4fa;
+  --dark-color: #4ba3c7;
+  --light-color: #b6ffff;
   --danger-color: #dc3545;
   --success-color: #28a745;
 }
@@ -19,24 +19,23 @@ nav {
   background-color: var(--dark-color);
   height: 60px;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav p {
   font-size: xx-large;
   font-weight: bold;
   line-height: 55px;
-  float: left;
   padding: 0px 20px;
 }
 
 nav ul {
-  float: left;
+  display: flex;
 }
 
 nav ul li {
-  float: left;
   list-style: none;
-  position: relative;
 }
 
 nav ul li a {
@@ -46,29 +45,25 @@ nav ul li a {
   padding: 19px 20px;
   text-decoration: none;
 }
-
-nav ul li ul {
-  display: none;
-  position: absolute;
-  background-color: var(--dark-color);
-  padding: 10px;
-  border-radius: 0px 0px 4px 4px;
-}
-nav ul li:hover ul {
-  display: block;
-}
-
-nav ul li ul li {
-  width: 210px;
+nav ul li:hover {
   border-radius: 4px;
-}
-
-nav ul li ul li a {
-  padding: 8px 14px;
-}
-
-nav ul li ul li a:hover {
   background-color: var(--light-color);
+}
+
+@media (max-width: 800px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    background-color: var(--dark-color);
+  }
 }
 
 .App {

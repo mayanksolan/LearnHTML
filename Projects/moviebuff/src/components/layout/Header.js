@@ -5,10 +5,11 @@ function Header() {
   return (
     <nav>
       <p>MovieBuff</p>
+
       <ul>
         <li>
-          <a href="#">TV</a>
-          <ul>
+          <Link to="/tv">TV</Link>
+          {/* <ul>
             <li>
               <a href="">Popular TV shows</a>
             </li>
@@ -21,11 +22,11 @@ function Header() {
             <li>
               <a href="">Airing today TV shows</a>
             </li>
-          </ul>
+          </ul> */}
         </li>
         <li>
-          <a href="#">Movies</a>
-          <ul>
+          <Link to="/movies">Movies</Link>
+          {/* <ul>
             <li>
               <a href="">Top rated movies</a>
             </li>
@@ -38,15 +39,21 @@ function Header() {
             <li>
               <a href="">Popular movies</a>
             </li>
-          </ul>
+          </ul> */}
         </li>
       </ul>
       <ul>
         <li>
+          <Link to="/home">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
           <Link to="/register">Register</Link>
         </li>
         <li>
-          <Link to="/register">Login</Link>
+          <Link to="/login">Login</Link>
         </li>
       </ul>
     </nav>
