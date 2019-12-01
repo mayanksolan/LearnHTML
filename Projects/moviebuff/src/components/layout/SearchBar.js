@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { setSearchText } from "../../actions";
 
-export default class SearchBar extends Component {
+class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -8,6 +10,7 @@ export default class SearchBar extends Component {
     };
   }
   handleChange = e => {
+    e.preventDefault();
     this.setState(
       {
         searchText: e.target.value
@@ -15,7 +18,11 @@ export default class SearchBar extends Component {
       () => console.log(this.state)
     );
   };
-  formSubmit = () => {};
+  formSubmit = e => {
+    e.preventDefault();
+    console.log(this.state.searchText);
+    this.props.setSearchText(this.state.searchText);
+  };
 
   render() {
     return (
@@ -29,6 +36,7 @@ export default class SearchBar extends Component {
               id="searchText"
               placeholder="Type any Movie or show"
               onChange={this.handleChange}
+              value={this.state.searchText}
             />
           </form>
         </div>
@@ -36,3 +44,19 @@ export default class SearchBar extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    searchText: state.searchText
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setSearchText: searchText => {
+      dispatch(setSearchText(searchText));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
