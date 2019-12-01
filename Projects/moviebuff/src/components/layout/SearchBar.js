@@ -15,6 +15,7 @@ export default class SearchBar extends Component {
       () => console.log(this.state)
     );
   };
+  formSubmit = () => {};
 
   render() {
     return (
