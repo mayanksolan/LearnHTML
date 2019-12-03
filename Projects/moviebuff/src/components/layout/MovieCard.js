@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class MovieCard extends Component {
   onClickHandler = e => {
@@ -38,12 +39,9 @@ class MovieCard extends Component {
               <p className="card-overview">
                 Overview: {this.props.movie.overview.substring(0, 50)}
               </p>
-              <button
-                onClick={this.onClickHandler}
-                style={{ textDecoration: "underline" }}
-              >
+              <Link onClick={this.onClickHandler} className="card-link">
                 Read More...
-              </button>
+              </Link>
             </div>
           </div>
         </div>

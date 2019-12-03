@@ -160,6 +160,11 @@ input:focus {
   font-size: smaller;
 }
 
+.card-link {
+  text-decoration: underline;
+  color: black;
+}
+
 @media (max-width: 800px) {
   nav {
     display: flex;
