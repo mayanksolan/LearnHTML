@@ -18,13 +18,13 @@ class MovieCard extends Component {
       "https://image.tmdb.org/t/p/original/" + this.props.movie.poster_path;
     return (
       <div className="card">
-        <img src={movieUrl} alt="Avatar" className="imageProp" />
         <div className="container">
-          <h4>
-            <b>{this.props.movie.title}</b>
-          </h4>
-          <p>{this.props.movie.vote_average}</p>
+          <img src={movieUrl} alt="Avatar" className="imageProp" />
         </div>
+        <h4>
+          <b>{this.props.movie.title}</b>
+        </h4>
+        <p>{this.props.movie.vote_average}</p>
       </div>
     );
   }

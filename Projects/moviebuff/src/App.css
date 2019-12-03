@@ -90,6 +90,8 @@ input:focus {
 }
 
 .movieListGrid {
+  width: 85%;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
@@ -137,6 +139,8 @@ input:focus {
     margin-top: 6rem;
   }
   .movieListGrid {
+    width: 85%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
@@ -145,6 +149,8 @@ input:focus {
 
 @media (max-width: 500px) {
   .movieListGrid {
+    width: 85%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 2rem;
