@@ -29,16 +29,26 @@ class MovieCard extends Component {
         <div className="card-back">
           <div className="card-back-inside">
             <h4>
-              Movie Name: <b>{this.props.movie.title}</b>
+              <span className="type">Movie: </span>
+              {this.props.movie.title}
             </h4>
             <div className="card-details">
-              <div>
-                <h4>Rating: {this.props.movie.vote_average}</h4>
-                <h4>Released: {this.props.movie.release_date}</h4>
+              <div className="card-ratrel">
+                <p>
+                  <span className="type">Rating: </span>
+                  {this.props.movie.vote_average}
+                </p>
+                <p>
+                  <span className="type">Released: </span>
+                  {this.props.movie.release_date}
+                </p>
               </div>
-              <p className="card-overview">
-                Overview: {this.props.movie.overview.substring(0, 50)}
-              </p>
+              <div className="card-ratrel">
+                <span className="type">Overview: </span>
+                <span className="card-overview-text">
+                  {this.props.movie.overview.substring(0, 100)}
+                </span>
+              </div>
               <Link onClick={this.onClickHandler} className="card-link">
                 Read More...
               </Link>

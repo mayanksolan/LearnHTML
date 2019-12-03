@@ -160,6 +160,21 @@ input:focus {
   font-size: smaller;
 }
 
+.card .type {
+  color: var(--light-color);
+  font-size: smaller;
+}
+
+.card-ratrel {
+  font-weight: bold;
+  padding-bottom: 5%;
+}
+
+.card-overview-text {
+  font-weight: normal;
+  font-size: small;
+}
+
 .card-link {
   text-decoration: underline;
   color: black;
