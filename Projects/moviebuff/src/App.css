@@ -161,7 +161,6 @@ input:focus {
 }
 
 .card .type {
-  color: var(--light-color);
   font-size: smaller;
 }
 

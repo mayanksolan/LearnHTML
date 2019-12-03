@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class MovieCard extends Component {
   onClickHandler = e => {
-    console.log(e.target.value);
+    console.log(this.props.movie.id);
   };
   render() {
     console.log(this.props.movie);
