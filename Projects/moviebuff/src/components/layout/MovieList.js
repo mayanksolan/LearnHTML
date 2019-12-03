@@ -1,24 +1,28 @@
 import React, { Component } from "react";
 import { fetchData } from "../../actions";
 import { connect } from "react-redux";
+import MovieCard from "./MovieCard";
 
 class MovieList extends Component {
   componentDidMount() {
     this.props.fetchData();
-    // console.log(this.props.topRated);
   }
   render() {
-    //console.log(this.props.topRated[0]);
     if (!this.props.topRated) {
       return <div>Loading...</div>;
     } else {
-      return <div>{this.props.topRated.map(movie => movie.title)}</div>;
+      return (
+        <div className="movieListGrid">
+          {this.props.topRated.map(movie => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
+        </div>
+      );
     }
   }
 }
 
 const mapStateToProps = state => {
-  //   console.log(state.fetchData.topRated);
   return {
     topRated: state.fetchData.topRated
   };
