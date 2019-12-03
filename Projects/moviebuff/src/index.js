@@ -7,8 +7,9 @@ import App from "./App";
 import reducers from "./reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
+import Promise from "redux-promise";
 
-const middleware = [thunk];
+const middleware = [thunk, Promise];
 
 const store = createStore(
   reducers,
