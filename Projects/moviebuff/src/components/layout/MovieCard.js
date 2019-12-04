@@ -7,22 +7,10 @@ class MovieCard extends Component {
   };
   render() {
     console.log(this.props.movie);
-    // const [
-    //   //   popularity,
-    //   //   vote_count,
-    //   poster_path,
-    //   //   id,
-    //   //   original_language,
-    //   title,
-    //   vote_average
-    //   //   overview,
-    //   //   release_date
-    // ] = this.props.movie;
-
     const movieUrl =
       "https://image.tmdb.org/t/p/original/" + this.props.movie.poster_path;
     return (
-      <div className="card">
+      <div className="card" onClick={this.onClickHandler}>
         <div className="card-front">
           <img src={movieUrl} alt="Avatar" className="imageProp" />
         </div>

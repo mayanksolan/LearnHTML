@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { fetchData } from "../../actions";
+import { fetchInitialData } from "../../actions";
 import { connect } from "react-redux";
 import MovieCard from "./MovieCard";
 
 class MovieList extends Component {
   componentDidMount() {
-    this.props.fetchData();
+    this.props.fetchInitialData();
   }
   render() {
     if (!this.props.topRated) {
@@ -30,8 +30,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchData: name => {
-      dispatch(fetchData(name));
+    fetchInitialData: name => {
+      dispatch(fetchInitialData(name));
     }
   };
 };
