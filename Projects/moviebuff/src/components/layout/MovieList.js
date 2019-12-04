@@ -23,6 +23,7 @@ class MovieList extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
     topRated: state.fetchData.topRated
   };

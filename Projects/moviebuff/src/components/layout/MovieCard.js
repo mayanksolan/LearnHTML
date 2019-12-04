@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 class MovieCard extends Component {
   onClickHandler = e => {
-    console.log(this.props.movie.id);
+    //console.log(this.props.movie.id);
   };
   render() {
-    console.log(this.props.movie);
+    //console.log(this.props.movie);
     const movieUrl =
       "https://image.tmdb.org/t/p/original/" + this.props.movie.poster_path;
     return (

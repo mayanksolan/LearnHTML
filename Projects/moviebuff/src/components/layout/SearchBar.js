@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { setSearchText } from "../../actions";
+import { setSearchText, setSearchMovieResults } from "../../actions";
+import axios from "axios";
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchText: ""
+      searchText: "",
+      movieResult: []
     };
   }
   handleChange = e => {
@@ -22,6 +24,20 @@ class SearchBar extends Component {
     e.preventDefault();
     console.log(this.state.searchText);
     this.props.setSearchText(this.state.searchText);
+    this.fetchMovieData();
+  };
+
+  fetchMovieData = () => {
+    const api_key = "71e765571755f062e48dd627663cb94b";
+    const query = this.state.searchText;
+    const baseUrl = "https://api.themoviedb.org/3/search/movie";
+    const url = `${baseUrl}?api_key=${api_key}&query=${query}`;
+    axios.get(url).then(response =>
+      this.setState({ movieResult: response.data.results }, () => {
+        console.log(this.state);
+        this.props.setSearchMovieResults(this.state.movieResult);
+      })
+    );
   };
 
   render() {
@@ -47,7 +63,8 @@ class SearchBar extends Component {
 
 const mapStateToProps = state => {
   return {
-    searchText: state.searchText
+    searchText: state.searchText,
+    topRated: state.fetchData.topRated
   };
 };
 
@@ -55,6 +72,9 @@ const mapDispatchToProps = dispatch => {
   return {
     setSearchText: searchText => {
       dispatch(setSearchText(searchText));
+    },
+    setSearchMovieResults: searchData => {
+      dispatch(setSearchMovieResults(searchData));
     }
   };
 };

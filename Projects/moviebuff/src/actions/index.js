@@ -17,3 +17,10 @@ export const fetchInitialData = () => {
     })
   };
 };
+
+export const setSearchMovieResults = searchMovieData => {
+  return {
+    type: "SET_SEARCH_MOVIE_RESULTS",
+    payload: searchMovieData
+  };
+};
