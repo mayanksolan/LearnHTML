@@ -5,9 +5,9 @@ const initialState = {
   topRated: null
 };
 
-const stateReducer = () => {
-  return initialState;
-};
+// const stateReducer = () => {
+//   return initialState;
+// };
 
 const fetchDataReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -31,7 +31,7 @@ const fetchDataReducer = (state = initialState, action) => {
 // };
 
 export default combineReducers({
-  state: stateReducer,
+  //state: stateReducer,
   //setSearchText: setSearchTextReducer,
   fetchData: fetchDataReducer
   //,setSearchMovieResults: setSearchMovieResultsReducer

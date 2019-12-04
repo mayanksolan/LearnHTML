@@ -16,8 +16,8 @@ class SearchBar extends Component {
     this.setState(
       {
         searchText: e.target.value
-      },
-      () => console.log(this.state)
+      }
+      //,() => console.log(this.state)
     );
   };
   formSubmit = e => {
