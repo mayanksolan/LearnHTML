@@ -179,6 +179,15 @@ input:focus {
   color: black;
 }
 
+.container {
+  width: 50%;
+  margin: 15% auto;
+}
+
+label {
+  display: block;
+}
+
 @media (max-width: 800px) {
   nav {
     display: flex;

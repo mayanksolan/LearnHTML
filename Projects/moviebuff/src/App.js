@@ -7,6 +7,7 @@ import Header from "./components/layout/Header";
 import SearchBar from "./components/layout/SearchBar";
 import MovieList from "./components/layout/MovieList";
 import Register from "./components/layout/Register";
+import Login from "./components/layout/Login";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             )}
           />
           <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </div>
     </BrowserRouter>
