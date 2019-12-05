@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 class Register extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       name: "",
       email: "",
@@ -80,7 +79,7 @@ class Register extends Component {
 
           <div className="container-signin">
             <p>
-              Already have an account? <Link to="#">Sign in</Link>.
+              Already have an account? <Link to="/login">Sign in</Link>.
             </p>
           </div>
         </form>

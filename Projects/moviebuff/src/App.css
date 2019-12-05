@@ -182,12 +182,11 @@ input:focus {
 .container {
   width: 50%;
   margin: 5% auto;
-  border: 1px solid red;
+  border-radius: 5%;
 }
 
 .container label b {
   display: block;
-  border: 1px solid red;
   margin: 2%;
 }
 
@@ -196,16 +195,20 @@ input:focus {
 }
 
 .container input {
-  display: block;
-  padding: 2%;
-  width: 90%;
-  align-self: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 2% 0%;
+  border-radius: 5%;
 }
 
 .container .registerbtn {
   padding: 2%;
-  margin: 5%;
-  border: 1px solid red;
+  margin: 5% 0% 5% 0%;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 5%;
+  background-color: var(--dark-color);
+  font-size: small;
 }
 
 @media (max-width: 800px) {
