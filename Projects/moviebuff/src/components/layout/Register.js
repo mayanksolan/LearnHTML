@@ -24,7 +24,6 @@ class Register extends Component {
           <div>
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
-            <hr />
 
             <label>
               <b>Name</b>
@@ -74,12 +73,6 @@ class Register extends Component {
               />
             </label>
 
-            <hr />
-
-            <p>
-              By creating an account you agree to our{" "}
-              <Link to="#">Terms & Conditions</Link>.
-            </p>
             <button type="submit" className="registerbtn">
               Register
             </button>
