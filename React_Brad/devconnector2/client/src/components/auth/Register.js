@@ -25,24 +25,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       setAlert("Passwords do not match", "danger", 3000);
     } else {
       register({ name, email, password });
-      // const newUser = {
-      //   name,
-      //   email,
-      //   password
-      // };
-      // try {
-      //   const config = {
-      //     header: {
-      //       "Content-Type": "application/json"
-      //     },
-      //     body: newUser
-      //   };
-      //   //const body = JSON.stringify(newUser);
-      //   const res = await axios.post("/api/users", config.body, config);
-      //   console.log(res.data);
-      // } catch (error) {
-      //   console.error(error.response.data);
-      // }
     }
   };
 
@@ -122,7 +104,4 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(
-  mapStateToProps,
-  { setAlert, register }
-)(Register);
+export default connect(mapStateToProps, { setAlert, register })(Register);
