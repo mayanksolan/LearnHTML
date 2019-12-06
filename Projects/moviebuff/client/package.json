@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^3.9.4",
     "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
     "config": "^3.2.4",
@@ -43,8 +42,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "concurrently": "^5.0.0",
-    "nodemon": "^2.0.1"
-  }
+  "proxy": "http://localhost:5000"
 }

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { register } from "../../actions/index";
 
 class Register extends Component {
   constructor(props) {
@@ -16,10 +18,20 @@ class Register extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  onSubmit = e => {
+    const { name, email, password, password2 } = this.state;
+    e.preventDefault();
+    if (password !== password2) {
+      console.log("Passwords do not match");
+    } else {
+      this.props.register({ name, email, password });
+    }
+  };
+
   render() {
     return (
       <div>
-        <form className="container">
+        <form className="container" onSubmit={this.onSubmit}>
           <div>
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
@@ -88,4 +100,12 @@ class Register extends Component {
   }
 }
 
-export default Register;
+const mapStateToProps = state => ({
+  isAuthenticated: state.isAuthenticated
+});
+
+const mapDispatchToProps = {
+  register
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

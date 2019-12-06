@@ -1,15 +1,11 @@
 import { combineReducers } from "redux";
 
 const initialState = {
+  token: localStorage.getItem("token"),
   searchText: null,
   topRated: null,
-  register: {
-    name: "",
-    email: "",
-    password: "",
-    password2: ""
-  },
-  login: { email: "", password: "" }
+  isAuthenticated: null,
+  user: null
 };
 
 const fetchDataReducer = (state = initialState, action) => {
@@ -19,10 +15,27 @@ const fetchDataReducer = (state = initialState, action) => {
       return { ...state, topRated: action.payload };
     case "SET_SEARCH_TEXT":
       return { ...state, searchText: action.payload };
-    case "SET_REGISTER_DATA":
-      return { ...state, register: action.payload };
-    case "SET_LOGIN_DATA":
-      return { ...state, login: action.payload };
+    case "USER_LOADED":
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: action.payload
+      };
+    case "REGISTER_SUCCESS":
+      localStorage.setItem("token", action.payload.token);
+      return {
+        ...state,
+        ...action.payload,
+        isAuthenticated: true
+      };
+    case "REGISTER_FAIL":
+    case "AUTH_ERROR":
+      localStorage.removeItem("token");
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false
+      };
     default:
       return state;
   }
