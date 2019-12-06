@@ -20,6 +20,7 @@ class Register extends Component {
 
   onSubmit = e => {
     const { name, email, password, password2 } = this.state;
+    console.log(this.state);
     e.preventDefault();
     if (password !== password2) {
       console.log("Passwords do not match");
