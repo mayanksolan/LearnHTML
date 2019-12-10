@@ -5,7 +5,8 @@ const initialState = {
   searchText: null,
   topRated: null,
   isAuthenticated: null,
-  user: null
+  user: null,
+  hello: ""
 };
 
 const fetchDataReducer = (state = initialState, action) => {
