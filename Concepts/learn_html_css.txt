@@ -335,7 +335,7 @@ ul.b {  list-style-type: square;}
 ol.c {  list-style-type: upper-roman;}
 ol.d {  list-style-type: lower-alpha;}
 
-ul.a {  list-style-position: outside;}  //default behaviour when list is outside only
+ul.a {  list-style-position: outside;}  //default behavior when list is outside only
 ul.b {  list-style-position: inside;}   //when list is one tab indented inside
 
 ul {  	list-style-type: none;

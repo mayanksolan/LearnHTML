@@ -969,7 +969,7 @@ React is Declarative
 
 
 3. Immutability
-const obj = {name: 'Andrei'}
+const obj = {name: 'Mayank'}
 function clone(obj) {
   return {...obj}; // this is pure
 }
