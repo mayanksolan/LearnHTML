@@ -27,7 +27,7 @@
     "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "bootstrap": "^4.2.1",
     "history": "^4.7.2",
     "moment": "^2.24.0",
